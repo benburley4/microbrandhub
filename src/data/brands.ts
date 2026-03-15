@@ -117,6 +117,6 @@ export function getBrandBySlug(s: string): Brand | undefined {
   return brands.find(b => b.slug === s)
 }
 
-export const allCountries = [...new Set(brands.map(b => b.country))].sort()
+export const allCountries = Array.from(new Set(brands.map(b => b.country))).sort()
 export const allCategories: Category[] = ['Dive', 'Field', 'Dress', 'Pilot', 'Sport', 'Casual', 'Tool']
 export const allPriceRanges: PriceRange[] = ['Under $300', '$300–$600', '$600–$1,000', '$1,000–$2,000', '$2,000+']
