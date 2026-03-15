@@ -1,0 +1,8 @@
+{
+  "/listings/page": "app/listings/page.js",
+  "/brands/page": "app/brands/page.js",
+  "/page": "app/page.js",
+  "/reviews/page": "app/reviews/page.js",
+  "/reviews/[slug]/page": "app/reviews/[slug]/page.js",
+  "/brands/[slug]/page": "app/brands/[slug]/page.js"
+}
