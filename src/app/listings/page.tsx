@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { listings, listingBrands, listingConditions } from '@/data/listings'
+import { listings, listingBrands, listingConditions, listingLocations } from '@/data/listings'
 import Link from 'next/link'
 import { Suspense } from 'react'
 
@@ -20,6 +20,7 @@ function ListingsContent() {
   const [search, setSearch] = useState(initialBrand)
   const [selectedBrand, setSelectedBrand] = useState(initialBrand)
   const [selectedCondition, setSelectedCondition] = useState('')
+  const [selectedLocation, setSelectedLocation] = useState('')
   const [maxPrice, setMaxPrice] = useState('')
   const [sortBy, setSortBy] = useState<'date' | 'price-asc' | 'price-desc'>('date')
 
@@ -30,6 +31,7 @@ function ListingsContent() {
             !l.brand.toLowerCase().includes(search.toLowerCase())) return false
         if (selectedBrand && l.brand !== selectedBrand) return false
         if (selectedCondition && l.condition !== selectedCondition) return false
+        if (selectedLocation && l.location !== selectedLocation) return false
         if (maxPrice && l.price > Number(maxPrice)) return false
         return true
       })
@@ -38,7 +40,7 @@ function ListingsContent() {
         if (sortBy === 'price-asc') return a.price - b.price
         return b.price - a.price
       })
-  }, [search, selectedBrand, selectedCondition, maxPrice, sortBy])
+  }, [search, selectedBrand, selectedCondition, selectedLocation, maxPrice, sortBy])
 
   function daysAgo(dateStr: string) {
     const diff = Math.floor((Date.now() - new Date(dateStr).getTime()) / 86400000)
@@ -87,6 +89,15 @@ function ListingsContent() {
           {listingConditions.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
 
+        <select
+          value={selectedLocation}
+          onChange={e => setSelectedLocation(e.target.value)}
+          className="bg-stone-800 border border-stone-700 rounded-lg px-3 py-2 text-sm text-stone-300 focus:outline-none focus:border-brand-500"
+        >
+          <option value="">Any Location</option>
+          {listingLocations.map(loc => <option key={loc} value={loc}>{loc}</option>)}
+        </select>
+
         <input
           type="number"
           placeholder="Max price ($)"
@@ -105,9 +116,9 @@ function ListingsContent() {
           <option value="price-desc">Sort: Price ↓</option>
         </select>
 
-        {(search || selectedBrand || selectedCondition || maxPrice) && (
+        {(search || selectedBrand || selectedCondition || selectedLocation || maxPrice) && (
           <button
-            onClick={() => { setSearch(''); setSelectedBrand(''); setSelectedCondition(''); setMaxPrice('') }}
+            onClick={() => { setSearch(''); setSelectedBrand(''); setSelectedCondition(''); setSelectedLocation(''); setMaxPrice('') }}
             className="text-sm text-stone-400 hover:text-white transition-colors whitespace-nowrap"
           >
             Clear filters ×
