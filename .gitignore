@@ -2,5 +2,6 @@ node_modules
 .next
 .env
 .env.local
-src/data/generated/
+src/data/generated/brand_content.json
+src/data/generated/generated_reviews.json
 tsconfig.tsbuildinfo
