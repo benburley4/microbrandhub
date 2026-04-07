@@ -335,8 +335,6 @@ The Formex Essence is a watch for buyers who want something different — not di
     rating: 4,
     featuredImage: 'https://placehold.co/1200x600/1c1917/d97706?text=Formex+Essence',
   },
-]
-
   {
     slug: 'christopher-ward-c63-review',
     title: 'Christopher Ward C63 Sealander: British Value at Its Best',

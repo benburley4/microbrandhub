@@ -34,7 +34,7 @@ def main():
     updated = 0
 
     for brand_name, data in content.items():
-        new_desc = data.get("brand_description", "").replace('"', '\\"').replace('\n', ' ').strip()
+        new_desc = data.get("brand_description", "").replace("'", "\\'").replace('"', '\\"').replace('\n', ' ').strip()
         if not new_desc:
             continue
 
