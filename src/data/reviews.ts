@@ -885,33 +885,6 @@ The Gruppo Gamma Divemaster is a successful execution of a vintage-inspired tool
     featuredImage: 'https://placehold.co/1200x600/1c1917/d97706?text=Gruppo+Gamma',
   },
   {
-    slug: 'halios-seaforth-review-the-microbrand-dive-watch-icon',
-    title: `Halios Seaforth Review: The Microbrand Dive Watch Icon`,
-    brand: 'Halios',
-    brandSlug: 'halios',
-    excerpt: `The Halios Seaforth is a modern classic that transcends its dive watch roots. With its distinctive design, versatile wearability, and accessible price, it has become a benchmark for independent watchmaking.`,
-    body: `## Overview
-For years, the Halios Seaforth has been more than just a watch; it's a phenomenon in the microbrand world. Created by Canadian designer Jason Lim, it represents a perfect storm of thoughtful design, robust quality, and community-driven appeal. It's a watch that feels both familiar and fresh, built not just for the water but for everyday life.
-
-## Design
-The Seaforth's design is its masterstroke. It features a compact, wearable case with a beautifully executed concave fixed bezel—a signature element that provides texture and vintage flair. The dial is where Halios truly shines, offering an array of stunning colors, from sunburst blues and greens to more muted pastels. Combined with highly legible, applied indices and a clean handset, the visual package is cohesive and deeply attractive. The finishing is tool-watch solid yet refined, making it equally at home on a bracelet, rubber strap, or NATO.
-
-## Movement
-Powering the Seaforth is the reliable and proven Sellita SW200-1 automatic movement. This Swiss workhorse offers a 38-hour power reserve, hacking seconds, and a smooth 28,800 vph sweep. It's a no-nonsense choice that prioritizes reliability and easy servicing over exotic complications. The movement is hidden behind a solid case back, which is appropriately engraved with Halios's sea turtle logo, keeping the focus squarely on the dial-side aesthetics.
-
-## Value
-In the $600 to $1,000 range, the Seaforth punches well above its weight. The quality of the case finishing, the originality of the design, and the overall execution rival watches from much larger brands at twice the price. While its limited production runs and high demand can make acquisition a challenge, the value proposition for those who secure one is undeniable. You get a distinctive, well-made watch with a passionate owner community behind it.
-
-## Verdict
-The Halios Seaforth is a microbrand legend for a reason. It successfully captures the elusive qualities of charm, versatility, and substance. It isn't trying to be a pure tool watch or a luxury item; it's a brilliantly designed accessory for daily wear. For anyone seeking a unique, high-quality dive-style watch with personality, the Seaforth remains a top-tier recommendation and a testament to independent watchmaking at its best.`,
-    author: 'MicrobrandHub Editorial',
-    publishedAt: '2026-04-07',
-    readingTime: 5,
-    tags: ["Review", "Halios", "Dive Watch", "Microbrand"],
-    rating: 4,
-    featuredImage: 'https://placehold.co/1200x600/1c1917/d97706?text=Halios',
-  },
-  {
     slug: 'h2o-kalmar-2-review-the-uncompromising-tool-watch',
     title: `H2O Kalmar 2 Review: The Uncompromising Tool Watch`,
     brand: 'H2O',
@@ -937,6 +910,33 @@ The H2O Kalmar 2 is a brilliantly focused instrument. It earns a high rating for
     tags: ["Review", "H2O", "Dive Watch", "Tool Watch", "Microbrand"],
     rating: 4,
     featuredImage: 'https://placehold.co/1200x600/1c1917/d97706?text=H2O',
+  },
+  {
+    slug: 'halios-seaforth-review-the-microbrand-dive-watch-icon',
+    title: `Halios Seaforth Review: The Microbrand Dive Watch Icon`,
+    brand: 'Halios',
+    brandSlug: 'halios',
+    excerpt: `The Halios Seaforth is a modern classic that transcends its dive watch roots. With its distinctive design, versatile wearability, and accessible price, it has become a benchmark for independent watchmaking.`,
+    body: `## Overview
+For years, the Halios Seaforth has been more than just a watch; it's a phenomenon in the microbrand world. Created by Canadian designer Jason Lim, it represents a perfect storm of thoughtful design, robust quality, and community-driven appeal. It's a watch that feels both familiar and fresh, built not just for the water but for everyday life.
+
+## Design
+The Seaforth's design is its masterstroke. It features a compact, wearable case with a beautifully executed concave fixed bezel—a signature element that provides texture and vintage flair. The dial is where Halios truly shines, offering an array of stunning colors, from sunburst blues and greens to more muted pastels. Combined with highly legible, applied indices and a clean handset, the visual package is cohesive and deeply attractive. The finishing is tool-watch solid yet refined, making it equally at home on a bracelet, rubber strap, or NATO.
+
+## Movement
+Powering the Seaforth is the reliable and proven Sellita SW200-1 automatic movement. This Swiss workhorse offers a 38-hour power reserve, hacking seconds, and a smooth 28,800 vph sweep. It's a no-nonsense choice that prioritizes reliability and easy servicing over exotic complications. The movement is hidden behind a solid case back, which is appropriately engraved with Halios's sea turtle logo, keeping the focus squarely on the dial-side aesthetics.
+
+## Value
+In the $600 to $1,000 range, the Seaforth punches well above its weight. The quality of the case finishing, the originality of the design, and the overall execution rival watches from much larger brands at twice the price. While its limited production runs and high demand can make acquisition a challenge, the value proposition for those who secure one is undeniable. You get a distinctive, well-made watch with a passionate owner community behind it.
+
+## Verdict
+The Halios Seaforth is a microbrand legend for a reason. It successfully captures the elusive qualities of charm, versatility, and substance. It isn't trying to be a pure tool watch or a luxury item; it's a brilliantly designed accessory for daily wear. For anyone seeking a unique, high-quality dive-style watch with personality, the Seaforth remains a top-tier recommendation and a testament to independent watchmaking at its best.`,
+    author: 'MicrobrandHub Editorial',
+    publishedAt: '2026-04-07',
+    readingTime: 5,
+    tags: ["Review", "Halios", "Dive Watch", "Microbrand"],
+    rating: 4,
+    featuredImage: 'https://placehold.co/1200x600/1c1917/d97706?text=Halios',
   },
   {
     slug: 'horage-autark-k1-a-microbrand-masterclass-in-swiss-value',
