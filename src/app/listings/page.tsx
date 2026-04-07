@@ -104,6 +104,15 @@ function ListingsContent() {
           <option value="price-asc">Sort: Price ↑</option>
           <option value="price-desc">Sort: Price ↓</option>
         </select>
+
+        {(search || selectedBrand || selectedCondition || maxPrice) && (
+          <button
+            onClick={() => { setSearch(''); setSelectedBrand(''); setSelectedCondition(''); setMaxPrice('') }}
+            className="text-sm text-stone-400 hover:text-white transition-colors whitespace-nowrap"
+          >
+            Clear filters ×
+          </button>
+        )}
       </div>
 
       <p className="text-sm text-stone-500 mb-4">Showing {filtered.length} listing{filtered.length !== 1 ? 's' : ''}</p>

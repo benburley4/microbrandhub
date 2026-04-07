@@ -1,11 +1,8 @@
+'use client'
+
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { reviews, allTags } from '@/data/reviews'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Reviews & Guides',
-  description: 'In-depth reviews, buying guides, and editorials on microbrand watches.',
-}
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -25,8 +22,15 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function ReviewsPage() {
-  const featured = reviews[0]
-  const rest = reviews.slice(1)
+  const [activeTag, setActiveTag] = useState<string | null>(null)
+
+  const filtered = useMemo(() => {
+    if (!activeTag) return reviews
+    return reviews.filter(r => r.tags.includes(activeTag))
+  }, [activeTag])
+
+  const featured = filtered[0]
+  const rest = filtered.slice(1)
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -35,61 +39,121 @@ export default function ReviewsPage() {
         <p className="text-stone-400">In-depth reviews, roundups and buying guides on microbrand watches.</p>
       </div>
 
-      {/* Tags */}
+      {/* Tag filters */}
       <div className="flex flex-wrap gap-2 mb-8">
+        <button
+          onClick={() => setActiveTag(null)}
+          className={`tag border text-xs transition-colors ${
+            activeTag === null
+              ? 'bg-brand-700 text-brand-100 border-brand-600'
+              : 'bg-stone-800 text-stone-400 border-stone-700 hover:border-brand-600 hover:text-brand-300'
+          }`}
+        >
+          All
+        </button>
         {allTags.map(tag => (
-          <span key={tag} className="tag bg-stone-800 text-stone-400 border border-stone-700 text-xs">
+          <button
+            key={tag}
+            onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+            className={`tag border text-xs transition-colors ${
+              activeTag === tag
+                ? 'bg-brand-700 text-brand-100 border-brand-600'
+                : 'bg-stone-800 text-stone-400 border-stone-700 hover:border-brand-600 hover:text-brand-300'
+            }`}
+          >
             {tag}
-          </span>
+          </button>
         ))}
       </div>
 
-      {/* Featured article */}
-      <Link href={`/reviews/${featured.slug}`} className="block card p-6 md:p-8 mb-6 group">
-        <div className="flex flex-wrap items-center gap-2 mb-3">
-          <span className="tag bg-brand-900/40 text-brand-300 border border-brand-800/50 text-xs">Featured</span>
-          {featured.tags.slice(0, 2).map(t => (
-            <span key={t} className="tag bg-stone-800 text-stone-400 text-xs">{t}</span>
-          ))}
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-white group-hover:text-brand-300 transition-colors mb-3">
-          {featured.title}
-        </h2>
-        <p className="text-stone-400 leading-relaxed mb-4 max-w-3xl">{featured.excerpt}</p>
-        <div className="flex items-center gap-3 text-sm text-stone-500">
-          {featured.rating && <StarRating rating={featured.rating} />}
-          <span>{featured.author}</span>
-          <span>·</span>
-          <span>{new Date(featured.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-          <span>·</span>
-          <span>{featured.readingTime} min read</span>
-        </div>
-      </Link>
+      <p className="text-sm text-stone-500 mb-6">
+        {filtered.length} article{filtered.length !== 1 ? 's' : ''}{activeTag ? ` tagged "${activeTag}"` : ''}
+      </p>
 
-      {/* Article grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {rest.map(review => (
-          <Link key={review.slug} href={`/reviews/${review.slug}`} className="card p-5 group flex flex-col">
-            <div className="flex flex-wrap gap-1.5 mb-3">
-              {review.tags.slice(0, 2).map(t => (
-                <span key={t} className="tag bg-stone-800 text-stone-500 text-xs">{t}</span>
+      {filtered.length === 0 ? (
+        <div className="text-center py-20 text-stone-500">
+          <div className="text-4xl mb-3">📖</div>
+          <p>No articles found for this tag.</p>
+          <button onClick={() => setActiveTag(null)} className="mt-4 text-brand-400 hover:text-brand-300 text-sm transition-colors">
+            Clear filter →
+          </button>
+        </div>
+      ) : (
+        <>
+          {/* Featured article */}
+          {featured && (
+            <Link href={`/reviews/${featured.slug}`} className="block card overflow-hidden mb-6 group">
+              {featured.featuredImage && (
+                <div className="h-48 sm:h-64 overflow-hidden">
+                  <img src={featured.featuredImage} alt={featured.title} className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+                </div>
+              )}
+              <div className="p-6 md:p-8">
+                <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <span className="tag bg-brand-900/40 text-brand-300 border border-brand-800/50 text-xs">Featured</span>
+                  {featured.tags.slice(0, 2).map(t => (
+                    <span key={t} className="tag bg-stone-800 text-stone-400 text-xs">{t}</span>
+                  ))}
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white group-hover:text-brand-300 transition-colors mb-3">
+                  {featured.title}
+                </h2>
+                <p className="text-stone-400 leading-relaxed mb-4 max-w-3xl">{featured.excerpt}</p>
+                <div className="flex items-center gap-3 text-sm text-stone-500">
+                  {featured.rating && <StarRating rating={featured.rating} />}
+                  <span>{featured.author}</span>
+                  <span>·</span>
+                  <span>{new Date(featured.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                  <span>·</span>
+                  <span>{featured.readingTime} min read</span>
+                </div>
+              </div>
+            </Link>
+          )}
+
+          {/* Article grid */}
+          {rest.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {rest.map(review => (
+                <Link key={review.slug} href={`/reviews/${review.slug}`} className="card overflow-hidden group flex flex-col">
+                  <div className="h-36 bg-stone-800 overflow-hidden">
+                    <img
+                      src={review.featuredImage ?? `https://placehold.co/600x240/292524/6b7280?text=${encodeURIComponent(review.title.slice(0, 20))}`}
+                      alt={review.title}
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {review.tags.slice(0, 2).map(t => (
+                        <button
+                          key={t}
+                          onClick={e => { e.preventDefault(); setActiveTag(t) }}
+                          className="tag bg-stone-800 text-stone-500 text-xs hover:text-brand-300 hover:border-brand-600 border border-transparent transition-colors"
+                        >
+                          {t}
+                        </button>
+                      ))}
+                    </div>
+                    <h2 className="font-semibold text-white group-hover:text-brand-300 transition-colors leading-snug mb-2">
+                      {review.title}
+                    </h2>
+                    <p className="text-sm text-stone-400 line-clamp-3 leading-relaxed mb-4 flex-1">
+                      {review.excerpt}
+                    </p>
+                    <div className="flex items-center gap-2 text-xs text-stone-500 mt-auto">
+                      {review.rating && <StarRating rating={review.rating} />}
+                      <span>{review.readingTime} min read</span>
+                      <span>·</span>
+                      <span>{new Date(review.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
-            <h2 className="font-semibold text-white group-hover:text-brand-300 transition-colors leading-snug mb-2">
-              {review.title}
-            </h2>
-            <p className="text-sm text-stone-400 line-clamp-3 leading-relaxed mb-4 flex-1">
-              {review.excerpt}
-            </p>
-            <div className="flex items-center gap-2 text-xs text-stone-500 mt-auto">
-              {review.rating && <StarRating rating={review.rating} />}
-              <span>{review.readingTime} min read</span>
-              <span>·</span>
-              <span>{new Date(review.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+          )}
+        </>
+      )}
     </div>
   )
 }

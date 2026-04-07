@@ -6,8 +6,10 @@ import { useState } from 'react'
 
 const navLinks = [
   { href: '/brands', label: 'Brands' },
+  { href: '/drops', label: 'Drops' },
   { href: '/listings', label: 'Listings' },
   { href: '/reviews', label: 'Reviews' },
+  { href: '/about', label: 'About' },
 ]
 
 export default function Header() {

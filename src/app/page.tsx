@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { brands, allCategories } from '@/data/brands'
+import { getLatestDrops } from '@/data/drops'
 
 const categoryIcons: Record<string, string> = {
   Dive: '🤿',
@@ -10,6 +11,8 @@ const categoryIcons: Record<string, string> = {
   Casual: '☕',
   Tool: '🔧',
 }
+
+const latestDrops = getLatestDrops(3)
 
 const featuredBrands = ['Baltic', 'Nomos', 'Halios', 'Formex', 'Traska', 'Serica'].map(
   name => brands.find(b => b.name === name)!
@@ -103,33 +106,87 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {featuredBrands.map(brand => (
-            <Link key={brand.slug} href={`/brands/${brand.slug}`} className="card p-5 group">
-              <div className="flex items-start justify-between mb-3">
-                <div>
-                  <h3 className="font-semibold text-white group-hover:text-brand-300 transition-colors">
-                    {brand.name}
-                  </h3>
-                  <p className="text-xs text-stone-500 mt-0.5">{brand.country}</p>
-                </div>
-                <span className="tag bg-brand-900/40 text-brand-300 border border-brand-800/50 text-xs">
-                  {brand.priceRange}
-                </span>
+            <Link key={brand.slug} href={`/brands/${brand.slug}`} className="card overflow-hidden group">
+              {/* TODO: replace placehold.co with real brand photography */}
+              <div className="h-32 bg-stone-800 overflow-hidden">
+                <img
+                  src={brand.heroImageUrl ?? `https://placehold.co/600x200/292524/6b7280?text=${encodeURIComponent(brand.name)}`}
+                  alt={`${brand.name}`}
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                />
               </div>
-              <p className="text-sm text-stone-400 line-clamp-2 leading-relaxed">{brand.description}</p>
-              <div className="flex flex-wrap gap-1.5 mt-3">
-                {brand.categories.map(cat => (
-                  <span key={cat} className="tag bg-stone-800 text-stone-300 text-xs">
-                    {cat}
+              <div className="p-5">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 className="font-semibold text-white group-hover:text-brand-300 transition-colors">
+                      {brand.name}
+                    </h3>
+                    <p className="text-xs text-stone-500 mt-0.5">{brand.country}</p>
+                  </div>
+                  <span className="tag bg-brand-900/40 text-brand-300 border border-brand-800/50 text-xs">
+                    {brand.priceRange}
                   </span>
-                ))}
+                </div>
+                <p className="text-sm text-stone-400 line-clamp-2 leading-relaxed">{brand.description}</p>
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {brand.categories.map(cat => (
+                    <span key={cat} className="tag bg-stone-800 text-stone-300 text-xs">
+                      {cat}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
+      {/* Latest Drops */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h2 className="section-heading text-white mb-1">Latest Drops</h2>
+            <p className="text-stone-400">Limited editions and new releases from the microbrand world.</p>
+          </div>
+          <Link href="/drops" className="text-brand-400 hover:text-brand-300 text-sm font-medium transition-colors">
+            View all →
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {latestDrops.map(drop => {
+            const statusLabel = drop.status === 'live' ? 'Live Now' : drop.status === 'upcoming' ? 'Upcoming' : 'Sold Out'
+            const statusClasses = drop.status === 'live'
+              ? 'bg-green-900/40 text-green-300 border-green-800/50'
+              : drop.status === 'upcoming'
+              ? 'bg-amber-900/40 text-amber-300 border-amber-800/50'
+              : 'bg-stone-800 text-stone-500 border-stone-700'
+            return (
+              <Link key={drop.id} href="/drops" className="card overflow-hidden group">
+                {/* TODO: replace placehold.co with real product photography */}
+                <div className="h-36 bg-stone-800 overflow-hidden">
+                  <img
+                    src={drop.imageUrl}
+                    alt={drop.title}
+                    className={`w-full h-full object-cover group-hover:opacity-100 transition-opacity ${drop.status === 'sold_out' ? 'opacity-40 grayscale' : 'opacity-90'}`}
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-xs text-brand-400 font-medium">{drop.brand}</span>
+                    <span className={`tag border text-xs font-medium ${statusClasses}`}>{statusLabel}</span>
+                  </div>
+                  <p className="text-sm font-semibold text-white group-hover:text-brand-300 transition-colors line-clamp-1">
+                    {drop.title}
+                  </p>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
       {/* CTA sections */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="card p-8 bg-gradient-to-br from-stone-900 to-stone-800">
             <div className="text-3xl mb-3">🛒</div>
@@ -151,6 +208,35 @@ export default function HomePage() {
               Read Reviews
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="bg-gradient-to-br from-brand-900/40 to-stone-900 border border-brand-800/40 rounded-2xl p-8 md:p-12 text-center">
+          <div className="text-4xl mb-4">📬</div>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Never Miss a Drop</h2>
+          <p className="text-stone-400 max-w-xl mx-auto mb-8 leading-relaxed">
+            Get weekly updates on new limited edition releases, brand launches, and hand-picked pre-owned listings — straight to your inbox.
+          </p>
+          <form
+            action={`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? 'YOUR_FORM_ID'}`}
+            method="POST"
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          >
+            <input type="hidden" name="_subject" value="Newsletter signup" />
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              className="flex-1 bg-stone-800 border border-stone-700 rounded-lg px-4 py-3 text-sm text-white placeholder-stone-500 focus:outline-none focus:border-brand-500 transition-colors"
+            />
+            <button type="submit" className="btn-primary whitespace-nowrap">
+              Subscribe
+            </button>
+          </form>
+          <p className="text-xs text-stone-600 mt-4">No spam. Unsubscribe any time.</p>
         </div>
       </section>
     </div>

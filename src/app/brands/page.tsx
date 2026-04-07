@@ -123,11 +123,21 @@ function BrandsContent() {
           {filtered.map(brand => (
             <Link key={brand.slug} href={`/brands/${brand.slug}`} className="card p-5 group">
               <div className="flex items-start justify-between mb-3">
-                <div>
-                  <h2 className="font-semibold text-white group-hover:text-brand-300 transition-colors">
-                    {brand.name}
-                  </h2>
-                  <p className="text-xs text-stone-500 mt-0.5">{brand.country}</p>
+                <div className="flex items-center gap-3">
+                  {brand.logoUrl ? (
+                    // TODO: replace with real brand logo
+                    <img src={brand.logoUrl} alt={`${brand.name} logo`} width={40} height={40} className="rounded-lg object-cover flex-shrink-0" />
+                  ) : (
+                    <div className="w-10 h-10 rounded-lg bg-stone-800 flex items-center justify-center flex-shrink-0 text-stone-500 text-xs font-bold">
+                      {brand.name.slice(0, 2).toUpperCase()}
+                    </div>
+                  )}
+                  <div>
+                    <h2 className="font-semibold text-white group-hover:text-brand-300 transition-colors">
+                      {brand.name}
+                    </h2>
+                    <p className="text-xs text-stone-500 mt-0.5">{brand.country}</p>
+                  </div>
                 </div>
                 <span className="tag bg-stone-800 text-stone-300 text-xs border border-stone-700 whitespace-nowrap ml-2">
                   {brand.priceRange}

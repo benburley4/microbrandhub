@@ -1,6 +1,10 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { brands, getBrandBySlug } from '@/data/brands'
+import { reviews } from '@/data/reviews'
+import { drops } from '@/data/drops'
+import { listings } from '@/data/listings'
+import { brandSEO } from '@/data/brand_seo'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -14,9 +18,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const brand = getBrandBySlug(params.slug)
   if (!brand) return {}
+  const seo = brandSEO[params.slug]
   return {
-    title: brand.name,
-    description: brand.description,
+    title: seo?.seoTitle ?? brand.name,
+    description: seo?.seoDescription ?? brand.description,
   }
 }
 
@@ -32,12 +37,48 @@ export default function BrandPage({ params }: Props) {
   const brand = getBrandBySlug(params.slug)
   if (!brand) notFound()
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Brand',
+    name: brand.name,
+    url: brand.website,
+    description: brand.description,
+    ...(brand.country && {
+      foundingLocation: {
+        '@type': 'Country',
+        name: brand.country,
+      },
+    }),
+    ...(brand.founded && { foundingDate: String(brand.founded) }),
+  }
+
+  const seo = brandSEO[brand.slug]
+
   const related = brands
     .filter(b => b.slug !== brand.slug && b.categories.some(c => brand.categories.includes(c)))
     .slice(0, 3)
 
+  const brandReviews  = reviews.filter(r => r.brandSlug === brand.slug)
+  const brandDrops    = drops.filter(d => d.brandSlug === brand.slug)
+  const brandListings = listings.filter(l => l.brand.toLowerCase() === brand.name.toLowerCase()).slice(0, 4)
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* Hero image — TODO: replace placehold.co with real brand photography */}
+      {brand.heroImageUrl && (
+        <div className="rounded-2xl overflow-hidden mb-8 border border-stone-800">
+          <img
+            src={brand.heroImageUrl}
+            alt={`${brand.name} watches`}
+            className="w-full h-48 sm:h-64 object-cover"
+          />
+        </div>
+      )}
+
       {/* Back */}
       <Link href="/brands" className="inline-flex items-center gap-1.5 text-sm text-stone-400 hover:text-white transition-colors mb-8">
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -93,6 +134,31 @@ export default function BrandPage({ params }: Props) {
         </div>
       </div>
 
+      {/* Key Collection + Why Buy — from DeepSeek content */}
+      {seo && (seo.keyCollection || seo.whyBuy?.length > 0) && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          {seo.keyCollection && (
+            <div className="bg-stone-900 border border-stone-800 rounded-xl p-5">
+              <h2 className="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-2">Signature Collection</h2>
+              <p className="text-sm text-stone-300 leading-relaxed">{seo.keyCollection}</p>
+            </div>
+          )}
+          {seo.whyBuy?.length > 0 && (
+            <div className="bg-stone-900 border border-stone-800 rounded-xl p-5">
+              <h2 className="text-sm font-semibold text-stone-400 uppercase tracking-wider mb-2">Why Buy</h2>
+              <ul className="space-y-1">
+                {seo.whyBuy.map((point, i) => (
+                  <li key={i} className="text-sm text-stone-300 flex gap-2">
+                    <span className="text-brand-400 mt-0.5">✓</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Details grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
         <div className="bg-stone-900 border border-stone-800 rounded-xl p-4">
@@ -108,6 +174,90 @@ export default function BrandPage({ params }: Props) {
           <div className="text-white font-medium">{brand.categories[0]}</div>
         </div>
       </div>
+
+      {/* Latest Reviews */}
+      {brandReviews.length > 0 && (
+        <div className="mb-10">
+          <h2 className="text-xl font-bold text-white mb-4">Reviews</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {brandReviews.map(review => (
+              <Link key={review.slug} href={`/reviews/${review.slug}`} className="card p-4 group">
+                <div className="font-medium text-white group-hover:text-brand-300 transition-colors mb-1 leading-snug">
+                  {review.title}
+                </div>
+                <div className="text-xs text-stone-500 mb-2">{review.readingTime} min read · {new Date(review.publishedAt).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}</div>
+                <p className="text-xs text-stone-400 line-clamp-2">{review.excerpt}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Latest Drops */}
+      {brandDrops.length > 0 && (
+        <div className="mb-10">
+          <h2 className="text-xl font-bold text-white mb-4">Limited Drops</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {brandDrops.map(drop => {
+              const statusLabel = drop.status === 'live' ? 'Live Now' : drop.status === 'upcoming' ? 'Upcoming' : 'Sold Out'
+              const statusClasses = drop.status === 'live'
+                ? 'bg-green-900/40 text-green-300 border-green-800/50'
+                : drop.status === 'upcoming'
+                ? 'bg-amber-900/40 text-amber-300 border-amber-800/50'
+                : 'bg-stone-800 text-stone-500 border-stone-700'
+              return (
+                <div key={drop.id} className="card p-4">
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <div className="font-medium text-white leading-snug">{drop.title}</div>
+                    <span className={`tag border text-xs font-medium whitespace-nowrap ${statusClasses}`}>{statusLabel}</span>
+                  </div>
+                  <p className="text-xs text-stone-400 line-clamp-2 mb-3">{drop.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-bold text-white">
+                      {new Intl.NumberFormat('en-US', { style: 'currency', currency: drop.currency, maximumFractionDigits: 0 }).format(drop.price)}
+                    </span>
+                    {drop.status !== 'sold_out' && (
+                      <a href={drop.url} target="_blank" rel="noopener noreferrer" className="text-xs text-brand-400 hover:text-brand-300 transition-colors">
+                        View Drop →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Pre-owned Listings */}
+      {brandListings.length > 0 && (
+        <div className="mb-10">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-xl font-bold text-white">Pre-owned Listings</h2>
+            <Link href={`/listings?brand=${encodeURIComponent(brand.name)}`} className="text-brand-400 hover:text-brand-300 text-sm transition-colors">
+              View all →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {brandListings.map(listing => (
+              <a key={listing.id} href={listing.url} target="_blank" rel="noopener noreferrer" className="card p-4 group">
+                <div className="font-medium text-white group-hover:text-brand-300 transition-colors leading-snug mb-1 line-clamp-2">
+                  {listing.title}
+                </div>
+                <div className="flex items-center gap-2 text-xs text-stone-500 mt-1">
+                  <span className="font-bold text-white text-sm">
+                    {new Intl.NumberFormat('en-US', { style: 'currency', currency: listing.currency, maximumFractionDigits: 0 }).format(listing.price)}
+                  </span>
+                  <span>·</span>
+                  <span>{listing.condition}</span>
+                  <span>·</span>
+                  <span>{listing.platform}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Related brands */}
       {related.length > 0 && (

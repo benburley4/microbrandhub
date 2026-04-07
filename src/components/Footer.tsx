@@ -18,8 +18,12 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">Explore</h3>
             <ul className="space-y-2 text-sm text-stone-400">
               <li><Link href="/brands" className="hover:text-white transition-colors">Brand Directory</Link></li>
+              <li><Link href="/drops" className="hover:text-white transition-colors">Limited Drops</Link></li>
               <li><Link href="/listings" className="hover:text-white transition-colors">Listings</Link></li>
               <li><Link href="/reviews" className="hover:text-white transition-colors">Reviews</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>
