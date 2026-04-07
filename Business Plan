@@ -1,0 +1,121 @@
+MICROBRANDHUB.COM - LOWEST-COST AI IMPLEMENTATION GUIDE
+========================================================
+(Claude for BUILD + DeepSeek API for LIVE RUN)
+
+Prepared for: Ben
+Date: April 2026
+
+1. EXECUTIVE SUMMARY - HYBRID OPTIMIZATION
+------------------------------------------
+This is the absolute lowest-cost setup possible in 2026:
+
+- Use CLAUDE (Sonnet/Haiku) only during the BUILD phase (excellent at coding, prompt engineering, and creating perfect n8n workflows).
+- Switch to DEEPSEEK V3.2 for all LIVE production running (one of the cheapest high-quality models available).
+- Total live monthly cost: $12 – $35 (even at medium-high volume).
+- One-time build cost: $15 – $40 (Claude API usage only).
+
+DeepSeek V3.2 pricing (April 2026):
+- Input (cache miss): $0.28 / 1M tokens
+- Input (cache hit): $0.028 / 1M tokens
+- Output: $0.42 / 1M tokens
+→ 10–50x cheaper than Claude for ongoing work.
+
+DeepSeek is fully OpenAI-compatible → zero-code switch in n8n.
+
+2. RECOMMENDED TECH STACK
+-------------------------
+Build Phase (Claude):
+- Claude 3.5/4 Sonnet via Anthropic Console or API (best for coding)
+- n8n self-hosted (free)
+
+Live Phase (DeepSeek):
+- DeepSeek V3.2 (deepseek-chat) via OpenAI-compatible endpoint
+- n8n self-hosted on $5–8/month VPS
+- Knowledge Base: Free Notion or Obsidian
+- Image Generation: Grok Imagine (free with your Grok access) or Leonardo free tier
+- Analytics: Google Analytics (free) + free affiliate tracking
+
+3. COST BREAKDOWN
+-----------------
+Build Phase (one-time, 1–2 weeks):
+- Claude API usage: $15–40 (mostly Sonnet for workflow generation)
+- Total: Under $50
+
+Live Phase (ongoing monthly):
+- DeepSeek API: $8–25 (with heavy caching and batching)
+- VPS + n8n: $5–8
+- Other tools: $0
+- Realistic total: $12–35/month (even with daily content + reviews)
+
+4. IMPLEMENTATION ROADMAP (Claude Build → DeepSeek Run)
+-------------------------------------------------------
+
+Phase 0: Preparation (Week 1 – Cost: $0–10)
+- Get Anthropic API key (for build)
+- Get DeepSeek API key[](https://platform.deepseek.com/)
+- Install n8n self-hosted on cheap VPS ($5–8/mo)
+- Build knowledge base in Notion (brand data + affiliate links)
+
+Phase 1: BUILD with Claude (Weeks 1–3)
+- Use Claude to:
+  • Generate all 5 AI team prompt templates (structured XML format)
+  • Create complete n8n workflow JSON files
+  • Write the central Orchestrator agent
+  • Generate testing scripts and human-approval loops
+- You simply paste your requirements into Claude and ask it to output ready-to-import n8n workflows.
+
+Phase 2: SWITCH TO DEEPSEEK & GO LIVE (Week 4)
+- In every n8n OpenAI node:
+  - Change Base URL to: https://api.deepseek.com/v1
+  - Use your DeepSeek API key
+  - Set model to: deepseek-chat (V3.2)
+- Test all workflows (they will work instantly because of OpenAI compatibility)
+- Enable prompt caching in DeepSeek for extra 90%+ savings
+
+Phase 3: Optimize & Scale (Month 2+)
+- Use DeepSeek for 100% of routine tasks
+- Only call Claude again if you need major workflow updates (rare)
+
+5. n8n SETUP FOR DEEPSEEK (Copy-Paste)
+--------------------------------------
+In n8n OpenAI node:
+- API Base URL: https://api.deepseek.com/v1
+- Model: deepseek-chat
+- Temperature: 0.7 (Reviews/Content) or 0.3 (optimization tasks)
+- Enable caching where possible
+
+(Claude will generate the exact JSON workflow for you during build phase.)
+
+6. OPTIMIZED PROMPT TEMPLATE (Use with Claude during Build)
+----------------------------------------------------------
+
+7. DETAILED 5 AI TEAMS (Live on DeepSeek)
+-----------------------------------------
+All teams run on DeepSeek V3.2 after build:
+- Reviews: Batch generation (lowest cost)
+- Marketing: Scheduled SEO + email
+- Digital Content: Daily/weekly calendar
+- Watch Drops: Daily monitoring (very cheap)
+- Affiliate Optimization: Weekly performance analysis
+
+8. COST CONTROL RULES (DeepSeek Live)
+-------------------------------------
+- Always enable cache hit (reuse system prompts)
+- Batch process reviews/content weekly
+- Use low temperature + structured output
+- Set monthly budget cap in DeepSeek dashboard
+- Monitor usage in n8n logs
+
+9. PRIORITIZED LAUNCH ORDER
+---------------------------
+1. Use Claude to build Digital Content + Reviews teams first (Week 2)
+2. Add Watch Drops monitoring
+3. Build Marketing + Affiliate Optimization
+4. Switch everything to DeepSeek and launch
+
+Expected Outcome:
+- Build phase: Professional, high-quality system created by Claude
+- Live phase: Extremely low running cost ($12–35/month) with DeepSeek
+- Full 5-team AI system running profitably with affiliate commissions
+
+End of Claude-Build + DeepSeek-Live Guide

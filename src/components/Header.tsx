@@ -12,18 +12,31 @@ const navLinks = [
   { href: '/about', label: 'About' },
 ]
 
+function WatchIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="14" cy="14" r="11.5" stroke="#B8FF6E" strokeWidth="1.5"/>
+      <circle cx="14" cy="14" r="9" stroke="#B8FF6E" strokeWidth="0.5"/>
+      <line x1="14" y1="5.5" x2="14" y2="7" stroke="#B8FF6E" strokeWidth="1.5" strokeLinecap="round"/>
+      <line x1="14" y1="14" x2="14" y2="8.5" stroke="#E8E4DC" strokeWidth="1.2" strokeLinecap="round"/>
+      <line x1="14" y1="14" x2="18.5" y2="16.5" stroke="#E8E4DC" strokeWidth="1" strokeLinecap="round"/>
+      <circle cx="14" cy="14" r="1" fill="#B8FF6E"/>
+    </svg>
+  )
+}
+
 export default function Header() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-stone-950/90 backdrop-blur border-b border-stone-800">
+    <header className="sticky top-0 z-50 bg-midnight/85 backdrop-blur border-b border-storm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <span className="text-brand-400 text-xl">⌚</span>
-            <span className="font-bold text-lg tracking-tight text-white group-hover:text-brand-300 transition-colors">
+            <WatchIcon />
+            <span className="font-display font-bold text-lg tracking-tight text-archive group-hover:text-lume transition-colors">
               MicrobrandHub
             </span>
           </Link>
@@ -34,20 +47,30 @@ export default function Header() {
               <Link
                 key={href}
                 href={href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 text-xs font-semibold tracking-widest uppercase transition-colors relative ${
                   pathname.startsWith(href)
-                    ? 'bg-stone-800 text-white'
-                    : 'text-stone-400 hover:text-white hover:bg-stone-800/60'
+                    ? 'text-lume'
+                    : 'text-silver hover:text-archive'
                 }`}
               >
                 {label}
+                {pathname.startsWith(href) && (
+                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-lume rounded-full" />
+                )}
               </Link>
             ))}
           </nav>
 
+          {/* Subscribe CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <Link href="#newsletter" className="btn-secondary text-xs py-2 px-4">
+              Subscribe
+            </Link>
+          </div>
+
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-lg text-stone-400 hover:text-white hover:bg-stone-800 transition-colors"
+            className="md:hidden p-2 rounded text-silver hover:text-archive hover:bg-storm transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -65,16 +88,16 @@ export default function Header() {
 
         {/* Mobile nav */}
         {menuOpen && (
-          <nav className="md:hidden py-3 border-t border-stone-800 flex flex-col gap-1">
+          <nav className="md:hidden py-3 border-t border-storm flex flex-col gap-1">
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
-                href={href}
                 onClick={() => setMenuOpen(false)}
-                className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                href={href}
+                className={`px-4 py-2.5 text-xs font-semibold tracking-widest uppercase transition-colors ${
                   pathname.startsWith(href)
-                    ? 'bg-stone-800 text-white'
-                    : 'text-stone-400 hover:text-white hover:bg-stone-800/60'
+                    ? 'text-lume'
+                    : 'text-silver hover:text-archive'
                 }`}
               >
                 {label}

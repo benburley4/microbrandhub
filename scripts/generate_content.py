@@ -18,8 +18,13 @@ import json
 import time
 import argparse
 import re
+import sys
 from pathlib import Path
 from typing import Optional
+
+# Fix Windows console encoding so Unicode characters in generated text don't crash print()
+if sys.stdout.encoding and sys.stdout.encoding.lower() not in ('utf-8', 'utf-8-sig'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')  # type: ignore
 
 try:
     from dotenv import load_dotenv
@@ -29,6 +34,8 @@ except ImportError:
 
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 OUTPUT_DIR = Path(__file__).parent.parent / "src" / "data" / "generated"
 
 # ---------------------------------------------------------------------------
@@ -128,7 +135,7 @@ def call_deepseek(prompt: str, temperature: float = 0.7) -> Optional[str]:
             "model": "deepseek-chat",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": temperature,
-            "max_tokens": 800,
+            "max_tokens": 2000,
         },
         timeout=30,
     )
@@ -177,20 +184,75 @@ Return ONLY valid JSON (no markdown, no explanation) in this exact format:
   "seo_description": "150-155 character meta description for the brand page"
 }}"""
 
-REVIEW_PROMPT = """You are a professional watch reviewer writing for MicrobrandHub.com, a site dedicated to independent microbrand watches.
-Write an in-depth review of the most popular watch model from {brand_name} ({country}, {price_range}, specialises in {categories}).
+REVIEW_PROMPT = """You are a senior watch reviewer for MicrobrandHub, the world's leading publication for independent watch enthusiasts. Your audience is highly knowledgeable, values value-for-money above brand heritage, and can spot a generic spec-sheet regurgitation. They care about the story, the finishing, the wearing experience, and what the community is saying.
 
-Return ONLY valid JSON (no markdown code fences, no explanation, no trailing commas) in this exact format:
+Write a comprehensive review of the most iconic watch model from {brand_name} ({country}, {price_range}, specialises in {categories}).
+
+Structure the body using these exact sections (use ## headings):
+## The Brand Story & Context
+Brief origin of the brand. Does this watch solve a problem the big brands (Seiko, Tissot, Hamilton) ignore?
+
+## Design & Case
+Case shape, finishing (brushed vs polished), thickness, lug-to-lug, crown feel. Dial: color, texture, indices (applied or printed?), handset. Address the community dealbreaker checks: is the lug width standard? Is the date wheel color-matched? Is the dial typography cohesive?
+
+## Movement & Specs
+Movement name (e.g. Miyota 9015, NH35, Sellita SW200). Real-world accuracy based on typical user reports. Crystal type and AR coating quality.
+
+## Wrist Experience
+Strap or bracelet quality: clasp (milled or pressed?), micro-adjust, comfort. How the dimensions feel on an average wrist. Lume brightness and longevity.
+
+## Community Verdict
+Synthesise representative praise and complaints as if from Reddit and watch forums (e.g. "The consensus among enthusiasts is..."). Cover customer service reputation and founder engagement.
+
+## Verdict & Alternatives
+Who this watch is for. List 2-3 direct competitors in the same price bracket. One punchy final sentence.
+
+Return ONLY valid JSON (no markdown code fences, no explanation, no trailing commas):
 {{
-  "title": "Review title including brand name and model",
-  "excerpt": "2-3 sentence summary of the watch for listing cards",
-  "body": "Full review text. Use ## for section headings. Separate sections with two newlines. Include: Overview, Design, Movement, Value, Verdict. Write 350-500 words. Do NOT use any quotes inside this string - use single quotes only if needed.",
+  "title": "Brand Model Review: One honest, compelling takeaway headline",
+  "excerpt": "2-3 sentence TL;DR including price, key spec, and a Buy if... statement",
+  "body": "Full review using the structure above. 800-1000 words. Use \\n\\n between sections. No unescaped double quotes — use single quotes where needed.",
   "rating": 4,
   "tags": ["Review", "{brand_name}"],
-  "readingTime": 5
+  "readingTime": 5,
+  "scores": {{
+    "design": 8,
+    "value": 8,
+    "wearability": 8,
+    "community": 8,
+    "overall": 8
+  }}
 }}
 
-IMPORTANT: The body field must be a single JSON string with \\n for newlines. No unescaped double quotes inside strings."""
+IMPORTANT: body must be a single JSON string. Use \\n\\n for paragraph breaks. No unescaped double quotes inside any string value."""
+
+
+def call_gemini(prompt: str) -> Optional[str]:
+    """Call Gemini 2.0 Flash with Google Search grounding enabled. Retries on 429."""
+    if not GEMINI_API_KEY:
+        raise EnvironmentError("GEMINI_API_KEY not set.")
+    for attempt in range(4):
+        response = requests.post(
+            f"{GEMINI_URL}?key={GEMINI_API_KEY}",
+            headers={"Content-Type": "application/json"},
+            json={
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {
+                    "temperature": 0.7,
+                    "maxOutputTokens": 4000,
+                    "responseMimeType": "application/json",
+                },
+            },
+            timeout=60,
+        )
+        if response.status_code == 429:
+            wait = 15 * (attempt + 1)
+            print(f" (rate limited, waiting {wait}s...)", end="", flush=True)
+            time.sleep(wait)
+            continue
+        response.raise_for_status()
+        return response.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+    raise RuntimeError("Gemini rate limit exceeded after retries")
 
 
 def generate_brand_content(brand: dict) -> dict:
@@ -214,7 +276,7 @@ def generate_review(brand: dict) -> dict:
         categories=", ".join(brand["categories"]),
         price_range=brand["priceRange"],
     )
-    raw = call_deepseek(prompt, temperature=0.8)
+    raw = call_gemini(prompt)
     result = extract_json(raw)
     # Inject brand metadata
     slug_val = brand["name"].lower().replace(r"[^a-z0-9]+", "-").strip("-")
@@ -238,7 +300,10 @@ def run_brands(slug_filter: Optional[str] = None):
     # Load existing results so we can resume interrupted runs
     existing: dict = {}
     if out_file.exists():
-        existing = json.loads(out_file.read_text())
+        try:
+            existing = json.loads(out_file.read_text(encoding='utf-8'))
+        except (json.JSONDecodeError, ValueError):
+            existing = {}
 
     targets = BRANDS
     if slug_filter:
@@ -258,7 +323,7 @@ def run_brands(slug_filter: Optional[str] = None):
         try:
             content = generate_brand_content(brand)
             existing[key] = content
-            out_file.write_text(json.dumps(existing, indent=2, ensure_ascii=False))
+            out_file.write_text(json.dumps(existing, indent=2, ensure_ascii=False), encoding='utf-8')
             print("done")
         except Exception as e:
             print(f"ERROR: {e}")
@@ -277,7 +342,10 @@ def run_reviews(slug_filter: Optional[str] = None):
 
     existing: dict = {}
     if out_file.exists():
-        existing = json.loads(out_file.read_text())
+        try:
+            existing = json.loads(out_file.read_text(encoding='utf-8'))
+        except (json.JSONDecodeError, ValueError):
+            existing = {}
 
     targets = BRANDS
     if slug_filter:
@@ -294,13 +362,13 @@ def run_reviews(slug_filter: Optional[str] = None):
         try:
             review = generate_review(brand)
             existing[key] = review
-            out_file.write_text(json.dumps(existing, indent=2, ensure_ascii=False))
+            out_file.write_text(json.dumps(existing, indent=2, ensure_ascii=False), encoding='utf-8')
             print("done")
         except Exception as e:
             print(f"ERROR: {e}")
 
         if i < total:
-            time.sleep(0.5)
+            time.sleep(5)  # Gemini free tier: 15 req/min — 5s gap keeps us safe
 
     print(f"\nSaved to {out_file}")
     print_cost_estimate(total, "reviews")

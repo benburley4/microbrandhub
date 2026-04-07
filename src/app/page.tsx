@@ -2,14 +2,35 @@ import Link from 'next/link'
 import { brands, allCategories } from '@/data/brands'
 import { getLatestDrops } from '@/data/drops'
 
-const categoryIcons: Record<string, string> = {
-  Dive: '🤿',
-  Field: '🏔️',
-  Dress: '👔',
-  Pilot: '✈️',
-  Sport: '🏃',
-  Casual: '☕',
-  Tool: '🔧',
+const categoryIcons: Record<string, { path: string; label: string }> = {
+  Dive: {
+    label: 'Dive',
+    path: 'M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9zm0 2a7 7 0 110 14A7 7 0 0112 5zm-1 3v5l4 2.5-.75-1.3L14 13V8h-3z',
+  },
+  Field: {
+    label: 'Field',
+    path: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5',
+  },
+  Dress: {
+    label: 'Dress',
+    path: 'M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm0-18c4.42 0 8 3.58 8 8s-3.58 8-8 8-8-3.58-8-8 3.58-8 8-8zm.5 3H11v6l5.25 3.15.75-1.23-4.5-2.67V7z',
+  },
+  Pilot: {
+    label: 'Pilot',
+    path: 'M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z',
+  },
+  Sport: {
+    label: 'Sport',
+    path: 'M13 2.05v2.02c3.95.49 7 3.85 7 7.93 0 3.21-1.82 6.14-4.72 7.7L13 17v5h5l-1.22-1.22C19.91 19.07 22 15.76 22 12c0-5.18-3.95-9.45-9-9.95zM11 2.05C5.95 2.55 2 6.82 2 12c0 3.76 2.09 7.07 5.22 8.78L6 22h5v-5l-2.28 2.28C7.28 18.13 6 15.19 6 12c0-4.08 3.05-7.44 7-7.93V2.05z',
+  },
+  Casual: {
+    label: 'Casual',
+    path: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z',
+  },
+  Tool: {
+    label: 'Tool',
+    path: 'M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z',
+  },
 }
 
 const latestDrops = getLatestDrops(3)
@@ -20,73 +41,81 @@ const featuredBrands = ['Baltic', 'Nomos', 'Halios', 'Formex', 'Traska', 'Serica
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="bg-midnight">
+
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-stone-900 to-stone-950 border-b border-stone-800">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-900/20 via-transparent to-transparent pointer-events-none" />
+      <section className="relative overflow-hidden bg-midnight border-b border-storm">
+        {/* Chapter ring pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 5.8deg, rgba(184,255,110,0.04) 6deg, transparent 6.2deg)`,
+            backgroundSize: '400px 400px',
+            backgroundPosition: 'center',
+          }}
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 relative">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-brand-400 text-sm font-medium mb-6 bg-brand-900/30 px-3 py-1.5 rounded-full border border-brand-800/50">
-              <span>⌚</span> {brands.length} microbrand watches catalogued
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight mb-6">
-              Discover the world&apos;s best{' '}
-              <span className="text-brand-400">independent</span>{' '}
-              watch brands
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-7xl font-display font-extrabold tracking-tight text-archive leading-none mb-6 uppercase">
+              Every Independent Watch.<br />
+              <span className="text-lume">One Trusted Source.</span>
             </h1>
-            <p className="text-lg text-stone-300 mb-8 leading-relaxed">
-              Your definitive guide to microbrand watches — from Scandinavian dive watches to Japanese dress pieces. Browse 90+ brands, find pre-owned listings, and read in-depth reviews.
+            <p className="font-mono text-lume text-sm tracking-widest mb-8">
+              {brands.length} BRANDS · 20 COUNTRIES · 7 CATEGORIES · 0 PAID INCLUSIONS
             </p>
-            <div className="flex flex-wrap gap-3">
+            <p className="text-silver text-lg mb-10 leading-relaxed max-w-xl">
+              MicrobrandHub is the definitive guide to independent watchmaking — curated by collectors, accountable to no brand.
+            </p>
+            <div className="flex flex-wrap gap-4">
               <Link href="/brands" className="btn-primary">
-                Browse All Brands
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                Browse Directory →
               </Link>
-              <Link href="/listings" className="btn-secondary">
-                View Listings
+              <Link href="/reviews" className="btn-secondary">
+                Read Reviews →
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats bar */}
-      <section className="border-b border-stone-800 bg-stone-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="grid grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="text-2xl font-bold text-white">{brands.length}</div>
-              <div className="text-sm text-stone-400 mt-0.5">Brands catalogued</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-white">7</div>
-              <div className="text-sm text-stone-400 mt-0.5">Categories</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-white">20+</div>
-              <div className="text-sm text-stone-400 mt-0.5">Countries</div>
-            </div>
+      {/* Stats ticker */}
+      <section className="border-b border-storm bg-slate/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <div className="flex flex-wrap items-center justify-center md:justify-between gap-6 text-center">
+            {[
+              { value: String(brands.length), label: 'BRANDS CATALOGUED' },
+              { value: '20+', label: 'COUNTRIES' },
+              { value: '7', label: 'CATEGORIES' },
+              { value: '0', label: 'PAID INCLUSIONS' },
+            ].map(({ value, label }) => (
+              <div key={label} className="flex items-center gap-3">
+                <span className="font-mono text-2xl font-medium text-lume">{value}</span>
+                <span className="text-xs font-semibold tracking-widest uppercase text-silver">{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Browse by Category */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="section-heading text-white mb-2">Browse by Category</h2>
-        <p className="text-stone-400 mb-8">Find the right watch for every occasion.</p>
+        <h2 className="section-heading text-archive mb-1">Browse by Category</h2>
+        <p className="text-silver mb-8">Find the right watch for every occasion.</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
           {allCategories.map(cat => (
             <Link
               key={cat}
               href={`/brands?category=${cat}`}
-              className="group card p-4 text-center hover:border-brand-700 transition-all duration-200"
+              className="group card p-4 text-center"
             >
-              <div className="text-3xl mb-2">{categoryIcons[cat]}</div>
-              <div className="text-sm font-medium text-stone-300 group-hover:text-white transition-colors">{cat}</div>
-              <div className="text-xs text-stone-500 mt-1">
-                {brands.filter(b => b.categories.includes(cat as any)).length} brands
+              <div className="flex justify-center mb-3">
+                <svg className="w-6 h-6 text-silver group-hover:text-lume transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d={categoryIcons[cat]?.path ?? 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'} />
+                </svg>
+              </div>
+              <div className="text-xs font-semibold tracking-widest uppercase text-silver group-hover:text-archive transition-colors">{cat}</div>
+              <div className="font-mono text-xs text-storm mt-1 group-hover:text-silver transition-colors">
+                {brands.filter(b => b.categories.includes(cat as any)).length}
               </div>
             </Link>
           ))}
@@ -97,40 +126,39 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="section-heading text-white mb-1">Featured Brands</h2>
-            <p className="text-stone-400">Editor picks from our brand directory.</p>
+            <h2 className="section-heading text-archive mb-1">Featured Brands</h2>
+            <p className="text-silver">Editor picks from our brand directory.</p>
           </div>
-          <Link href="/brands" className="text-brand-400 hover:text-brand-300 text-sm font-medium transition-colors">
+          <Link href="/brands" className="text-lume hover:text-archive text-sm font-semibold transition-colors tracking-wide">
             View all →
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {featuredBrands.map(brand => (
-            <Link key={brand.slug} href={`/brands/${brand.slug}`} className="card overflow-hidden group">
-              {/* TODO: replace placehold.co with real brand photography */}
-              <div className="h-32 bg-stone-800 overflow-hidden">
+            <Link key={brand.slug} href={`/brands/${brand.slug}`} className="card group">
+              <div className="h-36 bg-storm overflow-hidden">
                 <img
-                  src={brand.heroImageUrl ?? `https://placehold.co/600x200/292524/6b7280?text=${encodeURIComponent(brand.name)}`}
-                  alt={`${brand.name}`}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                  src={brand.heroImageUrl ?? `https://placehold.co/600x200/1C1E26/9BA0A8?text=${encodeURIComponent(brand.name)}`}
+                  alt={brand.name}
+                  className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
                 />
               </div>
               <div className="p-5">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <h3 className="font-semibold text-white group-hover:text-brand-300 transition-colors">
+                    <h3 className="font-semibold text-archive group-hover:text-lume transition-colors">
                       {brand.name}
                     </h3>
-                    <p className="text-xs text-stone-500 mt-0.5">{brand.country}</p>
+                    <p className="font-mono text-xs text-silver mt-0.5">{brand.country}</p>
                   </div>
-                  <span className="tag bg-brand-900/40 text-brand-300 border border-brand-800/50 text-xs">
+                  <span className="tag bg-storm text-silver border border-storm/60 text-xs font-mono tracking-tight normal-case">
                     {brand.priceRange}
                   </span>
                 </div>
-                <p className="text-sm text-stone-400 line-clamp-2 leading-relaxed">{brand.description}</p>
+                <p className="text-sm text-silver line-clamp-2 leading-relaxed">{brand.description}</p>
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {brand.categories.map(cat => (
-                    <span key={cat} className="tag bg-stone-800 text-stone-300 text-xs">
+                    <span key={cat} className="tag bg-midnight text-silver border border-storm text-xs">
                       {cat}
                     </span>
                   ))}
@@ -145,10 +173,10 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="section-heading text-white mb-1">Latest Drops</h2>
-            <p className="text-stone-400">Limited editions and new releases from the microbrand world.</p>
+            <h2 className="section-heading text-archive mb-1">Latest Drops</h2>
+            <p className="text-silver">Limited editions and new releases from the microbrand world.</p>
           </div>
-          <Link href="/drops" className="text-brand-400 hover:text-brand-300 text-sm font-medium transition-colors">
+          <Link href="/drops" className="text-lume hover:text-archive text-sm font-semibold transition-colors tracking-wide">
             View all →
           </Link>
         </div>
@@ -156,26 +184,25 @@ export default function HomePage() {
           {latestDrops.map(drop => {
             const statusLabel = drop.status === 'live' ? 'Live Now' : drop.status === 'upcoming' ? 'Upcoming' : 'Sold Out'
             const statusClasses = drop.status === 'live'
-              ? 'bg-green-900/40 text-green-300 border-green-800/50'
+              ? 'bg-lume/10 text-lume border-lume/30'
               : drop.status === 'upcoming'
-              ? 'bg-amber-900/40 text-amber-300 border-amber-800/50'
-              : 'bg-stone-800 text-stone-500 border-stone-700'
+              ? 'bg-copper/10 text-copper border-copper/30'
+              : 'bg-storm text-silver border-storm'
             return (
-              <Link key={drop.id} href="/drops" className="card overflow-hidden group">
-                {/* TODO: replace placehold.co with real product photography */}
-                <div className="h-36 bg-stone-800 overflow-hidden">
+              <Link key={drop.id} href="/drops" className="card group">
+                <div className="h-36 bg-storm overflow-hidden">
                   <img
                     src={drop.imageUrl}
                     alt={drop.title}
-                    className={`w-full h-full object-cover group-hover:opacity-100 transition-opacity ${drop.status === 'sold_out' ? 'opacity-40 grayscale' : 'opacity-90'}`}
+                    className={`w-full h-full object-cover group-hover:opacity-90 transition-opacity ${drop.status === 'sold_out' ? 'opacity-30 grayscale' : 'opacity-70'}`}
                   />
                 </div>
                 <div className="p-4">
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-xs text-brand-400 font-medium">{drop.brand}</span>
-                    <span className={`tag border text-xs font-medium ${statusClasses}`}>{statusLabel}</span>
+                    <span className="font-mono text-xs text-copper font-medium tracking-wide">{drop.brand}</span>
+                    <span className={`tag border text-xs ${statusClasses}`}>{statusLabel}</span>
                   </div>
-                  <p className="text-sm font-semibold text-white group-hover:text-brand-300 transition-colors line-clamp-1">
+                  <p className="text-sm font-semibold text-archive group-hover:text-lume transition-colors line-clamp-1">
                     {drop.title}
                   </p>
                 </div>
@@ -185,39 +212,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA sections */}
+      {/* Editorial CTA panels */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="card p-8 bg-gradient-to-br from-stone-900 to-stone-800">
-            <div className="text-3xl mb-3">🛒</div>
-            <h3 className="text-xl font-bold text-white mb-2">Pre-owned Listings</h3>
-            <p className="text-stone-400 text-sm mb-4 leading-relaxed">
-              Browse pre-owned microbrand watches sourced from Carousell and other platforms. Updated regularly.
+          <div className="card p-8 border-l-4 border-l-copper">
+            <p className="font-mono text-xs text-copper tracking-widest uppercase mb-3">Pre-owned Listings</p>
+            <h3 className="text-xl font-display font-bold text-archive mb-2">Find Your Next Watch</h3>
+            <p className="text-silver text-sm mb-5 leading-relaxed">
+              Browse pre-owned microbrand watches sourced from Carousell, eBay, Reddit, and Chrono24. Updated regularly.
             </p>
             <Link href="/listings" className="btn-primary text-sm">
-              Browse Listings
+              Browse Listings →
             </Link>
           </div>
-          <div className="card p-8 bg-gradient-to-br from-stone-900 to-stone-800">
-            <div className="text-3xl mb-3">📖</div>
-            <h3 className="text-xl font-bold text-white mb-2">Reviews & Guides</h3>
-            <p className="text-stone-400 text-sm mb-4 leading-relaxed">
-              In-depth reviews, buying guides, and editorials on the microbrand watch market.
+          <div className="card p-8 border-l-4 border-l-gilt">
+            <p className="font-mono text-xs text-gilt tracking-widest uppercase mb-3">Reviews & Guides</p>
+            <h3 className="text-xl font-display font-bold text-archive mb-2">Depth Over Hype</h3>
+            <p className="text-silver text-sm mb-5 leading-relaxed">
+              In-depth reviews, buying guides, and editorials. We go further — movement choice, case finishing, community verdict.
             </p>
             <Link href="/reviews" className="btn-secondary text-sm">
-              Read Reviews
+              Read Reviews →
             </Link>
           </div>
         </div>
       </section>
 
       {/* Newsletter */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="bg-gradient-to-br from-brand-900/40 to-stone-900 border border-brand-800/40 rounded-2xl p-8 md:p-12 text-center">
-          <div className="text-4xl mb-4">📬</div>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Never Miss a Drop</h2>
-          <p className="text-stone-400 max-w-xl mx-auto mb-8 leading-relaxed">
-            Get weekly updates on new limited edition releases, brand launches, and hand-picked pre-owned listings — straight to your inbox.
+      <section id="newsletter" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="bg-slate border border-storm rounded p-8 md:p-12 text-center">
+          <p className="font-mono text-xs text-lume tracking-widest uppercase mb-4">Never Miss a Drop</p>
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-archive mb-3">
+            The Drop List — Weekly
+          </h2>
+          <p className="text-silver max-w-xl mx-auto mb-8 leading-relaxed">
+            New limited editions, brand launches, and hand-picked pre-owned listings — straight to your inbox. No hype. No paid placements.
           </p>
           <form
             action={`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? 'YOUR_FORM_ID'}`}
@@ -230,13 +259,13 @@ export default function HomePage() {
               name="email"
               required
               placeholder="your@email.com"
-              className="flex-1 bg-stone-800 border border-stone-700 rounded-lg px-4 py-3 text-sm text-white placeholder-stone-500 focus:outline-none focus:border-brand-500 transition-colors"
+              className="flex-1 bg-midnight border border-storm rounded-sm px-4 py-3 text-sm text-archive placeholder-silver focus:outline-none focus:border-lume transition-colors"
             />
             <button type="submit" className="btn-primary whitespace-nowrap">
               Subscribe
             </button>
           </form>
-          <p className="text-xs text-stone-600 mt-4">No spam. Unsubscribe any time.</p>
+          <p className="font-mono text-xs text-storm mt-4 tracking-wide">No spam. Unsubscribe any time.</p>
         </div>
       </section>
     </div>

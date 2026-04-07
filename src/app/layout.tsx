@@ -5,16 +5,16 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
-    default: 'MicrobrandHub — Discover Independent Watch Brands',
+    default: 'MicrobrandHub — Every Independent Watch. One Trusted Source.',
     template: '%s | MicrobrandHub',
   },
-  description: 'Your guide to the world\'s best independent microbrand watch makers. Browse brands, find deals, and read expert reviews.',
+  description: 'The definitive guide to independent watchmaking. 93+ brands, 20 countries, curated by collectors — accountable to no brand.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

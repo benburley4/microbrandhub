@@ -2,28 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400&display=swap');
 
 @layer base {
   body {
-    @apply bg-stone-950 text-stone-100 antialiased;
+    @apply bg-midnight text-archive antialiased font-sans;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-brand-500 hover:bg-brand-400 text-white font-medium rounded-lg transition-colors duration-200;
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-lume hover:bg-[#A0F050] text-midnight font-semibold tracking-wide transition-all duration-200 rounded-sm scale-100 hover:scale-[1.02];
   }
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-stone-800 hover:bg-stone-700 text-stone-100 font-medium rounded-lg transition-colors duration-200 border border-stone-700;
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-transparent border border-silver text-[#E8E4DC] font-semibold tracking-wide transition-all duration-200 rounded-sm hover:border-lume hover:text-lume;
+  }
+  .btn-editorial {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-transparent border border-copper text-copper font-medium tracking-wide transition-all duration-200 rounded-sm hover:bg-copper/10;
   }
   .tag {
-    @apply inline-block text-xs font-medium px-2.5 py-1 rounded-full;
+    @apply inline-block text-xs font-semibold px-2.5 py-1 rounded-full tracking-widest uppercase;
   }
   .section-heading {
-    @apply text-3xl font-bold tracking-tight;
+    @apply text-3xl font-display font-bold tracking-tight;
   }
   .card {
-    @apply bg-stone-900 border border-stone-800 rounded-xl overflow-hidden hover:border-stone-700 transition-colors duration-200;
+    @apply bg-slate border border-storm rounded overflow-hidden hover:border-lume transition-colors duration-200;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+  .card:hover {
+    box-shadow: 0 4px 24px rgba(184,255,110,0.08);
+  }
+  .mono {
+    @apply font-mono text-sm tracking-tight;
   }
 }
