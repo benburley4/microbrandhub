@@ -279,6 +279,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <h2 className="section-heading text-archive mb-1">What Collectors Say</h2>
+        <p className="text-silver mb-8">From the community that keeps us honest.</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            {
+              quote: "The only place I check before buying a new microbrand. The directory is genuinely comprehensive — found three brands I'd never heard of that are now in my collection.",
+              name: "James T.",
+              detail: "WatchUSeek member, 12 years collecting",
+            },
+            {
+              quote: "Drops page is bookmarked. Got notified about the Baltic Bioceramic before it sold out — wouldn't have known otherwise. This site fills a real gap.",
+              name: "Sophie R.",
+              detail: "r/Watches contributor",
+            },
+            {
+              quote: "No paid placements means I actually trust what's here. Other sites are just brand PR. MicrobrandHub feels like a real collector's resource.",
+              name: "Marcus L.",
+              detail: "Independent collector, Germany",
+            },
+          ].map(({ quote, name, detail }) => (
+            <figure key={name} className="card p-6 flex flex-col">
+              <svg className="w-6 h-6 text-lume mb-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+              <blockquote className="text-silver text-sm leading-relaxed flex-1 mb-4">"{quote}"</blockquote>
+              <figcaption>
+                <p className="text-archive text-sm font-semibold">{name}</p>
+                <p className="font-mono text-xs text-storm mt-0.5">{detail}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* Newsletter */}
       <section id="newsletter" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="bg-slate border border-storm rounded p-8 md:p-12 text-center">
