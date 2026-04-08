@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { drops, type DropStatus } from '@/data/drops'
 
 const statusConfig: Record<DropStatus, { label: string; classes: string }> = {
-  live:      { label: 'Live Now',  classes: 'bg-green-900/40 text-green-300 border-green-800/50' },
-  upcoming:  { label: 'Upcoming', classes: 'bg-amber-900/40 text-amber-300 border-amber-800/50' },
-  sold_out:  { label: 'Sold Out', classes: 'bg-stone-800 text-stone-500 border-stone-700' },
+  live:     { label: 'Live Now',  classes: 'bg-lume/10 text-lume border-lume/30' },
+  upcoming: { label: 'Upcoming', classes: 'bg-copper/10 text-copper border-copper/30' },
+  sold_out: { label: 'Sold Out', classes: 'bg-storm text-silver border-storm' },
 }
 
 function formatDate(iso: string) {
@@ -20,35 +20,45 @@ function formatPrice(price: number, currency: string) {
 
 const allBrands = [...new Set(drops.map(d => d.brand))].sort()
 
+const selectClass = 'bg-midnight border border-storm rounded-sm px-3 py-2 text-sm text-silver focus:outline-none focus:border-lume transition-colors'
+
 function DropCard({ drop }: { drop: (typeof drops)[0] }) {
   const cfg = statusConfig[drop.status]
   return (
-    <div className="card overflow-hidden flex flex-col">
-      <div className="h-44 bg-stone-800 overflow-hidden">
+    <div className="card overflow-hidden flex flex-col group">
+      {/* Image — 4:3 ratio */}
+      <div className="relative aspect-[4/3] bg-storm overflow-hidden">
         <img
           src={drop.imageUrl}
           alt={drop.title}
-          className={`w-full h-full object-cover ${drop.status === 'sold_out' ? 'opacity-40 grayscale' : 'opacity-90'}`}
+          loading="lazy"
+          className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${
+            drop.status === 'sold_out' ? 'opacity-30 grayscale' : 'opacity-80 group-hover:opacity-95'
+          }`}
         />
+        {/* Status badge */}
+        <span className={`absolute top-3 left-3 tag border text-xs font-medium backdrop-blur-sm ${cfg.classes}`}>
+          {cfg.label}
+        </span>
       </div>
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-center justify-between mb-2">
-          <Link href={`/brands/${drop.brandSlug}`} className="text-xs text-brand-400 hover:text-brand-300 transition-colors font-medium">
+          <Link
+            href={`/brands/${drop.brandSlug}`}
+            className="font-mono text-xs text-copper hover:text-archive transition-colors font-medium tracking-wide"
+          >
             {drop.brand}
           </Link>
-          <span className={`tag border text-xs font-medium ${cfg.classes}`}>
-            {cfg.label}
-          </span>
+          <span className="font-mono text-xs text-silver">{formatDate(drop.dropDate)}</span>
         </div>
-        <h2 className="font-semibold text-white leading-snug mb-2">{drop.title}</h2>
-        <p className="text-sm text-stone-400 leading-relaxed line-clamp-3 mb-4 flex-1">
+        <h2 className="font-semibold text-archive leading-snug mb-2 group-hover:text-lume transition-colors">
+          {drop.title}
+        </h2>
+        <p className="text-sm text-silver leading-relaxed line-clamp-3 mb-4 flex-1">
           {drop.description}
         </p>
         <div className="flex items-center justify-between mt-auto">
-          <div>
-            <div className="text-white font-bold">{formatPrice(drop.price, drop.currency)}</div>
-            <div className="text-xs text-stone-500 mt-0.5">{formatDate(drop.dropDate)}</div>
-          </div>
+          <span className="text-archive font-bold font-display">{formatPrice(drop.price, drop.currency)}</span>
           {drop.status !== 'sold_out' && (
             <a
               href={drop.url}
@@ -56,7 +66,7 @@ function DropCard({ drop }: { drop: (typeof drops)[0] }) {
               rel="noopener noreferrer"
               className="btn-primary text-sm py-2"
             >
-              View Drop
+              View Drop →
             </a>
           )}
         </div>
@@ -79,7 +89,6 @@ export default function DropsPage() {
 
   const hasFilters = selectedBrand !== '' || selectedStatus !== ''
 
-  // Sort: live first, then upcoming by date, then sold out by date desc
   const sorted = [...filtered].sort((a, b) => {
     const order: Record<DropStatus, number> = { live: 0, upcoming: 1, sold_out: 2 }
     if (order[a.status] !== order[b.status]) return order[a.status] - order[b.status]
@@ -93,64 +102,55 @@ export default function DropsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-white mb-2">Limited Drops</h1>
-        <p className="text-stone-400">New releases, limited editions, and special runs from the microbrand world.</p>
+        <p className="font-mono text-xs text-lume tracking-widest uppercase mb-2">Limited Editions</p>
+        <h1 className="text-4xl md:text-5xl font-display font-extrabold text-archive mb-2 uppercase leading-tight">
+          Drops
+        </h1>
+        <p className="text-silver">New releases, limited editions, and special runs from the microbrand world.</p>
       </div>
 
       {/* Filters */}
-      <div className="bg-stone-900 border border-stone-800 rounded-xl p-4 mb-6 flex flex-wrap gap-3 items-center">
-        <select
-          value={selectedBrand}
-          onChange={e => setSelectedBrand(e.target.value)}
-          className="bg-stone-800 border border-stone-700 rounded-lg px-3 py-2 text-sm text-stone-300 focus:outline-none focus:border-brand-500"
-        >
+      <div className="bg-slate border border-storm rounded p-4 mb-6 flex flex-wrap gap-3 items-center">
+        <select value={selectedBrand} onChange={e => setSelectedBrand(e.target.value)} className={selectClass}>
           <option value="">All Brands</option>
           {allBrands.map(b => <option key={b} value={b}>{b}</option>)}
         </select>
-
-        <select
-          value={selectedStatus}
-          onChange={e => setSelectedStatus(e.target.value as DropStatus | '')}
-          className="bg-stone-800 border border-stone-700 rounded-lg px-3 py-2 text-sm text-stone-300 focus:outline-none focus:border-brand-500"
-        >
+        <select value={selectedStatus} onChange={e => setSelectedStatus(e.target.value as DropStatus | '')} className={selectClass}>
           <option value="">All Statuses</option>
           <option value="live">Live Now</option>
           <option value="upcoming">Upcoming</option>
           <option value="sold_out">Sold Out</option>
         </select>
-
         {hasFilters && (
           <button
             onClick={() => { setSelectedBrand(''); setSelectedStatus('') }}
-            className="text-sm text-stone-400 hover:text-white transition-colors ml-auto"
+            className="text-sm text-silver hover:text-archive transition-colors"
           >
-            Clear filters ×
+            Clear ×
           </button>
         )}
-
-        <p className="text-sm text-stone-500 ml-auto">
-          {filtered.length} drop{filtered.length !== 1 ? 's' : ''}
+        <p className="font-mono text-xs text-silver ml-auto tracking-wide">
+          {filtered.length} DROP{filtered.length !== 1 ? 'S' : ''}
         </p>
       </div>
 
       {filtered.length === 0 ? (
-        <div className="text-center py-20 text-stone-500">
-          <div className="text-4xl mb-3">🔍</div>
-          <p>No drops match your filters.</p>
+        <div className="text-center py-20 text-silver">
+          <p className="text-4xl mb-3 opacity-30">◎</p>
+          <p className="mb-3">No drops match your filters.</p>
           <button
             onClick={() => { setSelectedBrand(''); setSelectedStatus('') }}
-            className="mt-4 text-brand-400 hover:text-brand-300 text-sm transition-colors"
+            className="text-lume hover:text-archive text-sm transition-colors"
           >
             Clear filters →
           </button>
         </div>
       ) : (
         <>
-          {/* Live now */}
           {liveDrops.length > 0 && (
             <section className="mb-12">
-              <h2 className="text-lg font-semibold text-green-300 uppercase tracking-wider mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block" />
+              <h2 className="font-mono text-sm text-lume uppercase tracking-widest mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-lume animate-pulse inline-block" />
                 Live Now
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -159,20 +159,18 @@ export default function DropsPage() {
             </section>
           )}
 
-          {/* Upcoming */}
           {upcomingDrops.length > 0 && (
             <section className="mb-12">
-              <h2 className="text-lg font-semibold text-amber-300 uppercase tracking-wider mb-4">Upcoming</h2>
+              <h2 className="font-mono text-sm text-copper uppercase tracking-widest mb-4">Upcoming</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {upcomingDrops.map(d => <DropCard key={d.id} drop={d} />)}
               </div>
             </section>
           )}
 
-          {/* Sold out */}
           {soldOutDrops.length > 0 && (
             <section>
-              <h2 className="text-lg font-semibold text-stone-500 uppercase tracking-wider mb-4">Sold Out</h2>
+              <h2 className="font-mono text-sm text-storm uppercase tracking-widest mb-4">Sold Out</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {soldOutDrops.map(d => <DropCard key={d.id} drop={d} />)}
               </div>
