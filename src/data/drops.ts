@@ -1,3 +1,5 @@
+import generatedDrops from '@/data/generated/generated_drops.json'
+
 export type DropStatus = 'upcoming' | 'live' | 'sold_out'
 
 export interface Drop {
@@ -15,7 +17,7 @@ export interface Drop {
   url: string
 }
 
-export const drops: Drop[] = [
+const staticDrops: Drop[] = [
   {
     id: 'halios-seaforth-mist-2026',
     brand: 'Halios',
@@ -251,8 +253,15 @@ export const drops: Drop[] = [
     url: 'https://studiounderd0g.com',
   },
 ]
+
+// Merge static drops with auto-generated drops from watchdrops.py.
+// Static entries take precedence (by id) so manually curated data is never overwritten.
+const staticIds = new Set(staticDrops.map(d => d.id))
+const merged = generatedDrops.filter(d => !staticIds.has(d.id)) as Drop[]
+
+export const drops: Drop[] = [...staticDrops, ...merged]
+  .sort((a, b) => new Date(b.dropDate).getTime() - new Date(a.dropDate).getTime())
+
 export function getLatestDrops(count = 3): Drop[] {
-  return [...drops]
-    .sort((a, b) => new Date(b.dropDate).getTime() - new Date(a.dropDate).getTime())
-    .slice(0, count)
+  return drops.slice(0, count)
 }
