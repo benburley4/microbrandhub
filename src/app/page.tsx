@@ -108,6 +108,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Newsletter — hero placement */}
+      <section className="border-b border-storm bg-slate/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row md:items-center gap-6">
+          <div className="flex-1 min-w-0">
+            <p className="font-mono text-xs text-lume tracking-widest uppercase mb-1">The Drop List — Weekly</p>
+            <h2 className="text-xl md:text-2xl font-display font-bold text-archive leading-tight">
+              Never miss a limited edition or new release.
+            </h2>
+            <p className="text-silver text-sm mt-1">No hype. No paid placements. Straight to your inbox.</p>
+          </div>
+          <form
+            action={`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? 'YOUR_FORM_ID'}`}
+            method="POST"
+            className="flex flex-col sm:flex-row gap-3 w-full md:w-auto md:min-w-[380px]"
+          >
+            <input type="hidden" name="_subject" value="Newsletter signup" />
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              className="flex-1 bg-midnight border border-storm rounded-sm px-4 py-3 text-sm text-archive placeholder-silver focus:outline-none focus:border-lume transition-colors"
+            />
+            <button type="submit" className="btn-primary whitespace-nowrap">
+              Subscribe →
+            </button>
+          </form>
+        </div>
+      </section>
+
       {/* Browse by Category */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="section-heading text-archive mb-1">Browse by Category</h2>
