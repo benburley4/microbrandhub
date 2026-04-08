@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { drops, type DropStatus } from '@/data/drops'
 import CountdownTimer from '@/components/CountdownTimer'
 import NotifyMeButton from '@/components/NotifyMeButton'
+import DropsCalendar from '@/components/DropsCalendar'
 
 const statusConfig: Record<DropStatus, { label: string; classes: string }> = {
   live:     { label: 'Live Now',  classes: 'bg-lume/10 text-lume border-lume/30' },
@@ -86,6 +87,7 @@ function DropCard({ drop }: { drop: (typeof drops)[0] }) {
 }
 
 export default function DropsPage() {
+  const [view, setView] = useState<'list' | 'calendar'>('list')
   const [selectedBrand, setSelectedBrand] = useState('')
   const [selectedStatus, setSelectedStatus] = useState<DropStatus | ''>('')
 
@@ -111,14 +113,40 @@ export default function DropsPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div className="mb-8">
-        <p className="font-mono text-xs text-lume tracking-widest uppercase mb-2">Limited Editions</p>
-        <h1 className="text-4xl md:text-5xl font-display font-extrabold text-archive mb-2 uppercase leading-tight">
-          Drops
-        </h1>
-        <p className="text-silver">New releases, limited editions, and special runs from the microbrand world.</p>
+      <div className="mb-8 flex flex-col sm:flex-row sm:items-end gap-4">
+        <div className="flex-1">
+          <p className="font-mono text-xs text-lume tracking-widest uppercase mb-2">Limited Editions</p>
+          <h1 className="text-4xl md:text-5xl font-display font-extrabold text-archive mb-2 uppercase leading-tight">
+            Drops
+          </h1>
+          <p className="text-silver">New releases, limited editions, and special runs from the microbrand world.</p>
+        </div>
+        {/* View toggle */}
+        <div className="flex gap-1 bg-slate border border-storm rounded-sm p-1 self-start sm:self-end">
+          <button
+            onClick={() => setView('list')}
+            className={`px-4 py-1.5 font-mono text-xs tracking-widest uppercase rounded-sm transition-colors ${view === 'list' ? 'bg-midnight text-archive' : 'text-silver hover:text-archive'}`}
+          >
+            List
+          </button>
+          <button
+            onClick={() => setView('calendar')}
+            className={`px-4 py-1.5 font-mono text-xs tracking-widest uppercase rounded-sm transition-colors ${view === 'calendar' ? 'bg-midnight text-archive' : 'text-silver hover:text-archive'}`}
+          >
+            Calendar
+          </button>
+        </div>
       </div>
 
+      {/* Calendar view */}
+      {view === 'calendar' && (
+        <div className="bg-slate border border-storm rounded p-6 mb-8">
+          <DropsCalendar drops={drops} />
+        </div>
+      )}
+
+      {view === 'list' && (
+      <>
       {/* Filters */}
       <div className="bg-slate border border-storm rounded p-4 mb-6 flex flex-wrap gap-3 items-center">
         <select value={selectedBrand} onChange={e => setSelectedBrand(e.target.value)} className={selectClass}>
@@ -187,6 +215,8 @@ export default function DropsPage() {
             </section>
           )}
         </>
+      )}
+      </> /* end list view */
       )}
     </div>
   )
