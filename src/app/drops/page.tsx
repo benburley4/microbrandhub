@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { drops, type DropStatus } from '@/data/drops'
 import CountdownTimer from '@/components/CountdownTimer'
+import NotifyMeButton from '@/components/NotifyMeButton'
 
 const statusConfig: Record<DropStatus, { label: string; classes: string }> = {
   live:     { label: 'Live Now',  classes: 'bg-lume/10 text-lume border-lume/30' },
@@ -58,9 +59,12 @@ function DropCard({ drop }: { drop: (typeof drops)[0] }) {
         <p className="text-sm text-silver leading-relaxed line-clamp-3 mb-4 flex-1">
           {drop.description}
         </p>
-        {/* Countdown for upcoming drops */}
+        {/* Countdown + notify for upcoming/live drops */}
         {drop.status === 'upcoming' && (
           <CountdownTimer dropDate={drop.dropDate} />
+        )}
+        {(drop.status === 'upcoming' || drop.status === 'live') && (
+          <NotifyMeButton dropId={drop.id} dropTitle={drop.title} brandName={drop.brand} />
         )}
 
         <div className="flex items-center justify-between mt-3">
