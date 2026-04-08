@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { brands, allCategories } from '@/data/brands'
 import { getLatestDrops } from '@/data/drops'
+import FadeIn from '@/components/FadeIn'
 
 const categoryIcons: Record<string, { path: string; label: string }> = {
   Dive: {
@@ -139,6 +140,7 @@ export default function HomePage() {
       </section>
 
       {/* Browse by Category */}
+      <FadeIn>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="section-heading text-archive mb-1">Browse by Category</h2>
         <p className="text-silver mb-8">Find the right watch for every occasion.</p>
@@ -162,8 +164,10 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
       {/* Featured Brands */}
+      <FadeIn delay={100}>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -209,8 +213,10 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
       {/* Latest Drops */}
+      <FadeIn delay={100}>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -252,8 +258,10 @@ export default function HomePage() {
           })}
         </div>
       </section>
+      </FadeIn>
 
       {/* Editorial CTA panels */}
+      <FadeIn delay={100}>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="card p-8 border-l-4 border-l-copper">
@@ -278,8 +286,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
       {/* Testimonials */}
+      <FadeIn delay={100}>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="section-heading text-archive mb-1">What Collectors Say</h2>
         <p className="text-silver mb-8">From the community that keeps us honest.</p>
@@ -314,8 +324,10 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
       {/* Newsletter */}
+      <FadeIn delay={100}>
       <section id="newsletter" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="bg-slate border border-storm rounded p-8 md:p-12 text-center">
           <p className="font-mono text-xs text-lume tracking-widest uppercase mb-4">Never Miss a Drop</p>
@@ -345,6 +357,7 @@ export default function HomePage() {
           <p className="font-mono text-xs text-storm mt-4 tracking-wide">No spam. Unsubscribe any time.</p>
         </div>
       </section>
+      </FadeIn>
     </div>
   )
 }

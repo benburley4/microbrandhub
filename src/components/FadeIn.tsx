@@ -1,0 +1,49 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+
+interface FadeInProps {
+  children: React.ReactNode
+  className?: string
+  /** Delay before animation starts (ms). Useful for staggering siblings. */
+  delay?: number
+}
+
+/**
+ * Fades and slides children in when they enter the viewport.
+ * Uses IntersectionObserver — no third-party dependency.
+ */
+export default function FadeIn({ children, className = '', delay = 0 }: FadeInProps) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.12 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(20px)',
+        transition: `opacity 0.55s ease ${delay}ms, transform 0.55s ease ${delay}ms`,
+      }}
+    >
+      {children}
+    </div>
+  )
+}
