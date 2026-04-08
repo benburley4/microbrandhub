@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { drops, type DropStatus } from '@/data/drops'
+import CountdownTimer from '@/components/CountdownTimer'
 
 const statusConfig: Record<DropStatus, { label: string; classes: string }> = {
   live:     { label: 'Live Now',  classes: 'bg-lume/10 text-lume border-lume/30' },
@@ -57,7 +58,12 @@ function DropCard({ drop }: { drop: (typeof drops)[0] }) {
         <p className="text-sm text-silver leading-relaxed line-clamp-3 mb-4 flex-1">
           {drop.description}
         </p>
-        <div className="flex items-center justify-between mt-auto">
+        {/* Countdown for upcoming drops */}
+        {drop.status === 'upcoming' && (
+          <CountdownTimer dropDate={drop.dropDate} />
+        )}
+
+        <div className="flex items-center justify-between mt-3">
           <span className="text-archive font-bold font-display">{formatPrice(drop.price, drop.currency)}</span>
           {drop.status !== 'sold_out' && (
             <a
