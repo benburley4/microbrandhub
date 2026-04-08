@@ -74,6 +74,7 @@ export default function BrandPage({ params }: Props) {
           <img
             src={brand.heroImageUrl}
             alt={`${brand.name} watches`}
+            loading="lazy"
             className="w-full h-48 sm:h-64 object-cover"
           />
         </div>

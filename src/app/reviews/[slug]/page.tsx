@@ -123,6 +123,7 @@ export default function ReviewPage({ params }: Props) {
           <img
             src={review.featuredImage}
             alt={review.title}
+            loading="lazy"
             className="w-full h-56 sm:h-72 object-cover"
           />
         </div>

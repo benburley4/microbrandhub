@@ -185,6 +185,7 @@ export default function HomePage() {
                 <img
                   src={brand.heroImageUrl ?? `https://placehold.co/600x200/1C1E26/9BA0A8?text=${encodeURIComponent(brand.name)}`}
                   alt={brand.name}
+                  loading="lazy"
                   className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
                 />
               </div>
@@ -241,6 +242,7 @@ export default function HomePage() {
                   <img
                     src={drop.imageUrl}
                     alt={drop.title}
+                    loading="lazy"
                     className={`w-full h-full object-cover group-hover:opacity-90 transition-opacity ${drop.status === 'sold_out' ? 'opacity-30 grayscale' : 'opacity-70'}`}
                   />
                 </div>
