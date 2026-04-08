@@ -44,7 +44,15 @@ export default function HomePage() {
     <div className="bg-midnight">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-midnight border-b border-storm">
+      <section className="relative overflow-hidden bg-midnight border-b border-storm min-h-[600px] flex items-center">
+        {/* Lifestyle background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1800&q=80')` }}
+          aria-hidden="true"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-midnight/80" aria-hidden="true" />
         {/* Chapter ring pattern */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -54,7 +62,7 @@ export default function HomePage() {
             backgroundPosition: 'center',
           }}
         />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36 relative w-full">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-display font-extrabold tracking-tight text-archive leading-none mb-6 uppercase">
               Every Independent Watch.<br />
@@ -69,6 +77,9 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-4">
               <Link href="/brands" className="btn-primary">
                 Browse Directory →
+              </Link>
+              <Link href="/drops" className="btn-primary" style={{ background: 'transparent', border: '1px solid #B8FF6E', color: '#B8FF6E' }}>
+                Latest Drops →
               </Link>
               <Link href="/reviews" className="btn-secondary">
                 Read Reviews →
