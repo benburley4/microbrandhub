@@ -5,6 +5,7 @@ import { reviews } from '@/data/reviews'
 import { drops } from '@/data/drops'
 import { listings } from '@/data/listings'
 import { brandSEO } from '@/data/brand_seo'
+import { getWatchesByBrand } from '@/data/watches'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -61,6 +62,7 @@ export default function BrandPage({ params }: Props) {
   const brandReviews  = reviews.filter(r => r.brandSlug === brand.slug)
   const brandDrops    = drops.filter(d => d.brandSlug === brand.slug)
   const brandListings = listings.filter(l => l.brand.toLowerCase() === brand.name.toLowerCase()).slice(0, 4)
+  const brandModels   = getWatchesByBrand(brand.slug)
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -175,6 +177,78 @@ export default function BrandPage({ params }: Props) {
           <div className="text-white font-medium">{brand.categories[0]}</div>
         </div>
       </div>
+
+      {/* Watch Models */}
+      {brandModels.length > 0 && (
+        <div className="mb-10">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="text-xl font-display font-bold text-archive">Watch Models</h2>
+              <p className="font-mono text-xs text-silver tracking-widest mt-0.5">
+                {brandModels.filter(m => m.availability === 'available').length} AVAILABLE · {brandModels.length} TOTAL
+              </p>
+            </div>
+            <Link href={`/watches?brand=${encodeURIComponent(brand.name)}`} className="text-lume hover:text-archive text-sm font-semibold transition-colors">
+              View all →
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            {brandModels.slice(0, 8).map(model => {
+              const availStyle = model.availability === 'available'
+                ? 'bg-lume/10 text-lume border-lume/30'
+                : model.availability === 'pre_order'
+                ? 'bg-copper/10 text-copper border-copper/30'
+                : 'bg-storm text-silver border-storm'
+              const availLabel = model.availability === 'available' ? 'Available'
+                : model.availability === 'pre_order' ? 'Pre-Order'
+                : model.availability === 'coming_soon' ? 'Coming Soon'
+                : 'Sold Out'
+              return (
+                <div key={model.id} className="card group flex flex-col">
+                  <div className="aspect-[3/4] bg-storm overflow-hidden flex-shrink-0">
+                    {model.imageUrl ? (
+                      <img
+                        src={model.imageUrl}
+                        alt={model.name}
+                        loading="lazy"
+                        className={`w-full h-full object-cover transition-opacity duration-300 ${
+                          model.availability === 'sold_out' ? 'opacity-40 grayscale' : 'opacity-80 group-hover:opacity-95'
+                        }`}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <svg className="w-8 h-8 text-storm" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <circle cx="12" cy="12" r="9" strokeWidth={1.5}/>
+                          <path strokeLinecap="round" d="M12 7v5l3 2" strokeWidth={1.5}/>
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-2.5 flex flex-col gap-1 flex-1">
+                    <p className="text-xs font-semibold text-archive leading-tight line-clamp-2">{model.name}</p>
+                    <div className="flex items-center justify-between mt-auto pt-1 gap-1 flex-wrap">
+                      {model.priceDisplay && (
+                        <span className="font-mono text-[10px] text-silver">{model.priceDisplay}</span>
+                      )}
+                      <span className={`tag border text-[9px] px-1.5 py-0.5 ${availStyle}`}>{availLabel}</span>
+                    </div>
+                    {model.caseDiameterMm && (
+                      <p className="font-mono text-[10px] text-storm">{model.caseDiameterMm}mm</p>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          {brandModels.length > 8 && (
+            <div className="mt-4 text-center">
+              <Link href={`/watches?brand=${encodeURIComponent(brand.name)}`} className="btn-secondary text-sm">
+                See all {brandModels.length} models →
+              </Link>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Latest Reviews */}
       {brandReviews.length > 0 && (

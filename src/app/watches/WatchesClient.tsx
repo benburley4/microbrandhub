@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { WatchModel } from '@/data/watches'
 
@@ -41,8 +42,15 @@ const DIAMETER_RANGES = [
 ]
 
 export default function WatchesClient({ watches, brandNames, dialColors }: Props) {
+  const searchParams = useSearchParams()
   const [search,        setSearch]        = useState('')
-  const [brand,         setBrand]         = useState('')
+  const [brand,         setBrand]         = useState(() => searchParams.get('brand') ?? '')
+
+  // Sync brand filter from URL param on mount
+  useEffect(() => {
+    const b = searchParams.get('brand')
+    if (b) setBrand(b)
+  }, [searchParams])
   const [availability,  setAvailability]  = useState('')
   const [priceRange,    setPriceRange]    = useState('')
   const [diameterRange, setDiameterRange] = useState('')

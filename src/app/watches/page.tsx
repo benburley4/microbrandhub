@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { watches, watchBrands, watchDialColors, watchMovements } from '@/data/watches'
 import WatchesClient from './WatchesClient'
@@ -37,12 +38,14 @@ export default function WatchesPage() {
         </div>
       </div>
 
-      <WatchesClient
-        watches={watches}
-        brandNames={watchBrands}
-        dialColors={watchDialColors}
-        movements={watchMovements}
-      />
+      <Suspense fallback={<div className="p-8 text-silver font-mono text-xs tracking-widest">LOADING...</div>}>
+        <WatchesClient
+          watches={watches}
+          brandNames={watchBrands}
+          dialColors={watchDialColors}
+          movements={watchMovements}
+        />
+      </Suspense>
     </div>
   )
 }
