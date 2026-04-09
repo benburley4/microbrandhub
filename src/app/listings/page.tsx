@@ -1,36 +1,74 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useState, useMemo, useCallback, useEffect } from 'react'
+import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import { listings, listingBrands, listingConditions, listingLocations } from '@/data/listings'
 import Link from 'next/link'
 import { Suspense } from 'react'
+import AffiliateBadge from '@/components/AffiliateBadge'
 
 const conditionColor: Record<string, string> = {
-  New:        'text-lume bg-lume/10 border border-lume/30',
+  New:         'text-lume bg-lume/10 border border-lume/30',
   'Like New':  'text-archive bg-storm border border-storm',
   Good:        'text-copper bg-copper/10 border border-copper/30',
   Fair:        'text-silver bg-midnight border border-storm',
 }
 
+const platformColor: Record<string, string> = {
+  Carousell: 'text-lume',
+  eBay:      'text-gilt',
+  Reddit:    'text-copper',
+  Chrono24:  'text-archive',
+  Other:     'text-silver',
+}
+
 const selectClass = 'bg-midnight border border-storm rounded-sm px-3 py-2 text-sm text-silver focus:outline-none focus:border-lume transition-colors'
+
+function readParams(p: URLSearchParams) {
+  return {
+    search:    p.get('q') ?? '',
+    brand:     p.get('brand') ?? '',
+    condition: p.get('condition') ?? '',
+    location:  p.get('location') ?? '',
+    maxPrice:  p.get('maxPrice') ?? '',
+    sort:      (p.get('sort') ?? 'date') as 'date' | 'price-asc' | 'price-desc',
+  }
+}
 
 function ListingsContent() {
   const searchParams = useSearchParams()
-  const initialBrand = searchParams.get('brand') || ''
+  const router       = useRouter()
+  const pathname     = usePathname()
 
-  const [search, setSearch] = useState(initialBrand)
-  const [selectedBrand, setSelectedBrand] = useState(initialBrand)
-  const [selectedCondition, setSelectedCondition] = useState('')
-  const [selectedLocation, setSelectedLocation] = useState('')
-  const [maxPrice, setMaxPrice] = useState('')
-  const [sortBy, setSortBy] = useState<'date' | 'price-asc' | 'price-desc'>('date')
+  const { search, brand: selectedBrand, condition: selectedCondition, location: selectedLocation, maxPrice, sort: sortBy } =
+    useMemo(() => readParams(searchParams), [searchParams])
+
+  const setParam = useCallback(
+    (updates: Record<string, string>) => {
+      const next = new URLSearchParams(searchParams.toString())
+      for (const [k, v] of Object.entries(updates)) {
+        if (v) next.set(k, v); else next.delete(k)
+      }
+      router.replace(`${pathname}?${next.toString()}`, { scroll: false })
+    },
+    [searchParams, router, pathname],
+  )
+
+  const clearFilters = () => router.replace(pathname, { scroll: false })
+
+  const [searchInput, setSearchInput] = useState(search)
+  useEffect(() => { setSearchInput(search) }, [search])
+  useEffect(() => {
+    const id = setTimeout(() => setParam({ q: searchInput }), 300)
+    return () => clearTimeout(id)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchInput])
 
   const filtered = useMemo(() => {
+    const q = search.toLowerCase()
     return listings
       .filter(l => {
-        if (search && !l.title.toLowerCase().includes(search.toLowerCase()) &&
-            !l.brand.toLowerCase().includes(search.toLowerCase())) return false
+        if (q && !l.title.toLowerCase().includes(q) && !l.brand.toLowerCase().includes(q)) return false
         if (selectedBrand && l.brand !== selectedBrand) return false
         if (selectedCondition && l.condition !== selectedCondition) return false
         if (selectedLocation && l.location !== selectedLocation) return false
@@ -51,8 +89,19 @@ function ListingsContent() {
     return `${diff} days ago`
   }
 
+  // GA4 outbound click tracking
+  function trackClick(listing: (typeof listings)[0]) {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'listing_click', {
+        brand:    listing.brand,
+        platform: listing.platform,
+        price:    listing.price,
+        currency: listing.currency,
+      })
+    }
+  }
+
   const hasFilters = search || selectedBrand || selectedCondition || selectedLocation || maxPrice
-  const clearFilters = () => { setSearch(''); setSelectedBrand(''); setSelectedCondition(''); setSelectedLocation(''); setMaxPrice('') }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -68,25 +117,25 @@ function ListingsContent() {
       </div>
 
       {/* Filters */}
-      <div className="bg-slate border border-storm rounded p-4 mb-6 flex flex-wrap gap-3">
+      <div className="bg-slate border border-storm rounded p-4 mb-4 flex flex-wrap gap-3">
         <div className="flex-1 min-w-[200px]">
           <input
             type="text"
-            placeholder="Search listings..."
-            value={search}
-            onChange={e => setSearch(e.target.value)}
+            placeholder="Search listings…"
+            value={searchInput}
+            onChange={e => setSearchInput(e.target.value)}
             className="w-full bg-midnight border border-storm rounded-sm px-3 py-2 text-sm text-archive placeholder-silver focus:outline-none focus:border-lume transition-colors"
           />
         </div>
-        <select value={selectedBrand} onChange={e => setSelectedBrand(e.target.value)} className={selectClass}>
+        <select value={selectedBrand} onChange={e => setParam({ brand: e.target.value })} className={selectClass}>
           <option value="">All Brands</option>
           {listingBrands.map(b => <option key={b} value={b}>{b}</option>)}
         </select>
-        <select value={selectedCondition} onChange={e => setSelectedCondition(e.target.value)} className={selectClass}>
+        <select value={selectedCondition} onChange={e => setParam({ condition: e.target.value })} className={selectClass}>
           <option value="">Any Condition</option>
           {listingConditions.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
-        <select value={selectedLocation} onChange={e => setSelectedLocation(e.target.value)} className={selectClass}>
+        <select value={selectedLocation} onChange={e => setParam({ location: e.target.value })} className={selectClass}>
           <option value="">Any Location</option>
           {listingLocations.map(loc => <option key={loc} value={loc}>{loc}</option>)}
         </select>
@@ -94,10 +143,10 @@ function ListingsContent() {
           type="number"
           placeholder="Max price ($)"
           value={maxPrice}
-          onChange={e => setMaxPrice(e.target.value)}
+          onChange={e => setParam({ maxPrice: e.target.value })}
           className="w-36 bg-midnight border border-storm rounded-sm px-3 py-2 text-sm text-archive placeholder-silver focus:outline-none focus:border-lume transition-colors"
         />
-        <select value={sortBy} onChange={e => setSortBy(e.target.value as typeof sortBy)} className={selectClass}>
+        <select value={sortBy} onChange={e => setParam({ sort: e.target.value })} className={selectClass}>
           <option value="date">Sort: Newest</option>
           <option value="price-asc">Sort: Price ↑</option>
           <option value="price-desc">Sort: Price ↓</option>
@@ -108,6 +157,38 @@ function ListingsContent() {
           </button>
         )}
       </div>
+
+      {/* Active filter chips */}
+      {hasFilters && (
+        <div className="flex flex-wrap items-center gap-2 mb-4">
+          {selectedBrand && (
+            <button onClick={() => setParam({ brand: '' })} className="tag bg-lume/10 text-lume border border-lume/30 text-xs hover:bg-lume/20 transition-colors">
+              {selectedBrand} ×
+            </button>
+          )}
+          {selectedCondition && (
+            <button onClick={() => setParam({ condition: '' })} className="tag bg-copper/10 text-copper border border-copper/30 text-xs hover:bg-copper/20 transition-colors">
+              {selectedCondition} ×
+            </button>
+          )}
+          {selectedLocation && (
+            <button onClick={() => setParam({ location: '' })} className="tag bg-storm text-silver border border-storm text-xs hover:text-archive transition-colors">
+              {selectedLocation} ×
+            </button>
+          )}
+          {maxPrice && (
+            <button onClick={() => setParam({ maxPrice: '' })} className="tag bg-gilt/10 text-gilt border border-gilt/30 text-xs hover:bg-gilt/20 transition-colors">
+              Max ${maxPrice} ×
+            </button>
+          )}
+          <button
+            onClick={() => navigator.clipboard?.writeText(window.location.href)}
+            className="ml-auto font-mono text-xs text-silver/50 hover:text-silver transition-colors"
+          >
+            Copy link ↗
+          </button>
+        </div>
+      )}
 
       <p className="font-mono text-xs text-silver mb-6 tracking-wide">
         {filtered.length} LISTING{filtered.length !== 1 ? 'S' : ''}
@@ -126,15 +207,30 @@ function ListingsContent() {
               href={listing.url}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackClick(listing)}
               className="card group flex flex-col overflow-hidden"
             >
-              {/* Image placeholder — watch icon */}
-              <div className="relative aspect-[4/3] bg-slate flex items-center justify-center overflow-hidden group-hover:bg-storm transition-colors">
-                <svg className="w-12 h-12 text-storm group-hover:text-silver transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {/* External link hint */}
-                <span className="absolute top-3 right-3 font-mono text-xs text-silver/50 group-hover:text-silver transition-colors">↗</span>
+              {/* Image or placeholder */}
+              <div className="relative aspect-[4/3] bg-slate overflow-hidden">
+                {listing.imageUrl ? (
+                  <img
+                    src={listing.imageUrl}
+                    alt={listing.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover opacity-75 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center group-hover:bg-storm transition-colors">
+                    <svg className="w-12 h-12 text-storm group-hover:text-silver transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                )}
+                {/* Platform badge */}
+                <span className={`absolute top-3 left-3 font-mono text-[9px] tracking-widest uppercase bg-midnight/80 backdrop-blur-sm border border-storm/60 rounded-sm px-1.5 py-0.5 ${platformColor[listing.platform] ?? 'text-silver'}`}>
+                  {listing.platform}
+                </span>
+                <span className="absolute top-3 right-3 font-mono text-xs text-silver/60 group-hover:text-silver transition-colors">↗</span>
               </div>
 
               <div className="p-5 flex flex-col flex-1">
@@ -144,15 +240,16 @@ function ListingsContent() {
 
                 <div className="flex items-center gap-2 flex-wrap mt-auto">
                   <span className="text-lg font-bold font-display text-archive">
-                    {listing.currency === 'USD' ? '$' : listing.currency}{listing.price.toLocaleString()}
+                    {listing.currency === 'USD' ? '$' : listing.currency === 'GBP' ? '£' : listing.currency === 'EUR' ? '€' : listing.currency}{listing.price.toLocaleString()}
                   </span>
                   <span className={`tag text-xs ${conditionColor[listing.condition] ?? 'bg-midnight text-silver border border-storm'}`}>
                     {listing.condition}
                   </span>
+                  <AffiliateBadge />
                 </div>
 
                 <div className="flex items-center justify-between mt-3 font-mono text-xs text-silver">
-                  <span>{listing.platform} · {listing.location}</span>
+                  <span>{listing.location}</span>
                   <span>{daysAgo(listing.postedAt)}</span>
                 </div>
               </div>
@@ -165,9 +262,10 @@ function ListingsContent() {
       <div className="mt-12 card p-6 border-l-4 border-l-copper">
         <h3 className="font-semibold text-archive mb-2">How listings work</h3>
         <p className="text-sm text-silver leading-relaxed">
-          Listings are automatically sourced from Carousell using a custom scraper. Prices shown are in the seller&apos;s
-          listed currency. Always verify condition and price directly with the seller.{' '}
+          Listings are automatically sourced from Carousell and other platforms. Prices are in the seller&apos;s listed
+          currency. Always verify condition and price directly with the seller.{' '}
           <strong className="text-archive">MicrobrandHub is not a marketplace and does not facilitate transactions.</strong>
+          {' '}Links may earn a small affiliate commission.
         </p>
         <Link href="/brands" className="inline-block mt-3 text-lume hover:text-archive text-sm transition-colors">
           Browse the brand directory →
