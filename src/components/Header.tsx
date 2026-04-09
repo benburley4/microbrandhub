@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import GlobalSearch from './GlobalSearch'
 
 const navLinks = [
   { href: '/brands', label: 'Brands' },
@@ -62,11 +63,17 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Subscribe CTA */}
+          {/* Search + Subscribe CTA */}
           <div className="hidden md:flex items-center gap-3">
+            <GlobalSearch />
             <Link href="#newsletter" className="btn-secondary text-xs py-2 px-4">
               Subscribe
             </Link>
+          </div>
+
+          {/* Mobile search */}
+          <div className="md:hidden">
+            <GlobalSearch />
           </div>
 
           {/* Mobile menu button */}
