@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { brands } from '@/data/brands'
 import { reviews } from '@/data/reviews'
+import { drops } from '@/data/drops'
 
 const BASE_URL = 'https://www.microbrandhub.com'
 
@@ -30,5 +31,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticRoutes, ...brandRoutes, ...reviewRoutes]
+  // One sitemap entry per unique drop brand-slug combo drives indexing of the drops page
+  const dropRoute: MetadataRoute.Sitemap = drops.length > 0
+    ? [{ url: `${BASE_URL}/drops`, lastModified: new Date(drops[0].dropDate), changeFrequency: 'daily', priority: 0.85 }]
+    : []
+
+  return [...staticRoutes, ...brandRoutes, ...reviewRoutes, ...dropRoute]
 }

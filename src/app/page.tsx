@@ -40,9 +40,19 @@ const featuredBrands = ['Baltic', 'Nomos', 'Halios', 'Formex', 'Traska', 'Serica
   name => brands.find(b => b.name === name)!
 ).filter(Boolean)
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'MicrobrandHub',
+  url: 'https://www.microbrandhub.com',
+  description: 'The definitive guide to independent watchmaking. Curated by collectors — accountable to no brand.',
+  sameAs: [],
+}
+
 export default function HomePage() {
   return (
     <div className="bg-midnight">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-midnight border-b border-storm min-h-[600px] flex items-center">
