@@ -8,12 +8,13 @@ import { Suspense } from 'react'
 
 /** Read all filter state from URL params. */
 function readParams(params: URLSearchParams) {
+  const cats = params.get('category') ?? ''
   return {
-    search:   params.get('q') ?? '',
-    category: (params.get('category') ?? '') as Category | '',
-    country:  params.get('country') ?? '',
-    price:    (params.get('price') ?? '') as PriceRange | '',
-    sort:     (params.get('sort') ?? 'name') as 'name' | 'country',
+    search:     params.get('q') ?? '',
+    categories: cats ? (cats.split(',') as Category[]) : [] as Category[],
+    country:    params.get('country') ?? '',
+    price:      (params.get('price') ?? '') as PriceRange | '',
+    sort:       (params.get('sort') ?? 'name') as 'name' | 'country',
   }
 }
 
@@ -25,8 +26,15 @@ function BrandsContent() {
   const pathname    = usePathname()
 
   // Derive all filter state directly from URL — single source of truth
-  const { search, category: selectedCategory, country: selectedCountry, price: selectedPrice, sort: sortBy } =
+  const { search, categories: selectedCategories, country: selectedCountry, price: selectedPrice, sort: sortBy } =
     useMemo(() => readParams(searchParams), [searchParams])
+
+  function toggleCategory(cat: Category) {
+    const next = selectedCategories.includes(cat)
+      ? selectedCategories.filter(c => c !== cat)
+      : [...selectedCategories, cat]
+    setParam({ category: next.join(',') })
+  }
 
   /** Push a filter change to the URL without full navigation. */
   const setParam = useCallback(
@@ -59,15 +67,15 @@ function BrandsContent() {
         if (q && !b.name.toLowerCase().includes(q) &&
             !b.country.toLowerCase().includes(q) &&
             !b.description.toLowerCase().includes(q)) return false
-        if (selectedCategory && !b.categories.includes(selectedCategory as Category)) return false
+        if (selectedCategories.length > 0 && !selectedCategories.some(c => b.categories.includes(c))) return false
         if (selectedCountry && b.country !== selectedCountry) return false
         if (selectedPrice && b.priceRange !== selectedPrice) return false
         return true
       })
       .sort((a, b) => sortBy === 'name' ? a.name.localeCompare(b.name) : a.country.localeCompare(b.country))
-  }, [search, selectedCategory, selectedCountry, selectedPrice, sortBy])
+  }, [search, selectedCategories, selectedCountry, selectedPrice, sortBy])
 
-  const hasFilters = search || selectedCategory || selectedCountry || selectedPrice
+  const hasFilters = search || selectedCategories.length > 0 || selectedCountry || selectedPrice
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -81,77 +89,73 @@ function BrandsContent() {
       </div>
 
       {/* Filters */}
-      <div className="bg-slate border border-storm rounded p-4 mb-6 flex flex-wrap gap-3">
-        {/* Search */}
-        <div className="flex-1 min-w-[200px]">
-          <input
-            type="text"
-            placeholder="Search brands…"
-            value={searchInput}
-            onChange={e => setSearchInput(e.target.value)}
-            className="w-full bg-midnight border border-storm rounded-sm px-3 py-2 text-sm text-archive placeholder-silver focus:outline-none focus:border-lume transition-colors"
-          />
+      <div className="bg-slate border border-storm rounded p-4 mb-4 space-y-3">
+        {/* Row 1: search + country + price + sort */}
+        <div className="flex flex-wrap gap-3">
+          <div className="flex-1 min-w-[200px]">
+            <input
+              type="text"
+              placeholder="Search brands…"
+              value={searchInput}
+              onChange={e => setSearchInput(e.target.value)}
+              className="w-full bg-midnight border border-storm rounded-sm px-3 py-2 text-sm text-archive placeholder-silver focus:outline-none focus:border-lume transition-colors"
+            />
+          </div>
+          <select value={selectedCountry} onChange={e => setParam({ country: e.target.value })} className={selectClass}>
+            <option value="">All Countries</option>
+            {allCountries.map(c => <option key={c} value={c}>{c}</option>)}
+          </select>
+          <select value={selectedPrice} onChange={e => setParam({ price: e.target.value })} className={selectClass}>
+            <option value="">All Prices</option>
+            {allPriceRanges.map(p => <option key={p} value={p}>{p}</option>)}
+          </select>
+          <select value={sortBy} onChange={e => setParam({ sort: e.target.value })} className={selectClass}>
+            <option value="name">Sort: A–Z</option>
+            <option value="country">Sort: Country</option>
+          </select>
+          {hasFilters && (
+            <button onClick={clearFilters} className="text-sm text-silver hover:text-archive transition-colors px-3 py-2">
+              Clear ×
+            </button>
+          )}
         </div>
 
-        {/* Category */}
-        <select
-          value={selectedCategory}
-          onChange={e => setParam({ category: e.target.value })}
-          className={selectClass}
-        >
-          <option value="">All Categories</option>
-          {allCategories.map(c => <option key={c} value={c}>{c}</option>)}
-        </select>
-
-        {/* Country */}
-        <select
-          value={selectedCountry}
-          onChange={e => setParam({ country: e.target.value })}
-          className={selectClass}
-        >
-          <option value="">All Countries</option>
-          {allCountries.map(c => <option key={c} value={c}>{c}</option>)}
-        </select>
-
-        {/* Price */}
-        <select
-          value={selectedPrice}
-          onChange={e => setParam({ price: e.target.value })}
-          className={selectClass}
-        >
-          <option value="">All Prices</option>
-          {allPriceRanges.map(p => <option key={p} value={p}>{p}</option>)}
-        </select>
-
-        {/* Sort */}
-        <select
-          value={sortBy}
-          onChange={e => setParam({ sort: e.target.value })}
-          className={selectClass}
-        >
-          <option value="name">Sort: A–Z</option>
-          <option value="country">Sort: Country</option>
-        </select>
-
-        {hasFilters && (
-          <button onClick={clearFilters} className="text-sm text-silver hover:text-archive transition-colors px-3 py-2">
-            Clear ×
-          </button>
-        )}
+        {/* Row 2: multi-select category chips */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="font-mono text-xs text-silver tracking-widest uppercase shrink-0">Category:</span>
+          {allCategories.map(cat => {
+            const active = selectedCategories.includes(cat as Category)
+            return (
+              <button
+                key={cat}
+                onClick={() => toggleCategory(cat as Category)}
+                className={`tag border text-xs transition-colors ${
+                  active
+                    ? 'bg-lume text-midnight border-lume'
+                    : 'bg-midnight text-silver border-storm hover:border-lume hover:text-lume'
+                }`}
+              >
+                {cat}
+                {active && ' ✓'}
+              </button>
+            )
+          })}
+        </div>
       </div>
 
       {/* Active filter chips — visual summary + shareable link hint */}
       {hasFilters && (
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <span className="font-mono text-xs text-silver tracking-wide">Active:</span>
-          {selectedCategory && (
+          {selectedCategories.map(cat => (
             <button
-              onClick={() => setParam({ category: '' })}
+              key={cat}
+              onClick={() => toggleCategory(cat)}
               className="flex items-center gap-1 tag bg-lume/10 text-lume border border-lume/30 text-xs hover:bg-lume/20 transition-colors"
             >
-              {selectedCategory} ×
+              {cat} ×
             </button>
-          )}
+          ))}
           {selectedCountry && (
             <button
               onClick={() => setParam({ country: '' })}
@@ -239,9 +243,9 @@ function BrandsContent() {
                   {brand.categories.map(cat => (
                     <button
                       key={cat}
-                      onClick={e => { e.preventDefault(); setParam({ category: cat }) }}
+                      onClick={e => { e.preventDefault(); toggleCategory(cat as Category) }}
                       className={`tag text-xs border transition-colors ${
-                        selectedCategory === cat
+                        selectedCategories.includes(cat as Category)
                           ? 'bg-lume text-midnight border-lume'
                           : 'bg-midnight text-silver border-storm hover:border-lume hover:text-lume'
                       }`}
