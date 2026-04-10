@@ -7,6 +7,7 @@ import CountdownTimer from '@/components/CountdownTimer'
 import NotifyMeButton from '@/components/NotifyMeButton'
 import DropsCalendar from '@/components/DropsCalendar'
 import AffiliateBadge from '@/components/AffiliateBadge'
+import SponsoredBadge from '@/components/SponsoredBadge'
 
 const statusConfig: Record<DropStatus, { label: string; classes: string }> = {
   live:     { label: 'Live Now',  classes: 'bg-lume/10 text-lume border-lume/30' },
@@ -73,6 +74,7 @@ function DropCard({ drop }: { drop: (typeof drops)[0] }) {
           <div className="flex items-center gap-2">
             <span className="text-archive font-bold font-display">{formatPrice(drop.price, drop.currency)}</span>
             {drop.status !== 'sold_out' && <AffiliateBadge />}
+            {drop.sponsored && <SponsoredBadge />}
           </div>
           {drop.status !== 'sold_out' && (
             <a
