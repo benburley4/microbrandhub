@@ -114,6 +114,20 @@ export const brands: Brand[] = [
   { name: 'Yema', slug: slug('Yema'), country: 'France', priceRange: '$300–$600', categories: ['Dive', 'Sport', 'Pilot'], description: `Born in the heart of France in 1948, Yema is a watchmaking icon built on a legacy of adventure and technical innovation. From the wrists of pioneering French divers and astronauts to the dashboard of the iconic Ford Mustang, Yema's history is woven into the fabric of exploration. Today, this independent brand masterfully balances its rich heritage with modern execution, producing robust, purpose-built watches in its own workshops. Specializing in dive, sport, and field timepieces, Yema offers exceptional French design and in-house developed movements at accessible prices, delivering authentic horological character rarely found in the microbrand sphere.`, website: 'https://yema.com', heroImageUrl: 'https://cdn.shopify.com/s/files/1/0105/7557/7146/files/SupermanTitaneShopify01W1500.webp?v=1773221406' },
   { name: 'Zelos', slug: slug('Zelos'), country: 'Singapore', priceRange: '$600–$1,000', categories: ['Dive', 'Tool'], description: `Singapore brand known for exotic materials like meteorite, bronze, and Damascus steel.`, website: 'https://zeloswatches.com', heroImageUrl: 'https://cdn.shopify.com/s/files/1/0387/4989/files/39Kyanite.jpg?v=1774337528' },
   { name: 'Zodiac', slug: slug('Zodiac'), country: 'Switzerland', priceRange: '$600–$1,000', categories: ['Dive', 'Sport', 'Casual'], description: `Born in 1882 in Le Locle, Zodiac is a Swiss watchmaker with a legacy of robust, purpose-built timepieces. The brand carved its legend in the 1950s with the iconic Sea Wolf, one of the world's first production dive watches. Today, Zodiac masterfully blends this authentic tool-watch heritage with contemporary style and vibrant colorways. As a true microbrand, it offers direct, accessible luxury, focusing on Swiss automatic movements, distinctive designs, and a spirit of adventure that resonates with collectors seeking character beyond the mainstream.`, website: 'https://zodiacwatches.com', heroImageUrl: 'https://www.francisandgaye.co.uk/images/zodiac-super-sea-wolf-gmt-two-tone-diver-watch-p42588-68675_medium.jpg' },
+  // TODO: fill in details for Aethelsohn
+  { name: 'Aethelsohn', slug: slug('Aethelsohn'), country: 'Unknown', priceRange: '$300–$600', categories: ['Casual'], description: 'Microbrand discovered on r/MicrobrandWatches. Details to be verified.', website: '#' },
+  // TODO: fill in details for Brands
+  { name: 'Brands', slug: slug('Brands'), country: 'Unknown', priceRange: '$300–$600', categories: ['Casual'], description: 'Microbrand discovered on r/MicrobrandWatches. Details to be verified.', website: '#' },
+  // TODO: fill in details for Flux
+  { name: 'Flux', slug: slug('Flux'), country: 'Unknown', priceRange: '$300–$600', categories: ['Casual'], description: 'Microbrand discovered on r/MicrobrandWatches. Details to be verified.', website: '#' },
+  // TODO: fill in details for Ixdao
+  { name: 'Ixdao', slug: slug('Ixdao'), country: 'Unknown', priceRange: '$300–$600', categories: ['Casual'], description: 'Microbrand discovered on r/MicrobrandWatches. Details to be verified.', website: '#' },
+  // TODO: fill in details for kollokium
+  { name: 'kollokium', slug: slug('kollokium'), country: 'Unknown', priceRange: '$300–$600', categories: ['Casual'], description: 'Microbrand discovered on r/MicrobrandWatches. Details to be verified.', website: '#' },
+  // TODO: fill in details for Platina
+  { name: 'Platina', slug: slug('Platina'), country: 'Unknown', priceRange: '$300–$600', categories: ['Casual'], description: 'Microbrand discovered on r/MicrobrandWatches. Details to be verified.', website: '#' },
+  // TODO: fill in details for Underrated
+  { name: 'Underrated', slug: slug('Underrated'), country: 'Unknown', priceRange: '$300–$600', categories: ['Casual'], description: 'Microbrand discovered on r/MicrobrandWatches. Details to be verified.', website: '#' },
 ]
 
 export function getBrandBySlug(s: string): Brand | undefined {
