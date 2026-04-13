@@ -674,5 +674,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
     "url": "https://www.yema.com/products/yema-superman-tourbillon-cmm-31-limited-edition-12-25-31-66-te-mt"
+  },
+  {
+    "id": "aethelsohn-horizon-ember-gmt",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "Horizon Ember GMT",
+    "description": "Sold out",
+    "dropDate": "2026-04-14",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
+    "url": "https://aethelsohnwatch.com/products/horizon-ember-gmt"
   }
 ]
