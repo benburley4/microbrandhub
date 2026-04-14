@@ -687,5 +687,44 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
     "url": "https://aethelsohnwatch.com/products/horizon-ember-gmt"
+  },
+  {
+    "id": "mr-jones-watches-daydreamer-limited-edition",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "Daydreamer (Limited edition)",
+    "description": "New drop from Mr Jones Watches.",
+    "dropDate": "2026-04-15",
+    "status": "live",
+    "price": 0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/all-watches/products/daydreamer"
+  },
+  {
+    "id": "undone-aquadeep-submerge-carbon-black-edition",
+    "brand": "Undone",
+    "brandSlug": "undone",
+    "title": "Aquadeep Submerge Carbon - Black Edition",
+    "description": "new",
+    "dropDate": "2026-04-15",
+    "status": "live",
+    "price": 595.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
+    "url": "https://www.undone.com/collections/new-arrivals/products/aquadeep-submerge-carbon-black-edition"
+  },
+  {
+    "id": "yema-navygraf-phantom-cmm-10-limited-edition",
+    "brand": "Yema",
+    "brandSlug": "yema",
+    "title": "Navygraf Phantom CMM.10 Limited Edition",
+    "description": "New drop from Yema.",
+    "dropDate": "2026-04-15",
+    "status": "live",
+    "price": 2090.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
+    "url": "https://www.yema.com/products/yema-navygraf-phantom-cmm-10-limited-edition-21-26-10-66-snl-m6"
   }
 ]
