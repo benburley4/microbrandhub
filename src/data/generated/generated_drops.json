@@ -726,5 +726,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
     "url": "https://www.yema.com/products/yema-navygraf-phantom-cmm-10-limited-edition-21-26-10-66-snl-m6"
+  },
+  {
+    "id": "yema-rallygraf-alpine-cup-series-mkii-limited",
+    "brand": "Yema",
+    "brandSlug": "yema",
+    "title": "Rallygraf Alpine Cup Series MKII Limited Edition",
+    "description": "New drop from Yema.",
+    "dropDate": "2026-04-16",
+    "status": "live",
+    "price": 2425.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
+    "url": "https://www.yema.com/products/yema-rallygraf-alpine-cup-series-mkii-limited-edition-yral26alp-ch-aas"
   }
 ]
