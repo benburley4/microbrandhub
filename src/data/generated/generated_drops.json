@@ -739,5 +739,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
     "url": "https://www.yema.com/products/yema-rallygraf-alpine-cup-series-mkii-limited-edition-yral26alp-ch-aas"
+  },
+  {
+    "id": "yema-skin-diver-slim-full-lume-cmm-20-limited",
+    "brand": "Yema",
+    "brandSlug": "yema",
+    "title": "Skin Diver Slim Full Lume CMM.20 Limited Edition",
+    "description": "New drop from Yema.",
+    "dropDate": "2026-04-17",
+    "status": "live",
+    "price": 2725.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
+    "url": "https://www.yema.com/products/yema-skin-diver-slim-full-lume-cmm-20-limited-edition-12-26-20-67-snl-u7"
   }
 ]

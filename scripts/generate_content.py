@@ -36,6 +36,11 @@ DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+OLLAMA_URL = "http://localhost:11434/v1/chat/completions"
+OLLAMA_MODEL = "phi4:14b"
+
+# Set by --provider argument at runtime
+_provider: str = "deepseek"  # default
 OUTPUT_DIR = Path(__file__).parent.parent / "src" / "data" / "generated"
 
 # ---------------------------------------------------------------------------
@@ -114,10 +119,28 @@ BRANDS = [
 ]
 
 # ---------------------------------------------------------------------------
-# DeepSeek API helpers
+# API helpers
 # ---------------------------------------------------------------------------
 
 import requests  # noqa: E402 (imported after env setup)
+
+
+def call_ollama(prompt: str, temperature: float = 0.7) -> Optional[str]:
+    """Call a local Ollama model via its OpenAI-compatible endpoint."""
+    response = requests.post(
+        OLLAMA_URL,
+        headers={"Content-Type": "application/json"},
+        json={
+            "model": OLLAMA_MODEL,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": temperature,
+            "max_tokens": 2000,
+            "stream": False,
+        },
+        timeout=120,  # local models can be slower than remote APIs
+    )
+    response.raise_for_status()
+    return response.json()["choices"][0]["message"]["content"].strip()
 
 
 def call_deepseek(prompt: str, temperature: float = 0.7) -> Optional[str]:
@@ -141,6 +164,13 @@ def call_deepseek(prompt: str, temperature: float = 0.7) -> Optional[str]:
     )
     response.raise_for_status()
     return response.json()["choices"][0]["message"]["content"].strip()
+
+
+def call_llm(prompt: str, temperature: float = 0.7) -> Optional[str]:
+    """Route to the active provider (set via --provider)."""
+    if _provider == "ollama":
+        return call_ollama(prompt, temperature)
+    return call_deepseek(prompt, temperature)
 
 
 def extract_json(text: str) -> dict:
@@ -264,7 +294,7 @@ def generate_brand_content(brand: dict) -> dict:
         price_range=brand["priceRange"],
         website=brand["website"],
     )
-    raw = call_deepseek(prompt)
+    raw = call_llm(prompt)
     return extract_json(raw)
 
 
@@ -276,7 +306,7 @@ def generate_review(brand: dict) -> dict:
         categories=", ".join(brand["categories"]),
         price_range=brand["priceRange"],
     )
-    raw = call_gemini(prompt)
+    raw = call_gemini(prompt) if _provider == "gemini" else call_llm(prompt)
     result = extract_json(raw)
     # Inject brand metadata
     slug_val = brand["name"].lower().replace(r"[^a-z0-9]+", "-").strip("-")
@@ -387,11 +417,18 @@ def print_cost_estimate(count: int, mode: str):
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate MicrobrandHub content via DeepSeek API")
+    parser = argparse.ArgumentParser(description="Generate MicrobrandHub content via DeepSeek, Gemini, or local Ollama")
     parser.add_argument("--mode", choices=["brands", "reviews", "brand", "review"],
                         default="brands", help="What to generate")
     parser.add_argument("--slug", help="Single brand slug (e.g. 'baltic') for --mode brand/review")
+    parser.add_argument("--provider", choices=["deepseek", "gemini", "ollama"],
+                        default="deepseek", help="LLM provider to use (default: deepseek)")
+    parser.add_argument("--ollama-model", default=OLLAMA_MODEL,
+                        help=f"Ollama model name (default: {OLLAMA_MODEL})")
     args = parser.parse_args()
+
+    _provider = args.provider
+    OLLAMA_MODEL = args.ollama_model
 
     if args.mode in ("brand", "brands"):
         run_brands(args.slug)
