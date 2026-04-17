@@ -752,5 +752,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
     "url": "https://www.yema.com/products/yema-skin-diver-slim-full-lume-cmm-20-limited-edition-12-26-20-67-snl-u7"
+  },
+  {
+    "id": "yema-yema-x-silberstein-marine-2-cmm-20-limit",
+    "brand": "Yema",
+    "brandSlug": "yema",
+    "title": "Yema x Silberstein Marine 2 CMM.20 Limited Edition",
+    "description": "New drop from Yema.",
+    "dropDate": "2026-04-18",
+    "status": "live",
+    "price": 4425.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
+    "url": "https://www.yema.com/products/yema-yema-x-silberstein-marine-2-cmm-20-limited-edition-20-26-20-05-tn-u6"
   }
 ]
