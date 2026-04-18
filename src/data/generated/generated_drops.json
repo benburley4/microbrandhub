@@ -765,5 +765,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
     "url": "https://www.yema.com/products/yema-yema-x-silberstein-marine-2-cmm-20-limited-edition-20-26-20-05-tn-u6"
+  },
+  {
+    "id": "yema-superman-titanium-tourbillon-cmm-31-limi",
+    "brand": "Yema",
+    "brandSlug": "yema",
+    "title": "Superman Titanium Tourbillon CMM.31 Limited Edition",
+    "description": "New drop from Yema.",
+    "dropDate": "2026-04-19",
+    "status": "live",
+    "price": 13000.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
+    "url": "https://www.yema.com/products/yema-superman-titanium-tourbillon-cmm-31-limited-edition-12-26-31-65-te-mt"
   }
 ]
