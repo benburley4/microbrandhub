@@ -778,5 +778,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
     "url": "https://www.yema.com/products/yema-superman-titanium-tourbillon-cmm-31-limited-edition-12-26-31-65-te-mt"
+  },
+  {
+    "id": "isotope-ovni-jumping-hour-founders-edition",
+    "brand": "Isotope",
+    "brandSlug": "isotope",
+    "title": "OVNI Jumping Hour (Founders Edition)",
+    "description": "Sold out",
+    "dropDate": "2026-04-24",
+    "status": "live",
+    "price": 1800.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Isotope",
+    "url": "https://isotopewatches.com/products/ovni-jumping-hour-founders-edition"
   }
 ]
