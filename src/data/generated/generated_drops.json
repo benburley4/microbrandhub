@@ -791,5 +791,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Isotope",
     "url": "https://isotopewatches.com/products/ovni-jumping-hour-founders-edition"
+  },
+  {
+    "id": "aethelsohn-horizon-shadow-gmt",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "Horizon Shadow GMT",
+    "description": "Sold out",
+    "dropDate": "2026-04-26",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
+    "url": "https://aethelsohnwatch.com/products/horizon-shadow-gmt"
   }
 ]
