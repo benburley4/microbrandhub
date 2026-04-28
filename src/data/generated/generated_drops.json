@@ -804,5 +804,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
     "url": "https://aethelsohnwatch.com/products/horizon-shadow-gmt"
+  },
+  {
+    "id": "farer-curtis-eastern-arabic-limited-edition",
+    "brand": "Farer",
+    "brandSlug": "farer",
+    "title": "Curtis - Eastern Arabic Limited Edition",
+    "description": "NEW!",
+    "dropDate": "2026-04-29",
+    "status": "live",
+    "price": 1350.0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Farer",
+    "url": "https://farer.com/products/curtis-eastern-arabic-limited-edition"
   }
 ]
