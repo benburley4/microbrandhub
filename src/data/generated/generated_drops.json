@@ -817,5 +817,31 @@
     "currency": "GBP",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Farer",
     "url": "https://farer.com/products/curtis-eastern-arabic-limited-edition"
+  },
+  {
+    "id": "undone-the-undone-slim-silver-4-9mm",
+    "brand": "Undone",
+    "brandSlug": "undone",
+    "title": "The Undone Slim Silver - 4.9mm",
+    "description": "new",
+    "dropDate": "2026-05-01",
+    "status": "live",
+    "price": 295.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
+    "url": "https://www.undone.com/collections/new-arrivals/products/slim-watch-silver"
+  },
+  {
+    "id": "undone-the-undone-slim-black-4-9mm",
+    "brand": "Undone",
+    "brandSlug": "undone",
+    "title": "The Undone Slim Black - 4.9mm",
+    "description": "new",
+    "dropDate": "2026-05-01",
+    "status": "live",
+    "price": 295.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
+    "url": "https://www.undone.com/collections/new-arrivals/products/slim-watch-black"
   }
 ]
