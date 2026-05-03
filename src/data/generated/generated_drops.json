@@ -843,5 +843,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
     "url": "https://www.undone.com/collections/new-arrivals/products/slim-watch-black"
+  },
+  {
+    "id": "mr-jones-watches-colour-venn",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "Colour Venn",
+    "description": "Sold Out",
+    "dropDate": "2026-05-04",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/summer-sale-2026/products/colour-venn"
   }
 ]
