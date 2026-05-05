@@ -869,5 +869,57 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
     "url": "https://www.mrjoneswatches.com/collections/sale-two/products/the-everyday-special"
+  },
+  {
+    "id": "mr-jones-watches-beam-me-up-mechanical",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "Beam me up! mechanical",
+    "description": "Sold Out",
+    "dropDate": "2026-05-06",
+    "status": "live",
+    "price": 0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/automatic-mechanical-watches/products/beam-me-up-mechanical"
+  },
+  {
+    "id": "mr-jones-watches-the-accurate-mechanical",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "The Accurate: mechanical",
+    "description": "Sold Out",
+    "dropDate": "2026-05-06",
+    "status": "live",
+    "price": 0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/automatic-mechanical-watches/products/the-accurate-mechanical"
+  },
+  {
+    "id": "rze-pilot-watches-resolute-type-a-new-relea",
+    "brand": "RZE",
+    "brandSlug": "rze",
+    "title": "PILOT WATCHES RESOLUTE TYPE A [NEW RELEASE]",
+    "description": "New drop from RZE.",
+    "dropDate": "2026-05-06",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=RZE",
+    "url": "https://www.rzewatches.com/pages/redefine-adventure"
+  },
+  {
+    "id": "rze-re-verified-watches-best-sellers-limited",
+    "brand": "RZE",
+    "brandSlug": "rze",
+    "title": "RE-VERIFIED WATCHES BEST SELLERS LIMITED EDITIONS TRY WATCH FINDER",
+    "description": "New drop from RZE.",
+    "dropDate": "2026-05-06",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=RZE",
+    "url": "https://www.rzewatches.com/products/re-verified"
   }
 ]
