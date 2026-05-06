@@ -921,5 +921,57 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=RZE",
     "url": "https://www.rzewatches.com/products/re-verified"
+  },
+  {
+    "id": "mr-jones-watches-number-cruncher",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "Number Cruncher",
+    "description": "Sold Out",
+    "dropDate": "2026-05-07",
+    "status": "live",
+    "price": 0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/automatic-mechanical-watches/products/number-cruncher"
+  },
+  {
+    "id": "mr-jones-watches-enjoy-the-ride",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "Enjoy the ride",
+    "description": "Sold Out",
+    "dropDate": "2026-05-07",
+    "status": "live",
+    "price": 0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/automatic-mechanical-watches/products/enjoy-the-ride"
+  },
+  {
+    "id": "mr-jones-watches-the-silent-thief",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "The Silent Thief",
+    "description": "Sold Out",
+    "dropDate": "2026-05-07",
+    "status": "live",
+    "price": 0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/gilded-watches/products/the-silent-thief"
+  },
+  {
+    "id": "mr-jones-watches-the-golden-hour",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "The Golden Hour",
+    "description": "Sold Out",
+    "dropDate": "2026-05-07",
+    "status": "live",
+    "price": 0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/gilded-watches/products/the-golden-hour"
   }
 ]
