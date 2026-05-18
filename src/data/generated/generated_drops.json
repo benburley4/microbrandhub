@@ -1467,5 +1467,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Wise",
     "url": "https://wisetimepiece.com/collections/limited-edition/products/adamascus-adx019-true-gmt-limited"
+  },
+  {
+    "id": "aethelsohn-crimson-shard",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "Crimson Shard",
+    "description": "Sold out",
+    "dropDate": "2026-05-19",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
+    "url": "https://aethelsohnwatch.com/products/crimson-shard"
   }
 ]
