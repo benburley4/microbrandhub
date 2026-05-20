@@ -1584,5 +1584,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
     "url": "https://www.jonesbootmaker.com/products/dominica-leather-heeled-mules-dominica-323-833-cream"
+  },
+  {
+    "id": "isotope-mercury-seconds-society-x-isotope",
+    "brand": "Isotope",
+    "brandSlug": "isotope",
+    "title": "Mercury Seconds Society x Isotope",
+    "description": "Sold out",
+    "dropDate": "2026-05-21",
+    "status": "live",
+    "price": 2200.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Isotope",
+    "url": "https://isotopewatches.com/products/mercury-seconds-society-x-isotope"
+  },
+  {
+    "id": "jones-crewe-leather-derby-shoes",
+    "brand": "Jones",
+    "brandSlug": "jones",
+    "title": "Crewe Leather Derby Shoes",
+    "description": "New drop from Jones.",
+    "dropDate": "2026-05-21",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
+    "url": "https://www.jonesbootmaker.com/products/crewe-leather-derby-shoes-crewe-323-780-cognac"
   }
 ]
