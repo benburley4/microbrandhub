@@ -1610,5 +1610,57 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
     "url": "https://www.jonesbootmaker.com/products/crewe-leather-derby-shoes-crewe-323-780-cognac"
+  },
+  {
+    "id": "jones-reece-leather-loafers",
+    "brand": "Jones",
+    "brandSlug": "jones",
+    "title": "Reece Leather Loafers",
+    "description": "New drop from Jones.",
+    "dropDate": "2026-05-22",
+    "status": "live",
+    "price": 120.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
+    "url": "https://www.jonesbootmaker.com/products/reece-leather-loafers-reece-325-745-black-suede"
+  },
+  {
+    "id": "jones-raiden-suede-loafers",
+    "brand": "Jones",
+    "brandSlug": "jones",
+    "title": "Raiden Suede Loafers",
+    "description": "New drop from Jones.",
+    "dropDate": "2026-05-22",
+    "status": "live",
+    "price": 99.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
+    "url": "https://www.jonesbootmaker.com/products/raiden-suede-loafers-raiden-325-112-blue-suede"
+  },
+  {
+    "id": "undone-basecamp-malachite-dial-silver",
+    "brand": "Undone",
+    "brandSlug": "undone",
+    "title": "Basecamp Malachite Dial Silver",
+    "description": "new",
+    "dropDate": "2026-05-22",
+    "status": "live",
+    "price": 480.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
+    "url": "https://www.undone.com/collections/new-arrivals/products/basecamp-malachite-dial-silver"
+  },
+  {
+    "id": "undone-basecamp-gmt-malachite-gold",
+    "brand": "Undone",
+    "brandSlug": "undone",
+    "title": "Basecamp GMT Malachite Gold",
+    "description": "new",
+    "dropDate": "2026-05-22",
+    "status": "live",
+    "price": 480.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
+    "url": "https://www.undone.com/collections/new-arrivals/products/basecamp-malachite-dial-gold"
   }
 ]
