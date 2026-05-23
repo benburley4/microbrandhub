@@ -1662,5 +1662,83 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
     "url": "https://www.undone.com/collections/new-arrivals/products/basecamp-malachite-dial-gold"
+  },
+  {
+    "id": "jones-maura-leather-block-heel-boots",
+    "brand": "Jones",
+    "brandSlug": "jones",
+    "title": "Maura Leather Block Heel Boots",
+    "description": "New drop from Jones.",
+    "dropDate": "2026-05-24",
+    "status": "live",
+    "price": 140.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
+    "url": "https://www.jonesbootmaker.com/products/maura-leather-block-heel-boots-maura-328-026-black"
+  },
+  {
+    "id": "jones-mayah-leather-chelsea-boots",
+    "brand": "Jones",
+    "brandSlug": "jones",
+    "title": "Mayah Leather Chelsea Boots",
+    "description": "New drop from Jones.",
+    "dropDate": "2026-05-24",
+    "status": "live",
+    "price": 99.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
+    "url": "https://www.jonesbootmaker.com/products/mayah-leather-chelsea-boots-mayah-327-817-black"
+  },
+  {
+    "id": "jones-cagliari-extra-slim-calf-fit-knee-high-b",
+    "brand": "Jones",
+    "brandSlug": "jones",
+    "title": "Cagliari Extra Slim Calf Fit Knee-High Boots",
+    "description": "New drop from Jones.",
+    "dropDate": "2026-05-24",
+    "status": "live",
+    "price": 190.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
+    "url": "https://www.jonesbootmaker.com/products/cagliari-extra-slim-calf-fit-knee-high-boots-cagliarixs-321-244-black"
+  },
+  {
+    "id": "jones-cagliari-medium-calf-fit-knee-high-boots",
+    "brand": "Jones",
+    "brandSlug": "jones",
+    "title": "Cagliari Medium Calf Fit Knee-High Boots",
+    "description": "New drop from Jones.",
+    "dropDate": "2026-05-24",
+    "status": "live",
+    "price": 190.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
+    "url": "https://www.jonesbootmaker.com/products/cagliari-medium-calf-fit-knee-high-boots-cagliarim-321-031-black"
+  },
+  {
+    "id": "jones-cagliari-small-calf-fit-knee-high-boots",
+    "brand": "Jones",
+    "brandSlug": "jones",
+    "title": "Cagliari Small Calf Fit Knee High Boots",
+    "description": "New drop from Jones.",
+    "dropDate": "2026-05-24",
+    "status": "live",
+    "price": 190.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
+    "url": "https://www.jonesbootmaker.com/products/cagliari-small-calf-fit-knee-high-boots-cagliaris-321-030-black"
+  },
+  {
+    "id": "jones-cagliari-wide-calf-fit-knee-high-boots",
+    "brand": "Jones",
+    "brandSlug": "jones",
+    "title": "Cagliari Wide Calf Fit Knee-High Boots",
+    "description": "New drop from Jones.",
+    "dropDate": "2026-05-24",
+    "status": "live",
+    "price": 190.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
+    "url": "https://www.jonesbootmaker.com/products/cagliari-wide-calf-fit-knee-high-boots-cagliaril-321-032-black"
   }
 ]
