@@ -1740,5 +1740,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Jones",
     "url": "https://www.jonesbootmaker.com/products/cagliari-wide-calf-fit-knee-high-boots-cagliaril-321-032-black"
+  },
+  {
+    "id": "aethelsohn-forge-guilloch",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "Forge Guilloché",
+    "description": "NewSave up to 21%",
+    "dropDate": "2026-05-27",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
+    "url": "https://aethelsohnwatch.com/collections/new/products/forge-atlas"
   }
 ]
