@@ -1935,5 +1935,31 @@
     "currency": "GBP",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Hanhart",
     "url": "https://www.hanhart.com/en/product/primus-fly-navy-steel-mfg5-44-mm/?v=7885444af42e"
+  },
+  {
+    "id": "oan-gio-celestial-sea-orange",
+    "brand": "OAN Gio",
+    "brandSlug": "oan-gio",
+    "title": "Celestial Sea Orange",
+    "description": "Sold out",
+    "dropDate": "2026-06-02",
+    "status": "live",
+    "price": 1890.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=OAN+Gio",
+    "url": "https://oangio.watch/products/celestial-sea-orange"
+  },
+  {
+    "id": "oan-gio-celestial-sea-purple",
+    "brand": "OAN Gio",
+    "brandSlug": "oan-gio",
+    "title": "Celestial Sea Purple",
+    "description": "Sold out",
+    "dropDate": "2026-06-02",
+    "status": "live",
+    "price": 1890.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=OAN+Gio",
+    "url": "https://oangio.watch/products/celestial-sea-purple"
   }
 ]
