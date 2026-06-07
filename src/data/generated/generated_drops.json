@@ -1961,5 +1961,70 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=OAN+Gio",
     "url": "https://oangio.watch/products/celestial-sea-purple"
+  },
+  {
+    "id": "lum-tec-skip-to-product-information-open-media-1",
+    "brand": "Lum-Tec",
+    "brandSlug": "lum-tec",
+    "title": "Skip to product information Open media 1 in modal Open media 2 in modal Open media 3 in modal Open media 4 in modal Open",
+    "description": "New drop from Lum-Tec.",
+    "dropDate": "2026-06-08",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Lum-Tec",
+    "url": "https://lum-tec.com/products/b64-chronograph#ProductInfo-template--20602551107836__main"
+  },
+  {
+    "id": "lum-tec-b64-chronograph",
+    "brand": "Lum-Tec",
+    "brandSlug": "lum-tec",
+    "title": "B64 Chronograph",
+    "description": "Sale",
+    "dropDate": "2026-06-08",
+    "status": "live",
+    "price": 545.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Lum-Tec",
+    "url": "https://lum-tec.com/products/b64-chronograph"
+  },
+  {
+    "id": "venezianico-redentore-utopia-limited-edition",
+    "brand": "Venezianico",
+    "brandSlug": "venezianico",
+    "title": "Redentore Utopia - Limited Edition",
+    "description": "SOLD OUT",
+    "dropDate": "2026-06-08",
+    "status": "live",
+    "price": 4500.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
+    "url": "https://www.venezianico.com/products/redentore-utopia-limited-edition"
+  },
+  {
+    "id": "venezianico-redentore-ultrablack-40-1221510",
+    "brand": "Venezianico",
+    "brandSlug": "venezianico",
+    "title": "Redentore Ultrablack 40 - 1221510",
+    "description": "PRE-ORDER",
+    "dropDate": "2026-06-08",
+    "status": "upcoming",
+    "price": 500.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
+    "url": "https://www.venezianico.com/products/redentore-ultrablack-1221510c"
+  },
+  {
+    "id": "venezianico-nereide-acquaforte-3921520",
+    "brand": "Venezianico",
+    "brandSlug": "venezianico",
+    "title": "Nereide Acquaforte - 3921520",
+    "description": "PRE-ORDER",
+    "dropDate": "2026-06-08",
+    "status": "upcoming",
+    "price": 850.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
+    "url": "https://www.venezianico.com/products/nereide-acquaforte-3921520"
   }
 ]
