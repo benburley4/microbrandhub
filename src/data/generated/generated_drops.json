@@ -2026,5 +2026,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
     "url": "https://www.venezianico.com/products/nereide-acquaforte-3921520"
+  },
+  {
+    "id": "unimatic-steel-sandblasted-bracelet",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Steel Sandblasted Bracelet",
+    "description": "SANDBLASTED,back in stock",
+    "dropDate": "2026-06-10",
+    "status": "live",
+    "price": 19500.0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://www.unimaticwatches.com/product-tag/sandblasted/"
   }
 ]
