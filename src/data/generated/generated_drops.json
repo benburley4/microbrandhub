@@ -2039,5 +2039,18 @@
     "currency": "GBP",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
     "url": "https://www.unimaticwatches.com/product-tag/sandblasted/"
+  },
+  {
+    "id": "venezianico-arsenale-meteorite-6221560c",
+    "brand": "Venezianico",
+    "brandSlug": "venezianico",
+    "title": "Arsenale Meteorite - 6221560C",
+    "description": "PRE-ORDER",
+    "dropDate": "2026-06-11",
+    "status": "upcoming",
+    "price": 1200.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
+    "url": "https://www.venezianico.com/products/arsenale-meteorite-6221560c"
   }
 ]
