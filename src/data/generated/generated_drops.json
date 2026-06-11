@@ -2052,5 +2052,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
     "url": "https://www.venezianico.com/products/arsenale-meteorite-6221560c"
+  },
+  {
+    "id": "undone-aquadeep-k9-crystal-silver",
+    "brand": "Undone",
+    "brandSlug": "undone",
+    "title": "Aquadeep K9 Crystal Silver",
+    "description": "new",
+    "dropDate": "2026-06-12",
+    "status": "live",
+    "price": 1150.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
+    "url": "https://www.undone.com/collections/new-arrivals/products/aquadeep-k9-crystal-silver"
+  },
+  {
+    "id": "undone-aquadeep-k9-crystal-black",
+    "brand": "Undone",
+    "brandSlug": "undone",
+    "title": "Aquadeep K9 Crystal Black",
+    "description": "new",
+    "dropDate": "2026-06-12",
+    "status": "live",
+    "price": 1150.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
+    "url": "https://www.undone.com/collections/new-arrivals/products/aquadeep-k9-crystal-black"
   }
 ]
