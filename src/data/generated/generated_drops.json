@@ -2091,5 +2091,31 @@
     "currency": "GBP",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
     "url": "https://www.mrjoneswatches.com/collections/all-watches/products/starcatcher"
+  },
+  {
+    "id": "aethelsohn-terra-gaia",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "Terra Gaia",
+    "description": "NewSave 20%",
+    "dropDate": "2026-06-18",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
+    "url": "https://aethelsohnwatch.com/collections/new/products/terra-gaia"
+  },
+  {
+    "id": "aethelsohn-forge-patina-green",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "Forge Patina Green",
+    "description": "Pre-orderSave 13%",
+    "dropDate": "2026-06-18",
+    "status": "upcoming",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
+    "url": "https://aethelsohnwatch.com/products/forge-patina-green"
   }
 ]
