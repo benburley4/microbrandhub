@@ -2117,5 +2117,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
     "url": "https://aethelsohnwatch.com/products/forge-patina-green"
+  },
+  {
+    "id": "unimatic-modello-uno-ut1-ipn-limited-edition-di",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Modello Uno UT1-IPN Limited Edition – Diver",
+    "description": "41.5mm,QUARTZ",
+    "dropDate": "2026-06-20",
+    "status": "live",
+    "price": 59000.0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://www.unimaticwatches.com/product-tag/41-5mm/"
+  },
+  {
+    "id": "unimatic-modello-cinque-ut5-ipt-limited-edition",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Modello Cinque UT5-IPT Limited Edition – Time Only",
+    "description": "36mm,QUARTZ",
+    "dropDate": "2026-06-20",
+    "status": "live",
+    "price": 56000.0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://www.unimaticwatches.com/product-tag/36mm/"
   }
 ]
