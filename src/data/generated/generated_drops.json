@@ -2533,5 +2533,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
     "url": "https://aethelsohnwatch.com/products/terra-charoite"
+  },
+  {
+    "id": "isotope-chronograph-moonshot-stealth",
+    "brand": "Isotope",
+    "brandSlug": "isotope",
+    "title": "Chronograph Moonshot Stealth",
+    "description": "Sold out",
+    "dropDate": "2026-06-23",
+    "status": "live",
+    "price": 3340.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Isotope",
+    "url": "https://isotopewatches.com/products/chronograph-moonshot-stealth"
   }
 ]
