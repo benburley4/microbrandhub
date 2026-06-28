@@ -2546,5 +2546,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Isotope",
     "url": "https://isotopewatches.com/products/chronograph-moonshot-stealth"
+  },
+  {
+    "id": "venezianico-arsenale-bosphorus-limited-edition",
+    "brand": "Venezianico",
+    "brandSlug": "venezianico",
+    "title": "Arsenale Bosphorus - Limited Edition",
+    "description": "SOLD OUT",
+    "dropDate": "2026-06-29",
+    "status": "live",
+    "price": 900.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
+    "url": "https://www.venezianico.com/products/arsenale-bosphorus-limited-edition"
   }
 ]
