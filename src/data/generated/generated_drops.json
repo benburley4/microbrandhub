@@ -2559,5 +2559,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
     "url": "https://www.venezianico.com/products/arsenale-bosphorus-limited-edition"
+  },
+  {
+    "id": "undone-urban-37-orson",
+    "brand": "Undone",
+    "brandSlug": "undone",
+    "title": "Urban 37 Orson",
+    "description": "sold out",
+    "dropDate": "2026-07-04",
+    "status": "live",
+    "price": 275.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
+    "url": "https://www.undone.com/collections/new-arrivals/products/urban-37-orson"
   }
 ]
