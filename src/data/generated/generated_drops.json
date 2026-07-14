@@ -734,7 +734,7 @@
     "title": "Rallygraf Alpine Cup Series MKII Limited Edition",
     "description": "New drop from Yema.",
     "dropDate": "2026-04-16",
-    "status": "live",
+    "status": "sold_out",
     "price": 2425.0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
@@ -2572,5 +2572,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
     "url": "https://www.undone.com/collections/new-arrivals/products/urban-37-orson"
+  },
+  {
+    "id": "venezianico-bucintoro-42-8221510",
+    "brand": "Venezianico",
+    "brandSlug": "venezianico",
+    "title": "Bucintoro 42 - 8221510",
+    "description": "PRE-ORDER",
+    "dropDate": "2026-07-15",
+    "status": "upcoming",
+    "price": 1950.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
+    "url": "https://www.venezianico.com/products/bucintoro-42-8221510"
+  },
+  {
+    "id": "yema-navygraf-barracuda-cmm-20-limited-editio",
+    "brand": "Yema",
+    "brandSlug": "yema",
+    "title": "Navygraf Barracuda CMM.20 Limited Edition",
+    "description": "New drop from Yema.",
+    "dropDate": "2026-07-15",
+    "status": "live",
+    "price": 2590.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
+    "url": "https://www.yema.com/products/yema-navygraf-barracuda-cmm-20-limited-edition-21-26-20-66-snl-d6"
   }
 ]
