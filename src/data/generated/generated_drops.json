@@ -747,7 +747,7 @@
     "title": "Skin Diver Slim Full Lume CMM.20 Limited Edition",
     "description": "New drop from Yema.",
     "dropDate": "2026-04-17",
-    "status": "live",
+    "status": "sold_out",
     "price": 2725.0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
@@ -2598,5 +2598,44 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
     "url": "https://www.yema.com/products/yema-navygraf-barracuda-cmm-20-limited-edition-21-26-20-66-snl-d6"
+  },
+  {
+    "id": "unimatic-modello-uno-u1-tsp-limited-edition-div",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Modello Uno U1-TSP Limited Edition – Diver",
+    "description": "Automatic,41.5mm",
+    "dropDate": "2026-07-16",
+    "status": "live",
+    "price": 72000.0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://www.unimaticwatches.com/product-tag/automatic/"
+  },
+  {
+    "id": "unimatic-modello-due-u2-tsp-limited-edition-tim",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Modello Due U2-TSP Limited Edition – Time Only",
+    "description": "38mm,Automatic",
+    "dropDate": "2026-07-16",
+    "status": "live",
+    "price": 62000.0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://www.unimaticwatches.com/product-tag/38mm/"
+  },
+  {
+    "id": "venezianico-nereide-corallo-4521546",
+    "brand": "Venezianico",
+    "brandSlug": "venezianico",
+    "title": "Nereide Corallo - 4521546",
+    "description": "SOLD OUT",
+    "dropDate": "2026-07-16",
+    "status": "live",
+    "price": 1295.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
+    "url": "https://www.venezianico.com/products/nereide-corallo-4521546"
   }
 ]
