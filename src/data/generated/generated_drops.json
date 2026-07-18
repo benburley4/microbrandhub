@@ -773,7 +773,7 @@
     "title": "Superman Titanium Tourbillon CMM.31 Limited Edition",
     "description": "New drop from Yema.",
     "dropDate": "2026-04-19",
-    "status": "live",
+    "status": "sold_out",
     "price": 13000.0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
@@ -2637,5 +2637,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
     "url": "https://www.venezianico.com/products/nereide-corallo-4521546"
+  },
+  {
+    "id": "aethelsohn-turquoise-shard",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "Turquoise Shard",
+    "description": "Sold out",
+    "dropDate": "2026-07-18",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
+    "url": "https://aethelsohnwatch.com/products/turquoise-shard"
   }
 ]
