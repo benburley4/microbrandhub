@@ -2910,5 +2910,57 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Xeric",
     "url": "https://www.xeric.com/collections/omnigraph-automatic-watches"
+  },
+  {
+    "id": "aethelsohn-green-shard",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "Green Shard",
+    "description": "Sold out",
+    "dropDate": "2026-07-29",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
+    "url": "https://aethelsohnwatch.com/products/green-shard"
+  },
+  {
+    "id": "mr-jones-watches-analogon-pe",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "Analogon PE",
+    "description": "Sold Out",
+    "dropDate": "2026-07-29",
+    "status": "live",
+    "price": 0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/all-watches/products/analogon-pe"
+  },
+  {
+    "id": "norqain-pre-order-the-enjoy-life-special-editi",
+    "brand": "Norqain",
+    "brandSlug": "norqain",
+    "title": "Pre-Order The “Enjoy Life” Special Edition is a tribute to the kid in all of us. Pre-Order N2201.19S04.A01 CHF 4,790 Fre",
+    "description": "Pre-Order",
+    "dropDate": "2026-07-29",
+    "status": "upcoming",
+    "price": 4790.0,
+    "currency": "CHF",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Norqain",
+    "url": "https://norqain.com/products/freedom-chrono-40mm-enjoy-life-sprinkles-blue"
+  },
+  {
+    "id": "spinnaker-obsidian-glow",
+    "brand": "Spinnaker",
+    "brandSlug": "spinnaker",
+    "title": "obsidian glow",
+    "description": "New",
+    "dropDate": "2026-07-29",
+    "status": "live",
+    "price": 450.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Spinnaker",
+    "url": "https://spinnaker-watches.com/collections/limited-editions/products/fleuss-40-automatic-peanuts-snoopy-seaside-snorkel-limited-edition-obsidian-glow-sp-5186-04"
   }
 ]
