@@ -825,7 +825,7 @@
     "title": "The Undone Slim Silver - 4.9mm",
     "description": "new",
     "dropDate": "2026-05-01",
-    "status": "live",
+    "status": "sold_out",
     "price": 295.0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
@@ -838,7 +838,7 @@
     "title": "The Undone Slim Black - 4.9mm",
     "description": "new",
     "dropDate": "2026-05-01",
-    "status": "live",
+    "status": "sold_out",
     "price": 295.0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
@@ -2962,5 +2962,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Spinnaker",
     "url": "https://spinnaker-watches.com/collections/limited-editions/products/fleuss-40-automatic-peanuts-snoopy-seaside-snorkel-limited-edition-obsidian-glow-sp-5186-04"
+  },
+  {
+    "id": "spinnaker-black",
+    "brand": "Spinnaker",
+    "brandSlug": "spinnaker",
+    "title": "black",
+    "description": "Sold out",
+    "dropDate": "2026-07-30",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Spinnaker",
+    "url": "https://spinnaker-watches.com/collections/limited-editions/products/piccard-limited-edition-automatic-black-sp-5082-01"
   }
 ]
