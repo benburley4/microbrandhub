@@ -2975,5 +2975,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Spinnaker",
     "url": "https://spinnaker-watches.com/collections/limited-editions/products/piccard-limited-edition-automatic-black-sp-5082-01"
+  },
+  {
+    "id": "aethelsohn-mariner",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "Mariner",
+    "description": "Sold out",
+    "dropDate": "2026-07-31",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
+    "url": "https://aethelsohnwatch.com/collections/new/products/mariner"
+  },
+  {
+    "id": "earthen-summit-dawn-til-dusk-mkii",
+    "brand": "Earthen",
+    "brandSlug": "earthen",
+    "title": "Summit Dawn Til Dusk MKII",
+    "description": "Preorder -  Delivers End of AugNew",
+    "dropDate": "2026-07-31",
+    "status": "upcoming",
+    "price": 7013.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Earthen",
+    "url": "https://earthen-co.com/products/summit-mk-ii-dawn-til-dusk"
   }
 ]
