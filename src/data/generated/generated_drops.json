@@ -864,7 +864,7 @@
     "title": "The Everyday Special",
     "description": "Sold Out",
     "dropDate": "2026-05-05",
-    "status": "live",
+    "status": "sold_out",
     "price": 0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
@@ -3001,5 +3001,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Earthen",
     "url": "https://earthen-co.com/products/summit-mk-ii-dawn-til-dusk"
+  },
+  {
+    "id": "benjamin-james-november-pre-order-deerhurst-regulator",
+    "brand": "Benjamin James",
+    "brandSlug": "benjamin-james",
+    "title": "November Pre-Order | Deerhurst Regulator - Old English White",
+    "description": "New drop from Benjamin James.",
+    "dropDate": "2026-08-03",
+    "status": "upcoming",
+    "price": 1134.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Benjamin+James",
+    "url": "https://benjaminjameswatches.com/collections/deerhurst-p/products/deerhurst-regulator-old-english-white"
   }
 ]
