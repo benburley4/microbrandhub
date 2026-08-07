@@ -3014,5 +3014,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Benjamin+James",
     "url": "https://benjaminjameswatches.com/collections/deerhurst-p/products/deerhurst-regulator-old-english-white"
+  },
+  {
+    "id": "spinnaker-elemental",
+    "brand": "Spinnaker",
+    "brandSlug": "spinnaker",
+    "title": "elemental",
+    "description": "Sold out",
+    "dropDate": "2026-08-08",
+    "status": "live",
+    "price": 350.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Spinnaker",
+    "url": "https://spinnaker-watches.com/collections/new-arrivals/products/croft-mid-size-elemental-sp-5100-11"
   }
 ]
