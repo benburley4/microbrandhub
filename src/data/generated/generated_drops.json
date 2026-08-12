@@ -3027,5 +3027,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Spinnaker",
     "url": "https://spinnaker-watches.com/collections/new-arrivals/products/croft-mid-size-elemental-sp-5100-11"
+  },
+  {
+    "id": "isotope-ovni-jumping-disc-the-martian",
+    "brand": "Isotope",
+    "brandSlug": "isotope",
+    "title": "OVNI Jumping Disc The Martian",
+    "description": "COMING SOON",
+    "dropDate": "2026-08-13",
+    "status": "upcoming",
+    "price": 2650.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Isotope",
+    "url": "https://isotopewatches.com/products/ovni-jumping-disc-the-martian"
+  },
+  {
+    "id": "isotope-ovni-jumping-disc-the-neptunian",
+    "brand": "Isotope",
+    "brandSlug": "isotope",
+    "title": "OVNI Jumping Disc The Neptunian",
+    "description": "COMING SOON",
+    "dropDate": "2026-08-13",
+    "status": "upcoming",
+    "price": 2650.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Isotope",
+    "url": "https://isotopewatches.com/products/ovni-jumping-disc-the-neptunian"
   }
 ]
