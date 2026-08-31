@@ -3105,5 +3105,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
     "url": "https://aethelsohnwatch.com/products/terra-starstone"
+  },
+  {
+    "id": "hanhart-mad-preventor-hd12-36-mm-lederband",
+    "brand": "Hanhart",
+    "brandSlug": "hanhart",
+    "title": "MAD Preventor HD12™, 36 mm, Lederband",
+    "description": "Sold out",
+    "dropDate": "2026-09-01",
+    "status": "live",
+    "price": 81993.0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Hanhart",
+    "url": "https://www.hanhart.com/produkt/mad-preventor-hd12-36-mm-lederband/"
+  },
+  {
+    "id": "hanhart-mad-preventor-hd12-36mm-edelstahl-arm",
+    "brand": "Hanhart",
+    "brandSlug": "hanhart",
+    "title": "MAD Preventor HD12™, 36mm, Edelstahl-Armband",
+    "description": "Sold out",
+    "dropDate": "2026-09-01",
+    "status": "live",
+    "price": 96377.0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Hanhart",
+    "url": "https://www.hanhart.com/produkt/mad-preventor-hd12-36-mm-edelstahl-armband/"
   }
 ]
