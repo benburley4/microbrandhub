@@ -3131,5 +3131,44 @@
     "currency": "GBP",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Hanhart",
     "url": "https://www.hanhart.com/produkt/mad-preventor-hd12-36-mm-edelstahl-armband/"
+  },
+  {
+    "id": "unimatic-limited-edition-gmt",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Limited Edition - GMT",
+    "description": "40mmAutomatic",
+    "dropDate": "2026-09-03",
+    "status": "live",
+    "price": 795.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://unimaticwatches.com/products/uwk-u4-gmt-aeb"
+  },
+  {
+    "id": "unimatic-limited-edition-time-only",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Limited Edition - Time Only",
+    "description": "40mmAutomatic",
+    "dropDate": "2026-09-03",
+    "status": "live",
+    "price": 670.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://unimaticwatches.com/products/uwk-u4-aeg"
+  },
+  {
+    "id": "unimatic-limited-edition-prodiver",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Limited Edition - ProDiver",
+    "description": "New drop from Unimatic.",
+    "dropDate": "2026-09-03",
+    "status": "live",
+    "price": 650.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://unimaticwatches.com/products/uwk-ut1-pd"
   }
 ]
