@@ -2060,7 +2060,7 @@
     "title": "Aquadeep K9 Crystal Silver",
     "description": "new",
     "dropDate": "2026-06-12",
-    "status": "live",
+    "status": "sold_out",
     "price": 1150.0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
@@ -2073,7 +2073,7 @@
     "title": "Aquadeep K9 Crystal Black",
     "description": "new",
     "dropDate": "2026-06-12",
-    "status": "live",
+    "status": "sold_out",
     "price": 1150.0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Undone",
@@ -2086,7 +2086,7 @@
     "title": "Starcatcher",
     "description": "Sold Out",
     "dropDate": "2026-06-14",
-    "status": "live",
+    "status": "sold_out",
     "price": 0,
     "currency": "GBP",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
@@ -3170,5 +3170,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
     "url": "https://unimaticwatches.com/products/uwk-ut1-pd"
+  },
+  {
+    "id": "heinrich-sold-out-heinrich-taucher-sport-sold-out",
+    "brand": "Heinrich",
+    "brandSlug": "heinrich",
+    "title": "Sold out HEINRICH Taucher Sport Sold out /",
+    "description": "New drop from Heinrich.",
+    "dropDate": "2026-09-13",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Heinrich",
+    "url": "https://heinrich.watch/en-us/products/taucher-sport"
+  },
+  {
+    "id": "wolfgang-heinrich-sold-out-heinrich-taucher-sport-sold-out",
+    "brand": "Wolfgang Heinrich",
+    "brandSlug": "wolfgang-heinrich",
+    "title": "Sold out HEINRICH Taucher Sport Sold out /",
+    "description": "New drop from Wolfgang Heinrich.",
+    "dropDate": "2026-09-13",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Wolfgang+Heinrich",
+    "url": "https://heinrich.watch/en/products/taucher-sport"
   }
 ]
