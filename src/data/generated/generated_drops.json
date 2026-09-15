@@ -2099,7 +2099,7 @@
     "title": "Terra Gaia",
     "description": "NewSave 20%",
     "dropDate": "2026-06-18",
-    "status": "live",
+    "status": "sold_out",
     "price": 0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Aethelsohn",
@@ -3196,5 +3196,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Wolfgang+Heinrich",
     "url": "https://heinrich.watch/en/products/taucher-sport"
+  },
+  {
+    "id": "farer-cuprum-eastern-arabic-limited-edition",
+    "brand": "Farer",
+    "brandSlug": "farer",
+    "title": "Cuprum - Eastern Arabic Limited Edition",
+    "description": "LIMITED EDITION",
+    "dropDate": "2026-09-16",
+    "status": "live",
+    "price": 1495.0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Farer",
+    "url": "https://farer.com/products/cuprum-eastern-arabic-limited-edition"
+  },
+  {
+    "id": "unimatic-collab-time-only",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Collab - Time Only",
+    "description": "New drop from Unimatic.",
+    "dropDate": "2026-09-16",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://unimaticwatches.com/products/uwk-u5s-ts"
   }
 ]
