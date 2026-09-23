@@ -3222,5 +3222,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
     "url": "https://unimaticwatches.com/products/uwk-u5s-ts"
+  },
+  {
+    "id": "oan-gio-introducing-fragments",
+    "brand": "OAN Gio",
+    "brandSlug": "oan-gio",
+    "title": "Introducing FRAGMENTS",
+    "description": "New drop from OAN Gio.",
+    "dropDate": "2026-09-24",
+    "status": "upcoming",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=OAN+Gio",
+    "url": "https://oangio.watch/products/fragments-ombre"
   }
 ]
