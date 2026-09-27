@@ -2554,7 +2554,7 @@
     "title": "Arsenale Bosphorus - Limited Edition",
     "description": "SOLD OUT",
     "dropDate": "2026-06-29",
-    "status": "live",
+    "status": "sold_out",
     "price": 900.0,
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
@@ -3248,5 +3248,18 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
     "url": "https://www.yema.com/products/yema-navygraf-meteorite-cmm-10-limited-edition-22-26-10-64-tnl-m"
+  },
+  {
+    "id": "venezianico-redentore-levius-1521500",
+    "brand": "Venezianico",
+    "brandSlug": "venezianico",
+    "title": "Redentore Levius - 1521500",
+    "description": "PRE-ORDER",
+    "dropDate": "2026-09-28",
+    "status": "upcoming",
+    "price": 4750.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Venezianico",
+    "url": "https://www.venezianico.com/products/redentore-levius-1521500"
   }
 ]
