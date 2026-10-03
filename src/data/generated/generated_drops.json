@@ -3274,5 +3274,18 @@
     "currency": "GBP",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Hanhart",
     "url": "https://www.hanhart.com/produkt/steve-mcqueen-limited-edition-no-1/"
+  },
+  {
+    "id": "norqain-in-stock-in-stock-n3001-26t01-b01-chf-5",
+    "brand": "Norqain",
+    "brandSlug": "norqain",
+    "title": "In Stock In Stock N3001.26T01.B01 CHF 5,550 Wild ONE Skeleton Limited Edition 39mm Grey Mesh Rubber Manufacture Calibre",
+    "description": "In Stock",
+    "dropDate": "2026-10-03",
+    "status": "live",
+    "price": 5550.0,
+    "currency": "CHF",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Norqain",
+    "url": "https://norqain.com/products/wild-one-skeleton-titanium-limited-edition"
   }
 ]
