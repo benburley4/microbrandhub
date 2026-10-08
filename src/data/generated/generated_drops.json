@@ -3287,5 +3287,18 @@
     "currency": "CHF",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Norqain",
     "url": "https://norqain.com/products/wild-one-skeleton-titanium-limited-edition"
+  },
+  {
+    "id": "baltic-limited-edition-herm-tique-the-rift-see",
+    "brand": "Baltic",
+    "brandSlug": "baltic",
+    "title": "Limited Edition Hermétique The Rift See more",
+    "description": "New drop from Baltic.",
+    "dropDate": "2026-10-09",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Baltic",
+    "url": "https://www.baltic-watches.com/en/products/hermetique-the-rift"
   }
 ]
