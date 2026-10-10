@@ -3300,5 +3300,57 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Baltic",
     "url": "https://www.baltic-watches.com/en/products/hermetique-the-rift"
+  },
+  {
+    "id": "arcanaut-arc-ii-d-arc-roast",
+    "brand": "Arcanaut",
+    "brandSlug": "arcanaut",
+    "title": "ARC II — D'Arc Roast",
+    "description": "Sold out",
+    "dropDate": "2026-10-11",
+    "status": "live",
+    "price": 4.36,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Arcanaut",
+    "url": "https://arcanaut.watch/products/arc-ii-darc-roast"
+  },
+  {
+    "id": "bamford-bamford-edition-360-case-green",
+    "brand": "Bamford",
+    "brandSlug": "bamford",
+    "title": "BAMFORD Edition - 360 Case - Green",
+    "description": "Sold out",
+    "dropDate": "2026-10-11",
+    "status": "live",
+    "price": 20.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Bamford",
+    "url": "https://bamfordlondon.com/products/bamford-edition-360-case-green"
+  },
+  {
+    "id": "mr-jones-watches-chaos-window-pe",
+    "brand": "Mr Jones Watches",
+    "brandSlug": "mr-jones-watches",
+    "title": "Chaos Window PE",
+    "description": "Sold Out",
+    "dropDate": "2026-10-11",
+    "status": "live",
+    "price": 0,
+    "currency": "GBP",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Mr+Jones+Watches",
+    "url": "https://www.mrjoneswatches.com/collections/all-watches/products/chaos-window-pe"
+  },
+  {
+    "id": "unimatic-collab-gmt",
+    "brand": "Unimatic",
+    "brandSlug": "unimatic",
+    "title": "Collab - GMT",
+    "description": "New drop from Unimatic.",
+    "dropDate": "2026-10-11",
+    "status": "live",
+    "price": 0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
+    "url": "https://unimaticwatches.com/products/uwk-u4-gmt-emjdm"
   }
 ]
