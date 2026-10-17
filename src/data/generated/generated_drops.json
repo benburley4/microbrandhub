@@ -3352,5 +3352,31 @@
     "currency": "USD",
     "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Unimatic",
     "url": "https://unimaticwatches.com/products/uwk-u4-gmt-emjdm"
+  },
+  {
+    "id": "bamford-aether-bamford-london-d-300-matte-blac",
+    "brand": "Bamford",
+    "brandSlug": "bamford",
+    "title": "Aether × Bamford London D-300 Matte Black Ceramic",
+    "description": "Sold out",
+    "dropDate": "2026-10-18",
+    "status": "live",
+    "price": 2225.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Bamford",
+    "url": "https://bamfordlondon.com/products/aether-bamford-london-d-300-matte-black-ceramic"
+  },
+  {
+    "id": "yema-spacegraf-heure-sid-rale-tourbillon-vola",
+    "brand": "Yema",
+    "brandSlug": "yema",
+    "title": "Spacegraf Heure Sidérale Tourbillon Volant Limited Edition",
+    "description": "New drop from Yema.",
+    "dropDate": "2026-10-18",
+    "status": "live",
+    "price": 16000.0,
+    "currency": "USD",
+    "imageUrl": "https://placehold.co/600x400/1c1917/d97706?text=Yema",
+    "url": "https://www.yema.com/products/yema-spacegraf-heure-siderale-tourbillon-volant-limited-edition-60-26-32-06-tel-l6"
   }
 ]
