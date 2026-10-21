@@ -3768,5 +3768,18 @@
     "currency": "HKD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0664/2785/files/Mara_Blue_Blue_Rubber_7a322d55-9cd7-4a1d-bb25-454ba5cabc1a.jpg?v=1755073480",
     "url": "https://paulinwatches.com/products/mara-blue"
+  },
+  {
+    "id": "traska-freediver-seafoam-green",
+    "brand": "Traska",
+    "brandSlug": "traska",
+    "title": "Freediver Seafoam Green",
+    "description": "New release from Traska.",
+    "dropDate": "2026-10-21",
+    "status": "sold_out",
+    "price": 6332.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0643/5464/8287/files/Traska_FreeDiver_38_Face_Sept2026_NoDate_4000x4000_9c1bc9b2-455d-4408-baf7-feb0aafed673.jpg?v=1790866694",
+    "url": "https://traskawatch.com/products/freediver-seafoam-green"
   }
 ]
