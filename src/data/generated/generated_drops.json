@@ -4210,5 +4210,44 @@
     "currency": "USD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0946/8123/5759/files/Wren_Diver_One_Snow_TRANSPARENT.webp?v=1789388588",
     "url": "https://www.wrenwatches.com/products/diver-one-snow"
+  },
+  {
+    "id": "santurce-laco-pilot-watch-original-memmingen-erbs",
+    "brand": "Santurce",
+    "brandSlug": "santurce",
+    "title": "Laco Pilot Watch ORIGINAL Memmingen Erbstück",
+    "description": "New release from Santurce.",
+    "dropDate": "2026-10-24",
+    "status": "live",
+    "price": 18706.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0750/1375/1024/files/laco-fliegeruhr-typ-a-memmingen-erbstueck-861935_1920x1920_5c493aec-c7a5-4c6a-8b09-8c869f303d88.png?v=1792787218",
+    "url": "https://santurcecollection.store/products/laco-pilot-watch-original-memmingen-erbstuck"
+  },
+  {
+    "id": "santurce-laco-squad-watches-atacama-quarz-utc-mb",
+    "brand": "Santurce",
+    "brandSlug": "santurce",
+    "title": "Laco Squad Watches Atacama Quarz UTC MB",
+    "description": "New release from Santurce.",
+    "dropDate": "2026-10-24",
+    "status": "live",
+    "price": 6607.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0750/1375/1024/files/laco-einsatzuhr-atacama-quarz-utc-mb-862163_1200x1200_f9027c88-0695-4780-b920-4fc4580aa2f2.png?v=1792786832",
+    "url": "https://santurcecollection.store/products/laco-squad-watches-atacama-quarz-utc-mb"
+  },
+  {
+    "id": "santurce-laco-special-models-kiel-sport",
+    "brand": "Santurce",
+    "brandSlug": "santurce",
+    "title": "Laco Special Models: Kiel Sport",
+    "description": "New release from Santurce.",
+    "dropDate": "2026-10-24",
+    "status": "live",
+    "price": 23642.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0750/1375/1024/files/laco-fliegerchronograph-kiel-sport-862180_1920x1920_b2329e75-6eff-4724-8abe-25566f4ed86e.png?v=1792785687",
+    "url": "https://santurcecollection.store/products/laco-special-models-kiel-sport"
   }
 ]
