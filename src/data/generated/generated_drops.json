@@ -4964,5 +4964,44 @@
     "currency": "USD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0689/1703/5311/files/Hokusai2-V2-Lume_1.png?v=1791373155",
     "url": "https://www.undone.com/products/aquadeep-the-great-wave"
+  },
+  {
+    "id": "camden-watch-co-till-death-unisex-duo-on-mesh",
+    "brand": "Camden Watch Co",
+    "brandSlug": "camden-watch-co",
+    "title": "Till Death UNISEX DUO on Mesh",
+    "description": "Limited edition from Camden Watch Co.",
+    "dropDate": "2026-10-31",
+    "status": "live",
+    "price": 3430.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1424/2074/files/No.27-and-No.27-till-death-with-black-mesh-band.jpg?v=1792749823",
+    "url": "https://www.camdenwatchcompany.com/products/till-death-hers-and-hers-on-mesh"
+  },
+  {
+    "id": "camden-watch-co-till-death-his-and-hers-on-a-black-metal",
+    "brand": "Camden Watch Co",
+    "brandSlug": "camden-watch-co",
+    "title": "Till Death HIS AND HERS on a Black Metal",
+    "description": "Limited edition from Camden Watch Co.",
+    "dropDate": "2026-10-31",
+    "status": "live",
+    "price": 3537.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1424/2074/files/No.27-and-No.29-till-death-with-black-metal-band.jpg?v=1792748545",
+    "url": "https://www.camdenwatchcompany.com/products/till-death-his-and-hers-on-a-black-metal"
+  },
+  {
+    "id": "camden-watch-co-no-27-till-death-on-mesh",
+    "brand": "Camden Watch Co",
+    "brandSlug": "camden-watch-co",
+    "title": "No.27 Till Death on Mesh",
+    "description": "Limited edition from Camden Watch Co.",
+    "dropDate": "2026-10-31",
+    "status": "live",
+    "price": 1876.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1424/2074/files/No.27-till-death-with-black-mesh-band.png?v=1793380971",
+    "url": "https://www.camdenwatchcompany.com/products/no-27-till-death-on-mesh"
   }
 ]
