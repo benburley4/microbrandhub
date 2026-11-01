@@ -5003,5 +5003,18 @@
     "currency": "HKD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/1424/2074/files/No.27-till-death-with-black-mesh-band.png?v=1793380971",
     "url": "https://www.camdenwatchcompany.com/products/no-27-till-death-on-mesh"
+  },
+  {
+    "id": "arcanaut-experimental-arc-ii-poltergeist",
+    "brand": "Arcanaut",
+    "brandSlug": "arcanaut",
+    "title": "Experimental: ARC II — Poltergeist",
+    "description": "New release from Arcanaut.",
+    "dropDate": "2026-11-01",
+    "status": "live",
+    "price": 4350.0,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0659/2154/8524/files/Arcanaut_ARC_II_Poltergeist_Watch_8.jpg?v=1793362643",
+    "url": "https://arcanaut.watch/products/experimental-arc-ii-poltergeist"
   }
 ]
