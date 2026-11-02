@@ -5016,5 +5016,18 @@
     "currency": "EUR",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0659/2154/8524/files/Arcanaut_ARC_II_Poltergeist_Watch_8.jpg?v=1793362643",
     "url": "https://arcanaut.watch/products/experimental-arc-ii-poltergeist"
+  },
+  {
+    "id": "lum-tec-super-combat-b5",
+    "brand": "Lum-Tec",
+    "brandSlug": "lum-tec",
+    "title": "Super Combat B5",
+    "description": "New release of 200 pieces from Lum-Tec.",
+    "dropDate": "2026-11-02",
+    "status": "live",
+    "price": 19074.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2697/2164/files/B5-DSC04971-2k.jpg?v=1793276532",
+    "url": "https://lum-tec.com/products/super-combat-b5"
   }
 ]
