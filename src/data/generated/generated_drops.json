@@ -5029,5 +5029,44 @@
     "currency": "HKD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/2697/2164/files/B5-DSC04971-2k.jpg?v=1793276532",
     "url": "https://lum-tec.com/products/super-combat-b5"
+  },
+  {
+    "id": "formex-automatic-chronometer-black",
+    "brand": "Formex",
+    "brandSlug": "formex",
+    "title": "Automatic Chronometer Black",
+    "description": "New release from Formex.",
+    "dropDate": "2026-11-03",
+    "status": "live",
+    "price": 1490.0,
+    "currency": "CHF",
+    "imageUrl": "https://cdn11.bigcommerce.com/s-uok04hg6nb/products/672/images/2905/1.1_0330.1.6321.BRA.23.100_960x960__77777__94368.1623774309.386.513.png?c=1",
+    "url": "https://formexwatch.com/watches/essence-automatic-chronometer-black/"
+  },
+  {
+    "id": "formex-automatic-chronometer-degrade",
+    "brand": "Formex",
+    "brandSlug": "formex",
+    "title": "Automatic Chronometer Degrade",
+    "description": "New release from Formex.",
+    "dropDate": "2026-11-03",
+    "status": "live",
+    "price": 1490.0,
+    "currency": "CHF",
+    "imageUrl": "https://cdn11.bigcommerce.com/s-uok04hg6nb/products/627/images/2777/1.1_0330.1.6324.BRA.23.100_960x960__26314__14557.1623774250.386.513.png?c=1",
+    "url": "https://formexwatch.com/watches/essence-automatic-chronometer-degrade/"
+  },
+  {
+    "id": "revelot-terra-38-nishikigoi-batch-2",
+    "brand": "Revelot",
+    "brandSlug": "revelot",
+    "title": "Terra 38 Nishikigoi (Batch 2)",
+    "description": "New release from Revelot.",
+    "dropDate": "2026-11-03",
+    "status": "upcoming",
+    "price": 2438.0,
+    "currency": "MYR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1504/3878/files/R20-SKU-Side-Arrival-May_2.jpg?v=1767153170",
+    "url": "https://www.revelot.com/products/terra-38-nishikigoi-arrival-may-june"
   }
 ]
