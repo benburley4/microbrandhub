@@ -5068,5 +5068,44 @@
     "currency": "MYR",
     "imageUrl": "https://cdn.shopify.com/s/files/1/1504/3878/files/R20-SKU-Side-Arrival-May_2.jpg?v=1767153170",
     "url": "https://www.revelot.com/products/terra-38-nishikigoi-arrival-may-june"
+  },
+  {
+    "id": "ba111od-chapter-7-chronometer-white",
+    "brand": "BA111OD",
+    "brandSlug": "ba111od",
+    "title": "Chapter 7 Chronometer White",
+    "description": "New release from BA111OD.",
+    "dropDate": "2026-11-04",
+    "status": "live",
+    "price": 903.0,
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0070/1251/5925/files/1_8f20dce3-4d52-4b0b-a03f-aaf0af92d497.png?v=1793721582",
+    "url": "https://ba111od.com/products/chapter-7-chronometer-white"
+  },
+  {
+    "id": "trafford-daytripper-violet-crown",
+    "brand": "Trafford",
+    "brandSlug": "trafford",
+    "title": "Daytripper - Violet Crown",
+    "description": "Limited edition of 200 pieces from Trafford.",
+    "dropDate": "2026-11-04",
+    "status": "live",
+    "price": 799.0,
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0912/1844/4586/files/TWC_DaytripperSE1_V1.png?v=1793200833",
+    "url": "https://www.traffordwatchco.com/products/daytripper-violet-crown"
+  },
+  {
+    "id": "straum-straum-trts-jan-mayen-titanium-stormy",
+    "brand": "Straum",
+    "brandSlug": "straum",
+    "title": "Straum × TRTS Jan Mayen Titanium Stormy Seas",
+    "description": "New release from Straum.",
+    "dropDate": "2026-11-04",
+    "status": "live",
+    "price": 2160.0,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0708/9310/9559/files/jan-mayen-titanium__trts__rubber-black.webp?v=1762380246",
+    "url": "https://straum.co/products/straum-trts-jan-mayen-titanium-stormy-seas"
   }
 ]
