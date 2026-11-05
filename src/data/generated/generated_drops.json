@@ -5107,5 +5107,70 @@
     "currency": "EUR",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0708/9310/9559/files/jan-mayen-titanium__trts__rubber-black.webp?v=1762380246",
     "url": "https://straum.co/products/straum-trts-jan-mayen-titanium-stormy-seas"
+  },
+  {
+    "id": "canopy-field-one-red",
+    "brand": "Canopy",
+    "brandSlug": "canopy",
+    "title": "Field One - Red",
+    "description": "New release from Canopy.",
+    "dropDate": "2026-11-05",
+    "status": "upcoming",
+    "price": 6363.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0609/0217/8998/files/01-F1-Red-187C-White-Tip-Front.png?v=1793809857",
+    "url": "https://www.canopywatchco.com/products/field-one-red"
+  },
+  {
+    "id": "hanhart-ur-frosted-meteorite-42-mm",
+    "brand": "Hanhart",
+    "brandSlug": "hanhart",
+    "title": "UR Frosted Meteorite, 42 mm",
+    "description": "Limited edition of 82 pieces from Hanhart.",
+    "dropDate": "2026-11-05",
+    "status": "live",
+    "price": 0.0,
+    "currency": "USD",
+    "imageUrl": "https://www.hanhart.com/wp-content/uploads/2026/11/hanhart_frosted-meteorit_1600x874_1.jpg",
+    "url": "https://www.hanhart.com/produkt/frosted-meteorite-42-mm/"
+  },
+  {
+    "id": "hanhart-ur-frosted-meteorite-aquasphere-42-mm",
+    "brand": "Hanhart",
+    "brandSlug": "hanhart",
+    "title": "UR Frosted Meteorite AQUASPHERE, 42 mm",
+    "description": "Limited edition of 82 pieces from Hanhart.",
+    "dropDate": "2026-11-05",
+    "status": "live",
+    "price": 0.0,
+    "currency": "USD",
+    "imageUrl": "https://www.hanhart.com/wp-content/uploads/2026/11/hanhart_frosted-meteorit_1600x874_1.jpg",
+    "url": "https://www.hanhart.com/en/product/frosted-meteorite-aquasphere-42-mm/"
+  },
+  {
+    "id": "nomos-club-sport-neomatik-34-automatic-sport",
+    "brand": "Nomos",
+    "brandSlug": "nomos",
+    "title": "Club Sport neomatik 34 – automatic sports watches from NOMOS – NOMOS Glashütte",
+    "description": "New release from Nomos.",
+    "dropDate": "2026-11-05",
+    "status": "live",
+    "price": 0.0,
+    "currency": "USD",
+    "imageUrl": "https://cdn.nomos-glashuette.com/img/f=scale-down,w=2560/cms/content/new-releases/club-34-all-silver/0769-club-sport-neomatik-34-all-silver-cms-seo.jpg",
+    "url": "https://nomos-glashuette.com/en/watches/new-releases/club-sport-neomatik-34"
+  },
+  {
+    "id": "serica-ref-8315-3",
+    "brand": "Serica",
+    "brandSlug": "serica",
+    "title": "Réf. 8315-3",
+    "description": "New release from Serica.",
+    "dropDate": "2026-11-05",
+    "status": "live",
+    "price": 18779.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0933/3194/7784/files/8315-3-3h-packshot_01-V2.jpg?v=1793715899",
+    "url": "https://serica-watches.com/products/8315-3-chronometre-voyage"
   }
 ]
