@@ -5302,5 +5302,70 @@
     "currency": "USD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0105/7557/7146/files/SenansGrandeLuneBlackShopify01W1500.webp?v=1793862314",
     "url": "https://www.yema.com/products/yema-senans-grande-lune-cmm-22-edition-limitee-77-26-22-06-snl-l8"
+  },
+  {
+    "id": "awake-son-mai-silver-leaf-indian-red",
+    "brand": "Awake",
+    "brandSlug": "awake",
+    "title": "Son Mài - Silver Leaf \"Indian Red\"",
+    "description": "New release from Awake.",
+    "dropDate": "2026-11-07",
+    "status": "live",
+    "price": 2640.0,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0079/4869/7659/files/SonMai_Silver_Leaf_IndianRed_Packshot.jpg?v=1793534366",
+    "url": "https://awakewatches.com/products/sơn-mai-silver-leaf-indian-red"
+  },
+  {
+    "id": "awake-son-mai-silver-leaf-java-green",
+    "brand": "Awake",
+    "brandSlug": "awake",
+    "title": "Son Mài - Silver Leaf \"Java Green\"",
+    "description": "New release from Awake.",
+    "dropDate": "2026-11-07",
+    "status": "live",
+    "price": 2640.0,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0079/4869/7659/files/SonMai_Silver_Leaf_JavaGreen_Packshot.jpg?v=1793807875",
+    "url": "https://awakewatches.com/products/son-mai-silver-leaf-java-green"
+  },
+  {
+    "id": "awake-son-mai-silver-leaf-gentian-blue",
+    "brand": "Awake",
+    "brandSlug": "awake",
+    "title": "Son Mài - Silver Leaf \"Gentian Blue\"",
+    "description": "New release from Awake.",
+    "dropDate": "2026-11-07",
+    "status": "live",
+    "price": 2640.0,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0079/4869/7659/files/SonMai_Silver_Leaf_GentianBlue_Packshot.jpg?v=1793807896",
+    "url": "https://awakewatches.com/products/son-mai-silver-leaf-gentian-blue"
+  },
+  {
+    "id": "awake-son-mai-silver-leaf-purple-viola",
+    "brand": "Awake",
+    "brandSlug": "awake",
+    "title": "Son Mài - Silver Leaf \"Purple Viola\"",
+    "description": "New release from Awake.",
+    "dropDate": "2026-11-07",
+    "status": "live",
+    "price": 2640.0,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0079/4869/7659/files/SonMai_Silver_Leaf_PurpleViola_Packshot.jpg?v=1793807918",
+    "url": "https://awakewatches.com/products/son-mai-silver-leaf-purple-viola"
+  },
+  {
+    "id": "maen-grand-tonneau-jump-hour-m8-1-4",
+    "brand": "Maen",
+    "brandSlug": "maen",
+    "title": "GRAND TONNEAU JUMP HOUR - M8.1.4",
+    "description": "New release from Maen.",
+    "dropDate": "2026-11-07",
+    "status": "sold_out",
+    "price": 719.2,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1014/8897/files/GTJH_Front_Coffee.jpg?v=1792276946",
+    "url": "https://maenwatches.com/products/grand-tonneau-jump-hour-m8-1-4"
   }
 ]
