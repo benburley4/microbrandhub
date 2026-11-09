@@ -5458,5 +5458,18 @@
     "currency": "HKD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0750/1375/1024/files/Montar-Ana-Digi-Flint-B1-Front.webp?v=1794086615",
     "url": "https://santurcecollection.store/products/praesidus-montar-ana-digi-flint-44-mm-quartz-field-watch"
+  },
+  {
+    "id": "erebus-titan-blue-black",
+    "brand": "Erebus",
+    "brandSlug": "erebus",
+    "title": "TITAN Blue Black",
+    "description": "New release from Erebus.",
+    "dropDate": "2026-11-09",
+    "status": "live",
+    "price": 3592.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0765/3828/2270/files/erebus-titan-blue-black.jpg?v=1750317962",
+    "url": "https://erebuswatches.com/products/titan-blue-black"
   }
 ]
