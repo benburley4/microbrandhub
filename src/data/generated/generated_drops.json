@@ -5471,5 +5471,70 @@
     "currency": "HKD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0765/3828/2270/files/erebus-titan-blue-black.jpg?v=1750317962",
     "url": "https://erebuswatches.com/products/titan-blue-black"
+  },
+  {
+    "id": "scurfa-treasure-seeker-yellow-dial-scurfa-wat",
+    "brand": "Scurfa",
+    "brandSlug": "scurfa",
+    "title": "Treasure Seeker Yellow Dial | Scurfa Watches",
+    "description": "New release from Scurfa.",
+    "dropDate": "2026-11-10",
+    "status": "live",
+    "price": 445.0,
+    "currency": "GBP",
+    "imageUrl": "https://www.scurfawatches.com/tc-content/uploads/2026/11/treasure-seeker-yellow-01.webp",
+    "url": "https://www.scurfawatches.com/product/treasure-seeker-yellow-dial-2026/"
+  },
+  {
+    "id": "scurfa-treasure-seeker-white-dial-scurfa-watc",
+    "brand": "Scurfa",
+    "brandSlug": "scurfa",
+    "title": "Treasure Seeker White Dial | Scurfa Watches",
+    "description": "New release from Scurfa.",
+    "dropDate": "2026-11-10",
+    "status": "live",
+    "price": 445.0,
+    "currency": "GBP",
+    "imageUrl": "https://www.scurfawatches.com/tc-content/uploads/2026/11/treasure-seeker-white-01.webp",
+    "url": "https://www.scurfawatches.com/product/treasure-seeker-white-dial-2026/"
+  },
+  {
+    "id": "scurfa-treasure-seeker-orange-dial-scurfa-wat",
+    "brand": "Scurfa",
+    "brandSlug": "scurfa",
+    "title": "Treasure Seeker Orange Dial | Scurfa Watches",
+    "description": "New release from Scurfa.",
+    "dropDate": "2026-11-10",
+    "status": "live",
+    "price": 445.0,
+    "currency": "GBP",
+    "imageUrl": "https://www.scurfawatches.com/tc-content/uploads/2026/11/treasure-seeker-orange-01.webp",
+    "url": "https://www.scurfawatches.com/product/treasure-seeker-orange-dial-2026/"
+  },
+  {
+    "id": "scurfa-treasure-seeker-blue-dial-scurfa-watch",
+    "brand": "Scurfa",
+    "brandSlug": "scurfa",
+    "title": "Treasure Seeker Blue Dial | Scurfa Watches",
+    "description": "New release from Scurfa.",
+    "dropDate": "2026-11-10",
+    "status": "live",
+    "price": 445.0,
+    "currency": "GBP",
+    "imageUrl": "https://www.scurfawatches.com/tc-content/uploads/2026/11/treasure-seeker-blue-01.webp",
+    "url": "https://www.scurfawatches.com/product/treasure-seeker-blue-dial-2026/"
+  },
+  {
+    "id": "scurfa-treasure-seeker-black-dial-scurfa-watc",
+    "brand": "Scurfa",
+    "brandSlug": "scurfa",
+    "title": "Treasure Seeker Black Dial | Scurfa Watches",
+    "description": "New release from Scurfa.",
+    "dropDate": "2026-11-10",
+    "status": "live",
+    "price": 445.0,
+    "currency": "GBP",
+    "imageUrl": "https://www.scurfawatches.com/tc-content/uploads/2026/11/treasure-seeker-black-01.webp",
+    "url": "https://www.scurfawatches.com/product/treasure-seeker-black-dial-2026/"
   }
 ]
