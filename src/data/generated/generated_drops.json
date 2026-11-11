@@ -5536,5 +5536,83 @@
     "currency": "GBP",
     "imageUrl": "https://www.scurfawatches.com/tc-content/uploads/2026/11/treasure-seeker-black-01.webp",
     "url": "https://www.scurfawatches.com/product/treasure-seeker-black-dial-2026/"
+  },
+  {
+    "id": "ba111od-chapter-3-7-midnight-mauve",
+    "brand": "BA111OD",
+    "brandSlug": "ba111od",
+    "title": "Chapter 3.7 - Midnight Mauve",
+    "description": "New release from BA111OD.",
+    "dropDate": "2026-11-11",
+    "status": "live",
+    "price": 975.0,
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0070/1251/5925/files/versionvalidee.png?v=1698848000",
+    "url": "https://ba111od.com/products/chapter-3-7-midnight-mauve"
+  },
+  {
+    "id": "islander-logo-toque",
+    "brand": "Islander",
+    "brandSlug": "islander",
+    "title": "Logo Toque",
+    "description": "New release from Islander.",
+    "dropDate": "2026-11-11",
+    "status": "live",
+    "price": 34.99,
+    "currency": "CAD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0754/9331/0754/files/White-texture.jpg?v=1738702645",
+    "url": "https://islander.com/products/logo-toque"
+  },
+  {
+    "id": "maen-grand-tonneau-jump-hour-mnl-01",
+    "brand": "Maen",
+    "brandSlug": "maen",
+    "title": "GRAND TONNEAU JUMP HOUR - MNL.01",
+    "description": "New release from Maen.",
+    "dropDate": "2026-11-11",
+    "status": "sold_out",
+    "price": 999.2,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1014/8897/files/Front_Black_Black_Strap.jpg?v=1742464234",
+    "url": "https://maenwatches.com/products/maen-x-nico-leonard-mnl-01"
+  },
+  {
+    "id": "maen-grand-tonneau-jump-hour-mnl-02",
+    "brand": "Maen",
+    "brandSlug": "maen",
+    "title": "GRAND TONNEAU JUMP HOUR - MNL.02",
+    "description": "New release from Maen.",
+    "dropDate": "2026-11-11",
+    "status": "sold_out",
+    "price": 999.2,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1014/8897/files/Front_Green_Green_Strap.jpg?v=1742476754",
+    "url": "https://maenwatches.com/products/maen-x-nico-leonard-mnl-02"
+  },
+  {
+    "id": "maen-grand-tonneau-jump-hour-mnl-03",
+    "brand": "Maen",
+    "brandSlug": "maen",
+    "title": "GRAND TONNEAU JUMP HOUR - MNL.03",
+    "description": "New release from Maen.",
+    "dropDate": "2026-11-11",
+    "status": "sold_out",
+    "price": 999.2,
+    "currency": "EUR",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1014/8897/files/Front_Red_White_Strap.jpg?v=1742476933",
+    "url": "https://maenwatches.com/products/maen-x-nico-leonard-mnl-03"
+  },
+  {
+    "id": "wise-hitman-hit66-full-lume-special-edition",
+    "brand": "Wise",
+    "brandSlug": "wise",
+    "title": "HITMAN HIT66 Full Lume Special Edition (Hitman FKM rubber)",
+    "description": "Limited edition from Wise.",
+    "dropDate": "2026-11-11",
+    "status": "live",
+    "price": 545.0,
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0003/4688/2057/files/1x1_HIT_full_lume_04.jpg?v=1689829900",
+    "url": "https://wisetimepiece.com/products/hitman-hit66-full-lume-special-edition-hitman-fkm-rubber"
   }
 ]
