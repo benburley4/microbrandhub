@@ -5965,5 +5965,83 @@
     "currency": "HKD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0750/1375/1024/files/f77-100-years-black-opal-front-view_1080x_61962d84-3841-40b9-9625-f91ea455bc4b.webp?v=1794596828",
     "url": "https://santurcecollection.store/products/nivada-grenchen-f77-mk2-black-opal-100-years-edition-38m"
+  },
+  {
+    "id": "aethelsohn-terra-yuan",
+    "brand": "Aethelsohn",
+    "brandSlug": "aethelsohn",
+    "title": "TERRA YUAN｜源",
+    "description": "New release from Aethelsohn.",
+    "dropDate": "2026-11-16",
+    "status": "sold_out",
+    "price": 0.0,
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0774/3858/3043/files/126_f6af2d8f-c09c-4c53-ae96-e6d44040dae6.png?v=1794815925",
+    "url": "https://aethelsohnwatch.com/products/terra-yuan-源"
+  },
+  {
+    "id": "fears-brunswick-38-white-sandbox",
+    "brand": "Fears",
+    "brandSlug": "fears",
+    "title": "Brunswick 38 White (Sandbox)",
+    "description": "New release from Fears.",
+    "dropDate": "2026-11-16",
+    "status": "live",
+    "price": 25967.63,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0301/4787/0857/files/FearsBrunswick38PolarWhiteStrapPackshot.png?v=1741791597",
+    "url": "https://fearswatches.com/products/brunswick-38-white-sandbox"
+  },
+  {
+    "id": "studio-underd0g-0vercast-exclusive-access",
+    "brand": "Studio Underd0g",
+    "brandSlug": "studio-underd0g",
+    "title": "0vercast Exclusive Access",
+    "description": "New release from Studio Underd0g.",
+    "dropDate": "2026-11-16",
+    "status": "live",
+    "price": 8000.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0564/6784/9378/files/04OVCA_37_Product_Card.png?v=1794233723",
+    "url": "https://underd0g.com/products/04ovca_ea"
+  },
+  {
+    "id": "studio-underd0g-shepherd-s-delight-exclusive-access",
+    "brand": "Studio Underd0g",
+    "brandSlug": "studio-underd0g",
+    "title": "Shepherd's Delight Exclusive Access",
+    "description": "New release from Studio Underd0g.",
+    "dropDate": "2026-11-16",
+    "status": "live",
+    "price": 8000.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0564/6784/9378/files/04SDNA_37_Product_Card.png?v=1794233723",
+    "url": "https://underd0g.com/products/04sdna_ea"
+  },
+  {
+    "id": "studio-underd0g-arabian-sky-exclusive-access",
+    "brand": "Studio Underd0g",
+    "brandSlug": "studio-underd0g",
+    "title": "Arabian Sky Exclusive Access",
+    "description": "New release from Studio Underd0g.",
+    "dropDate": "2026-11-16",
+    "status": "live",
+    "price": 8000.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0564/6784/9378/files/04ASEM_37_Product_Card.png?v=1794233723",
+    "url": "https://underd0g.com/products/04asem_ea"
+  },
+  {
+    "id": "studio-underd0g-cloud10-exclusive-access",
+    "brand": "Studio Underd0g",
+    "brandSlug": "studio-underd0g",
+    "title": "Cloud10 Exclusive Access",
+    "description": "New release from Studio Underd0g.",
+    "dropDate": "2026-11-16",
+    "status": "live",
+    "price": 8000.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0564/6784/9378/files/04CLCH_37_Product_Card.png?v=1794233723",
+    "url": "https://underd0g.com/products/04clch_ea"
   }
 ]
