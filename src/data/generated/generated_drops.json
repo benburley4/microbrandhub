@@ -6043,5 +6043,31 @@
     "currency": "HKD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0564/6784/9378/files/04CLCH_37_Product_Card.png?v=1794233723",
     "url": "https://underd0g.com/products/04clch_ea"
+  },
+  {
+    "id": "bamford-popeye-d-300-limited-edition",
+    "brand": "Bamford",
+    "brandSlug": "bamford",
+    "title": "Popeye D-300 Limited Edition",
+    "description": "Limited edition from Bamford.",
+    "dropDate": "2026-11-17",
+    "status": "live",
+    "price": 1900.0,
+    "currency": "GBP",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0140/7218/4890/files/popeyed300.jpg?v=1794583722",
+    "url": "https://bamfordlondon.com/products/popeye-x-bl-d300"
+  },
+  {
+    "id": "hanhart-racemaster-gtm-45-mm",
+    "brand": "Hanhart",
+    "brandSlug": "hanhart",
+    "title": "Racemaster GTM, 45 mm",
+    "description": "New release from Hanhart.",
+    "dropDate": "2026-11-17",
+    "status": "live",
+    "price": 0.0,
+    "currency": "USD",
+    "imageUrl": "https://www.hanhart.com/wp-content/uploads/2024/12/Hanhart_Pioneer-Racemaster-GTM_737.670-001.jpg",
+    "url": "https://www.hanhart.com/en/product/racemaster-gtm/"
   }
 ]
