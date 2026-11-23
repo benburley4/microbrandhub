@@ -6784,5 +6784,31 @@
     "currency": "HKD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0088/9058/1055/files/5E47239C-59F4-49DA-A319-5F1B7D45017A_1_105_c.jpg?v=1795202530",
     "url": "https://isotopewatches.com/products/isotope-x-direnzo-cosmonaire"
+  },
+  {
+    "id": "ba111od-chapter-4-9-meteor-tourbillon",
+    "brand": "BA111OD",
+    "brandSlug": "ba111od",
+    "title": "Chapter 4.9 Meteor Tourbillon",
+    "description": "New release from BA111OD.",
+    "dropDate": "2026-11-23",
+    "status": "live",
+    "price": 9200.0,
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0070/1251/5925/files/Siteimages_900x1200px_7.png?v=1712221698",
+    "url": "https://ba111od.com/products/chapter-4-9-meteor-tourbillon"
+  },
+  {
+    "id": "undone-vintage-mystique-mercury",
+    "brand": "Undone",
+    "brandSlug": "undone",
+    "title": "Vintage Mystique Mercury",
+    "description": "New release from Undone.",
+    "dropDate": "2026-11-23",
+    "status": "live",
+    "price": 265.0,
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0689/1703/5311/files/mystique-mercury-silver1-st__front_fb8a4d91-5b05-4985-bfbd-c8c5e0c57660.png?v=1700838406",
+    "url": "https://www.undone.com/products/vintage-mystique-mercury"
   }
 ]
