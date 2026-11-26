@@ -7018,5 +7018,44 @@
     "currency": "GBP",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0014/2711/1983/files/IMG-0375.png?v=1789553183",
     "url": "https://williamwoodwatches.com/products/never-forget-watch-9-11-tunnel-to-towers-auction"
+  },
+  {
+    "id": "anoma-a2",
+    "brand": "Anoma",
+    "brandSlug": "anoma",
+    "title": "A2",
+    "description": "New release from Anoma.",
+    "dropDate": "2026-11-26",
+    "status": "live",
+    "price": 2400.0,
+    "currency": "GBP",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0786/9874/2085/files/A2_-_18_2d3aef7a-4800-4794-a135-7fe56219a78c.jpg?v=1795527168",
+    "url": "https://anomawatches.com/products/a2"
+  },
+  {
+    "id": "echo-neutra-rivanera-piccolo-green",
+    "brand": "Echo Neutra",
+    "brandSlug": "echo-neutra",
+    "title": "Rivanera Piccolo Green",
+    "description": "New release from Echo Neutra.",
+    "dropDate": "2026-11-26",
+    "status": "live",
+    "price": 14500.0,
+    "currency": "HKD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0872/1822/5433/files/RivaneraPiccoloGreen-DarkGreenCordovan-112026.png?v=1795605103",
+    "url": "https://echoneutra.com/products/rivanera-piccolo-green"
+  },
+  {
+    "id": "san-martin-san-martin-new-sn0144-dg1-39mm-luxury-me",
+    "brand": "San Martin",
+    "brandSlug": "san-martin",
+    "title": "San Martin New SN0144-DG1 39mm Luxury Men's Business Dress Watch Miyota 9130 Automatic Mechanical Waterproof 100m Luminous - San Martin Official Store",
+    "description": "New release from San Martin.",
+    "dropDate": "2026-11-26",
+    "status": "live",
+    "price": 0.0,
+    "currency": "USD",
+    "imageUrl": "https://sanmartinwatches.com/wp-content/uploads/2026/11/SAN-MARTIN-SN0144DG1-01.webp",
+    "url": "https://sanmartinwatches.com/shop/new-arrivals/sn0144-dg1/"
   }
 ]
